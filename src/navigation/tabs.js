@@ -4,9 +4,9 @@ import { View, Text, Image } from 'react-native';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Home } from '../screens/Home';
+import { Home } from '../screens/HomeScreen/Home';
 import { COLORS, icons } from '../constants';
-import { BirthChartScreen } from '../screens/BirthChartScreen';
+import { BirthChartScreen } from '../screens/BirthChartScreen/BirthChartScreen';
 
 const Tab = createBottomTabNavigator();
 

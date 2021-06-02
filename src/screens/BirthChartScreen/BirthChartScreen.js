@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import { COLORS } from '../constants';
+import { COLORS } from '../../constants';
 
 export class BirthChartScreen extends Component {
     render() {
