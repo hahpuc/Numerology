@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import { COLORS, FONTS } from '../constants';
+import { COLORS, FONTS } from '../../constants';
 
 export class Home extends Component {
     render() {
