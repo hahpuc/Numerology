@@ -14,16 +14,18 @@ const tabOptions = {
     showLabel: false,
     style: {
         height: '10%',
+        backgroundColor: COLORS.primary
     },
 };
 
 const Tabs = () => {
     return (
         <Tab.Navigator
+            initialRouteName="Home"
             tabBarOptions={tabOptions}
             screenOptions={({ route }) => ({
                 tabBarIcon: ({ focused }) => {
-                    const tintColor = focused ? COLORS.primary : COLORS.gray;
+                    const tintColor = focused ? COLORS.white : COLORS.black;
 
                     switch (route.name) {
                         case 'Home':
@@ -76,7 +78,9 @@ const Tabs = () => {
                             );
                     }
                 },
-            })}>
+            })}
+
+        >
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Box" component={BirthChartScreen} />
             <Tab.Screen name="Search" component={Home} />
