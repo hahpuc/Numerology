@@ -14,7 +14,18 @@ const tabOptions = {
     showLabel: false,
     style: {
         height: '10%',
-        backgroundColor: COLORS.primary
+        backgroundColor: COLORS.primary,
+
+        // Shadow 
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 0,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
 };
 
