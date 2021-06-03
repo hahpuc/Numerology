@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, SafeAreaView, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
 import { CardNumber } from '../../components';
+import { CardInformationModal } from '../../components/CardInformationModal';
 import { COLORS, FONTS } from '../../constants';
 
 export class BirthChartScreen extends Component {
 
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            cardInformationVisible: false
+        }
+    }
+
 
     onNumberPress(number) {
         console.log("PRESSSSS", number)
+        this.setState({
+            cardInformationVisible: !this.state.cardInformationVisible
+        })
     }
 
     render() {
@@ -103,7 +115,10 @@ export class BirthChartScreen extends Component {
 
                             {/* Button  */}
                             <View style={{ marginTop: 16, marginBottom: 16, height: 50, alignItems: 'center' }}>
-                                <TouchableOpacity style={[styles.button, { width: buttonWidth }]}>
+                                <TouchableOpacity
+                                    style={[styles.button, { width: buttonWidth }]}
+                                    onPress={() => { this.props.navigation.push("BirthChartResult") }}
+                                >
                                     <Text style={{ ...FONTS.body3, color: COLORS.white }}> Khám phá </Text>
                                 </TouchableOpacity>
                             </View>
@@ -144,6 +159,11 @@ export class BirthChartScreen extends Component {
                         </View>
                     </View>
                 </ScrollView>
+
+                <CardInformationModal
+                    isVisible={this.state.cardInformationVisible}
+                    onRequestClose={() => this.setState({ cardInformationVisible: !this.state.cardInformationVisible })}
+                />
 
             </SafeAreaView>
 

@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Home } from '../screens/HomeScreen/Home';
 import { COLORS, icons } from '../constants';
+import { BirthChartContainer } from '../screens/BirthChartScreen/BirthChartContainer';
 import { BirthChartScreen } from '../screens/BirthChartScreen/BirthChartScreen';
 
 const Tab = createBottomTabNavigator();
@@ -93,7 +94,7 @@ const Tabs = () => {
 
         >
             <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Box" component={BirthChartScreen} />
+            <Tab.Screen name="Box" component={BirthChartContainer} />
             <Tab.Screen name="Search" component={Home} />
             <Tab.Screen name="Favourite" component={BirthChartScreen} />
         </Tab.Navigator>

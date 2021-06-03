@@ -11,6 +11,7 @@ export const COLORS = {
   orangeCard: '#ff7e52',
 
   black: '#1E1F20',
+  blackBlur: 'rgba(0, 0, 0, 0.6)',
 
   white: '#FFFFFF',
 

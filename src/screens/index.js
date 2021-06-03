@@ -1,7 +1,9 @@
 import Home from './HomeScreen/Home'
-import PlantDetail from './BirthChartScreen/BirthChartScreen'
+import { BirthChartScreen, BirthChartContainer, BirthChartResultScreen } from './BirthChartScreen/'
 
 export {
     Home,
-    PlantDetail
+    BirthChartScreen,
+    BirthChartContainer,
+    BirthChartResultScreen,
 }
