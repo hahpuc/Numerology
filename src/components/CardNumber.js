@@ -10,7 +10,7 @@ export class CardNumber extends Component {
         const cardWidth = (Dimensions.get('window').width - 48) / 3
 
         return (
-            <View style={[styles.container, { width: cardWidth, height: cardWidth }]}>
+            <View style={[styles.container, { backgroundColor: this.props.color, width: cardWidth, height: cardWidth }]}>
 
                 {/* Header */}
                 <View style={styles.header}>
@@ -28,7 +28,6 @@ export class CardNumber extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: COLORS.brownCard,
         borderRadius: 20,
     },
 

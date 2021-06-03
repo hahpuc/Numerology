@@ -23,7 +23,7 @@ export class BirthChartScreen extends Component {
     }
 
     render() {
-        const buttonWidth = Dimensions.get('window').width - 64;
+        const buttonWidth = Dimensions.get('window').width - 32;
 
         return (
             <SafeAreaView style={styles.safeArea}>
@@ -46,21 +46,21 @@ export class BirthChartScreen extends Component {
                                     style={{ paddingLeft: 16 }}
                                     onPress={() => this.onNumberPress("3")}
                                 >
-                                    <CardNumber title='Trí não' number='3' />
+                                    <CardNumber color={COLORS.brownCard} title='Trí não' number='3' />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
                                     onPress={() => this.onNumberPress("6")}
                                 >
-                                    <CardNumber title='Sáng tạo' number='6' />
+                                    <CardNumber color={COLORS.brownCard} title='Sáng tạo' number='6' />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
                                     onPress={() => this.onNumberPress("9")}
                                 >
-                                    <CardNumber title='Lý tưởng' number='9' />
+                                    <CardNumber color={COLORS.brownCard} title='Lý tưởng' number='9' />
                                 </TouchableOpacity>
                             </View>
 
@@ -70,7 +70,7 @@ export class BirthChartScreen extends Component {
                                     style={{ paddingLeft: 16 }}
                                     onPress={() => this.onNumberPress("2")}
                                 >
-                                    <CardNumber title='Trực giác' number='2' />
+                                    <CardNumber color={COLORS.brownCard} title='Trực giác' number='2' />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
@@ -78,14 +78,14 @@ export class BirthChartScreen extends Component {
                                     onPress={() => this.onNumberPress("5")}
 
                                 >
-                                    <CardNumber title='Cảm xúc' number='5' />
+                                    <CardNumber color={COLORS.brownCard} title='Cảm xúc' number='5' />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
                                     onPress={() => this.onNumberPress("8")}
                                 >
-                                    <CardNumber title='Nghĩa vụ' number='8' />
+                                    <CardNumber color={COLORS.brownCard} title='Nghĩa vụ' number='8' />
                                 </TouchableOpacity>
                             </View>
 
@@ -95,21 +95,21 @@ export class BirthChartScreen extends Component {
                                     style={{ paddingLeft: 16 }}
                                     onPress={() => this.onNumberPress("1")}
                                 >
-                                    <CardNumber title='Tính cách' number='1' />
+                                    <CardNumber color={COLORS.brownCard} title='Tính cách' number='1' />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
                                     onPress={() => this.onNumberPress("4")}
                                 >
-                                    <CardNumber title='Thực tế' number='4' />
+                                    <CardNumber color={COLORS.brownCard} title='Thực tế' number='4' />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
                                     onPress={() => this.onNumberPress("7")}
                                 >
-                                    <CardNumber title='Hy sinh' number='7' />
+                                    <CardNumber color={COLORS.brownCard} title='Hy sinh' number='7' />
                                 </TouchableOpacity>
                             </View>
 
@@ -130,27 +130,26 @@ export class BirthChartScreen extends Component {
                                 <Text style={{ ...FONTS.light2 }}>Con số cá nhân</Text>
                             </View>
 
-                            {/* 1 - 4 - 7 */}
                             <View style={{ marginBottom: 16, marginTop: 16, flexDirection: 'row' }}>
                                 <TouchableOpacity
                                     style={{ paddingLeft: 16 }}
                                     onPress={() => this.onNumberPress("1")}
                                 >
-                                    <CardNumber title='Số biểu đạt' number='4' />
+                                    <CardNumber color={COLORS.brownCard} title='Số biểu đạt' number='4' />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
                                     onPress={() => this.onNumberPress("4")}
                                 >
-                                    <CardNumber color={COLORS.pink} title='Số chủ đạo' number='10' />
+                                    <CardNumber color={COLORS.orangeCard} title='Số chủ đạo' number='10' />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
                                     onPress={() => this.onNumberPress("7")}
                                 >
-                                    <CardNumber title='Số linh hồn' number='8' />
+                                    <CardNumber color={COLORS.brownCard} title='Số linh hồn' number='8' />
                                 </TouchableOpacity>
                             </View>
 

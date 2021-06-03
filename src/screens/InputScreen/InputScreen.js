@@ -5,7 +5,7 @@ import { COLORS, FONTS, images } from '../../constants';
 export class InputScreen extends Component {
 
     render() {
-        const buttonWidth = Dimensions.get('window').width - 64;
+        const buttonWidth = Dimensions.get('window').width - 32;
 
         return (
             <View style={styles.container}>
