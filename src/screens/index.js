@@ -1,5 +1,5 @@
-import Home from './Home'
-import PlantDetail from './PlantDetail'
+import Home from './HomeScreen/Home'
+import PlantDetail from './BirthChartScreen/BirthChartScreen'
 
 export {
     Home,

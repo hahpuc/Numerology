@@ -10,14 +10,13 @@ import { View } from 'react-native';
 import { InputScreen } from './src/screens/InputScreen/InputScreen';
 
 // Tabs
-
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      {/* <Tabs /> */}
-      <InputScreen />
+      <Tabs />
+      {/* <InputScreen /> */}
     </NavigationContainer>
 
 
