@@ -5,16 +5,19 @@ import Header from '../../components/header.js'
 
 import { LifePathNumber } from '../../../data/LifePathNumber';
 import calculator from '../../helper/calculator';
+import { CardInformationModal } from '../../components/CardInformationModal';
 export class Home extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            data: LifePathNumber
+            data: LifePathNumber,
+
+            isVisible: false
         }
 
-        calculator.calNumber("23112000")
-        calculator.nameInfo("Vi huu duc")
+        // calculator.calNumber("23112000")
+        // calculator.nameInfo("Vi huu duc")
     }
 
 
@@ -58,6 +61,9 @@ export class Home extends Component {
 
                 </View>
 
+                <CardInformationModal
+                    isVisible={this.state.isVisible}
+                />
             </SafeAreaView>
         )
     }
@@ -68,12 +74,12 @@ const DATA = [ // Sau thì dùng cái trong file data.js nha
     {
         id: 1,
         title: 'Mục đích sống',
-        describe: 'Người số 9 luôn tự cảm thấy mình đầy trách nhiệm. Họ phù hợp với nghệ thuật và các lĩnh vực nhân văn hơn là với khoa học hay thương mại. Rất nhiều người đi đầu trong lĩnh vực văn...'
+        describe: LifePathNumber[0]['Số 2']['Mục đích sống'].text
     },
     {
         id: 2,
         title: 'Đặc điểm nổi bật',
-        describe: 'Có hoài bão, có trách nhiệm, có lý tưởng là ba giá trị nổi bật trong con đường tiến hóa của Người số 9, nhưng trên hết, trách nhiệm với bản thân mới là điểm nhấn đặc biệt của họ...'
+        describe: LifePathNumber[0]['Số 2']['Đặc điểm nổi bật'].text
     },
     {
         id: 3,

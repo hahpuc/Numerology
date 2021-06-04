@@ -6,6 +6,7 @@ export const search = require('../assets/icons/search_icon.png');
 export const setting = require('../assets/icons/setting-icon.png')
 export const back = require('../assets/icons/back_icon.png')
 export const cancel = require('../assets/icons/cancel_icon.png')
+export const home = require('../assets/icons/home_icon.png')
 
 export default {
   camera,
@@ -15,5 +16,6 @@ export default {
   search,
   setting,
   back,
-  cancel
+  cancel,
+  home
 };

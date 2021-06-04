@@ -8,6 +8,7 @@ import { Home } from '../screens/HomeScreen/Home';
 import { COLORS, icons } from '../constants';
 import { BirthChartContainer } from '../screens/BirthChartScreen/BirthChartContainer';
 import { BirthChartScreen } from '../screens/BirthChartScreen/BirthChartScreen';
+import { PyramidPeak } from '../screens/PyramidPeak/PyramidPeak';
 
 const Tab = createBottomTabNavigator();
 
@@ -43,7 +44,7 @@ const Tabs = () => {
                         case 'Home':
                             return (
                                 <Image
-                                    source={icons.flash}
+                                    source={icons.home}
                                     resizeMode="contain"
                                     style={{
                                         tintColor: tintColor,
@@ -52,7 +53,7 @@ const Tabs = () => {
                                     }}
                                 />
                             );
-                        case 'Box':
+                        case 'BirthChart':
                             return (
                                 <Image
                                     source={icons.cube}
@@ -64,22 +65,10 @@ const Tabs = () => {
                                     }}
                                 />
                             );
-                        case 'Search':
+                        case 'Pyramid':
                             return (
                                 <Image
                                     source={icons.search}
-                                    resizeMode="contain"
-                                    style={{
-                                        tintColor: tintColor,
-                                        width: 25,
-                                        height: 25,
-                                    }}
-                                />
-                            );
-                        case 'Favourite':
-                            return (
-                                <Image
-                                    source={icons.heart}
                                     resizeMode="contain"
                                     style={{
                                         tintColor: tintColor,
@@ -94,9 +83,8 @@ const Tabs = () => {
 
         >
             <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Box" component={BirthChartContainer} />
-            <Tab.Screen name="Search" component={Home} />
-            <Tab.Screen name="Favourite" component={BirthChartScreen} />
+            <Tab.Screen name="BirthChart" component={BirthChartContainer} />
+            <Tab.Screen name="Pyramid" component={PyramidPeak} />
         </Tab.Navigator>
     );
 };
