@@ -38,7 +38,7 @@ const Tabs = () => {
             tabBarOptions={tabOptions}
             screenOptions={({ route }) => ({
                 tabBarIcon: ({ focused }) => {
-                    const tintColor = focused ? COLORS.white : COLORS.black;
+                    const tintColor = focused ? COLORS.orangeCard : COLORS.black;
 
                     switch (route.name) {
                         case 'Home':
@@ -56,7 +56,7 @@ const Tabs = () => {
                         case 'BirthChart':
                             return (
                                 <Image
-                                    source={icons.cube}
+                                    source={icons.birthchart}
                                     resizeMode="contain"
                                     style={{
                                         tintColor: tintColor,
@@ -68,7 +68,7 @@ const Tabs = () => {
                         case 'Pyramid':
                             return (
                                 <Image
-                                    source={icons.search}
+                                    source={icons.pyramid}
                                     resizeMode="contain"
                                     style={{
                                         tintColor: tintColor,
