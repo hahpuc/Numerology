@@ -4,9 +4,9 @@ import { View, Text, Image } from 'react-native';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Home } from '../screens/Home';
+import { Home } from '../screens/HomeScreen/Home';
 import { COLORS, icons } from '../constants';
-import { BirthChartScreen } from '../screens/BirthChartScreen';
+import { BirthChartScreen } from '../screens/BirthChartScreen/BirthChartScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +14,18 @@ const tabOptions = {
     showLabel: false,
     style: {
         height: '10%',
-        backgroundColor: COLORS.primary
+        backgroundColor: COLORS.primary,
+
+        // Drop Shadow 
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 0,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
 };
 

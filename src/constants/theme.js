@@ -20,7 +20,7 @@ export const SIZES = {
   padding: 24,
 
   // font sizes
-  largeTitle: 50,
+  largeTitle: 20,
   h1: 30,
   h2: 22,
   h3: 16,
@@ -37,9 +37,8 @@ export const SIZES = {
 
 export const FONTS = {
   largeTitle: {
-    fontFamily: 'Roboto-Black',
-    fontSize: SIZES.largeTitle,
-    lineHeight: 55,
+    fontFamily: 'Roboto-Light',
+    fontSize: SIZES.largeTitle
   },
   h1: { fontFamily: 'Roboto-Black', fontSize: SIZES.h1, lineHeight: 36 },
   h2: { fontFamily: 'Roboto-Bold', fontSize: SIZES.h2, lineHeight: 30 },
@@ -48,7 +47,7 @@ export const FONTS = {
   body1: { fontFamily: 'Roboto-Regular', fontSize: SIZES.body1, lineHeight: 36 },
   body2: { fontFamily: 'Roboto-Regular', fontSize: SIZES.body2, lineHeight: 30 },
   body3: { fontFamily: 'Roboto-Regular', fontSize: SIZES.body3, lineHeight: 22 },
-  body4: { fontFamily: 'Roboto-Regular', fontSize: SIZES.body4, lineHeight: 22 },
+  body4: { fontFamily: 'Roboto-Regular', fontSize: SIZES.body4, lineHeight: 20 },
 };
 
 const appTheme = { COLORS, SIZES, FONTS };
