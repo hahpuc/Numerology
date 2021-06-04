@@ -38,7 +38,7 @@ export class Home extends Component {
                         <FlatList
                             data={DATA}
                             renderItem={renderItem}
-                            //keyExtractor={item => item.id}
+                            keyExtractor={item => item.id}
                         />
                     </View>
 
@@ -52,6 +52,7 @@ export class Home extends Component {
 const DATA = [ // Sau thì dùng cái trong file data.js nha
     // thêm scroll view vào nữa 
     {
+        key:'1',
         title: 'Mục đích sống',
         describe:'Người số 9 luôn tự cảm thấy mình đầy trách nhiệm. Họ phù hợp với nghệ thuật và các lĩnh vực nhân văn hơn là với khoa học hay thương mại. Rất nhiều người đi đầu trong lĩnh vực văn...'
     },
@@ -93,18 +94,16 @@ const styles = StyleSheet.create({
         borderColor: 'black', 
         borderWidth: 1, 
         margin: 16
-        // backgroundColor: '#f9c2ff',
-        // padding: 20,
-        // marginVertical: 8,
-        // marginHorizontal: 16,
     },
     title: {
         fontFamily: 'Roboto-Regular', 
         fontSize: 17, 
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
+        margin:6
     },
     describe: {
         fontFamily: 'Roboto-Regular', 
-        fontSize: 17
+        fontSize: 17,
+        margin:6
     }
 })
