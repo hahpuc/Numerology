@@ -5,7 +5,7 @@ import { COLORS, FONTS, images } from '../../constants';
 export class InputScreen extends Component {
 
     render() {
-        const buttonWidth = Dimensions.get('window').width - 64;
+        const buttonWidth = Dimensions.get('window').width - 32;
 
         return (
             <View style={styles.container}>
@@ -34,7 +34,7 @@ export class InputScreen extends Component {
                     </View>
 
                     {/* Input Field */}
-                    <View style={{ paddingLeft: 16, flex: 1, justifyContent: 'center' }}>
+                    <View style={{ paddingRight: 16, paddingLeft: 16, flex: 1, justifyContent: 'center' }}>
 
                         <View>
                             <Text style={{ color: COLORS.primary, fontSize: 17 }}>Họ và tên</Text>

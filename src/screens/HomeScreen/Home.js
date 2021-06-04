@@ -3,7 +3,21 @@ import { SafeAreaView, Text, View, Image, StyleSheet, FlatList } from 'react-nat
 import { COLORS, FONTS, icons } from '../../constants';
 import Header from '../../components/header.js'
 
+import { LifePathNumber } from '../../../data/LifePathNumber';
+import calculator from '../../helper/calculator';
 export class Home extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            data: LifePathNumber
+        }
+
+        calculator.calNumber("23112000")
+        calculator.nameInfo("Vi huu duc")
+    }
+
+
     render() {
         return (
             <SafeAreaView style={styles.container}>
@@ -52,29 +66,33 @@ export class Home extends Component {
 const DATA = [ // Sau thì dùng cái trong file data.js nha
     // thêm scroll view vào nữa 
     {
-        key:'1',
+        id: 1,
         title: 'Mục đích sống',
-        describe:'Người số 9 luôn tự cảm thấy mình đầy trách nhiệm. Họ phù hợp với nghệ thuật và các lĩnh vực nhân văn hơn là với khoa học hay thương mại. Rất nhiều người đi đầu trong lĩnh vực văn...'
+        describe: 'Người số 9 luôn tự cảm thấy mình đầy trách nhiệm. Họ phù hợp với nghệ thuật và các lĩnh vực nhân văn hơn là với khoa học hay thương mại. Rất nhiều người đi đầu trong lĩnh vực văn...'
     },
     {
+        id: 2,
         title: 'Đặc điểm nổi bật',
-        describe:'Có hoài bão, có trách nhiệm, có lý tưởng là ba giá trị nổi bật trong con đường tiến hóa của Người số 9, nhưng trên hết, trách nhiệm với bản thân mới là điểm nhấn đặc biệt của họ...'
+        describe: 'Có hoài bão, có trách nhiệm, có lý tưởng là ba giá trị nổi bật trong con đường tiến hóa của Người số 9, nhưng trên hết, trách nhiệm với bản thân mới là điểm nhấn đặc biệt của họ...'
     },
     {
+        id: 3,
         title: 'Khuynh hướng cần khắc phục',
-        describe:'Khi người Số 9 không áp được những lý tưởng mà họ đặt ra cho người khác lên chính bản thân mình, họ trở nên tiêu cực. Họ cần đặc biệt lưu ý để không trở thành nạn nhân của thói đạo đức...'
+        describe: 'Khi người Số 9 không áp được những lý tưởng mà họ đặt ra cho người khác lên chính bản thân mình, họ trở nên tiêu cực. Họ cần đặc biệt lưu ý để không trở thành nạn nhân của thói đạo đức...'
     },
     {
+        id: 4,
         title: 'Hướng phát triển',
-        describe:'Khi người Số 9 không áp được những lý tưởng mà họ đặt ra cho người khác lên chính bản thân mình, họ trở nên tiêu cực. Họ cần đặc biệt lưu ý để không trở thành nạn nhân của thói đạo đức...'
+        describe: 'Khi người Số 9 không áp được những lý tưởng mà họ đặt ra cho người khác lên chính bản thân mình, họ trở nên tiêu cực. Họ cần đặc biệt lưu ý để không trở thành nạn nhân của thói đạo đức...'
     },
     {
+        id: 5,
         title: 'Nghề nghiệp phù hợp',
-        describe:'Khi người Số 9 không áp được những lý tưởng mà họ đặt ra cho người khác lên chính bản thân mình, họ trở nên tiêu cực. Họ cần đặc biệt lưu ý để không trở thành nạn nhân của thói đạo đức...'
+        describe: 'Khi người Số 9 không áp được những lý tưởng mà họ đặt ra cho người khác lên chính bản thân mình, họ trở nên tiêu cực. Họ cần đặc biệt lưu ý để không trở thành nạn nhân của thói đạo đức...'
     },
 ];
 
-const Item = ({ title,describe }) => (
+const Item = ({ title, describe }) => (
     <View style={styles.item}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.describe}>{describe}</Text>
@@ -91,19 +109,19 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.primary,
     },
     item: {
-        borderColor: 'black', 
-        borderWidth: 1, 
+        borderColor: 'black',
+        borderWidth: 1,
         margin: 16
     },
     title: {
-        fontFamily: 'Roboto-Regular', 
-        fontSize: 17, 
+        fontFamily: 'Roboto-Regular',
+        fontSize: 17,
         textDecorationLine: 'underline',
-        margin:6
+        margin: 6
     },
     describe: {
-        fontFamily: 'Roboto-Regular', 
+        fontFamily: 'Roboto-Regular',
         fontSize: 17,
-        margin:6
+        margin: 6
     }
 })
