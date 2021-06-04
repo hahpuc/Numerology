@@ -14,7 +14,6 @@ export class BirthChartScreen extends Component {
         }
     }
 
-
     onNumberPress(number) {
         console.log("PRESSSSS", number)
         this.setState({
