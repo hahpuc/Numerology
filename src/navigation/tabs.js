@@ -17,7 +17,7 @@ const tabOptions = {
         height: '10%',
         backgroundColor: COLORS.primary,
 
-        // Shadow 
+        // Drop Shadow 
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
