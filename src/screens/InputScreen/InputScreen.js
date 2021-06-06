@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Image, TextInput, TouchableOpacity, Dimensions } from 'react-native';
+import {
+    View, StyleSheet, Text, Image, TextInput, TouchableOpacity, Dimensions,
+    AsyncStorageStatic
+} from 'react-native';
+
 import { COLORS, FONTS, images } from '../../constants';
 
 export class InputScreen extends Component {
@@ -27,9 +31,9 @@ export class InputScreen extends Component {
 
                     {/* Label  */}
                     <View style={{ paddingLeft: 16, flex: 1, justifyContent: 'center' }}>
-                        <Text style={{ ...FONTS.largeTitle, color: COLORS.primary }}>Khám phá</Text>
-                        <Text style={{ ...FONTS.largeTitle, color: COLORS.primary }}>Bản thân</Text>
-                        <Text style={{ ...FONTS.largeTitle, color: COLORS.primary }}>Bằng những con số</Text>
+                        <Text style={{ ...FONTS.logoTitle, color: COLORS.primary }}>Khám phá</Text>
+                        <Text style={{ ...FONTS.logoTitle, color: COLORS.primary }}>Bản thân</Text>
+                        <Text style={{ ...FONTS.logoTitle, color: COLORS.primary }}>Bằng những con số</Text>
 
                     </View>
 
