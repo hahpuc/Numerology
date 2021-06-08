@@ -9,6 +9,8 @@ import { COLORS, icons } from '../constants';
 import { BirthChartContainer } from '../screens/BirthChartScreen/BirthChartContainer';
 import { BirthChartScreen } from '../screens/BirthChartScreen/BirthChartScreen';
 import { PyramidPeak } from '../screens/PyramidPeak/PyramidPeak';
+import { HomeContainer } from '../screens/HomeScreen/HomeContainer';
+import { getFocusedRouteNameFromRoute } from '@react-navigation/core';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,6 +34,17 @@ const tabOptions = {
 };
 
 const Tabs = () => {
+
+    const getTabBarVisibility = (route) => {
+        const routeName = getFocusedRouteNameFromRoute(route);
+
+        if (routeName === 'Setting' || routeName === 'BirthChartResult') {
+            return false;
+        }
+
+        return true;
+    }
+
     return (
         <Tab.Navigator
             initialRouteName="Home"
@@ -82,8 +95,16 @@ const Tabs = () => {
             })}
 
         >
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="BirthChart" component={BirthChartContainer} />
+            <Tab.Screen name="Home" component={HomeContainer}
+                options={({ route }) => ({
+                    tabBarVisible: getTabBarVisibility(route)
+                })}
+            />
+            <Tab.Screen name="BirthChart" component={BirthChartContainer}
+                options={({ route }) => ({
+                    tabBarVisible: getTabBarVisibility(route)
+                })}
+            />
             <Tab.Screen name="Pyramid" component={PyramidPeak} />
         </Tab.Navigator>
     );

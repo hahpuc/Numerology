@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, SafeAreaView, TouchableOpacity, Dimensions, Scr
 import { CardNumber } from '../../components';
 import { COLORS, FONTS, icons } from '../../constants';
 
-export class BirthChartResultScreen extends Component {
+export class SettingScreen extends Component {
 
 
     onNumberPress(number) {
@@ -33,7 +33,7 @@ export class BirthChartResultScreen extends Component {
                             }}
                         />
                     </TouchableOpacity>
-                    <Text style={{ ...FONTS.largeTitle, flex: 1, textAlign: 'center' }}>Các con số ngày sinh</Text>
+                    <Text style={{ ...FONTS.largeTitle, flex: 1, textAlign: 'center' }}>Setting</Text>
                     <View style={{ marginRight: 16, height: 24, width: 24 }} />
                 </View>
 

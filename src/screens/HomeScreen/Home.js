@@ -31,7 +31,12 @@ export class Home extends Component {
                         borderBottomColor: COLORS.black,
                         borderBottomWidth: 1
                     }}>
-                    <Header headerText={'HOME'} />
+                    <Header
+                        headerText={'HOME'}
+                        navigateToSetting={() => {
+                            this.props.navigation.push('Setting')
+                        }}
+                    />
                 </View>
 
                 {/*Name and BirthDate */}
