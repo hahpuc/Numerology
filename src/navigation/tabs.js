@@ -38,7 +38,10 @@ const Tabs = () => {
     const getTabBarVisibility = (route) => {
         const routeName = getFocusedRouteNameFromRoute(route);
 
-        if (routeName === 'Setting' || routeName === 'BirthChartResult') {
+        if (routeName === 'Setting'
+            || routeName === 'BirthChartResult'
+            || routeName === 'InputScreen'
+        ) {
             return false;
         }
 

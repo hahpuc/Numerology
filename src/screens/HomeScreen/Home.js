@@ -74,8 +74,7 @@ export class Home extends Component {
     }
 }
 
-const DATA = [ // Sau thì dùng cái trong file data.js nha
-    // thêm scroll view vào nữa 
+const DATA = [
     {
         id: 1,
         title: 'Mục đích sống',
