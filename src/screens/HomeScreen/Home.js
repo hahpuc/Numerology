@@ -8,6 +8,8 @@ import TextCollapse from 'react-native-text-collapse';
 import calculator from '../../helper/calculator';
 import { LifePathNumber } from '../../../data/LifePathNumber';
 
+
+
 export class Home extends Component {
     constructor(props) {
         super(props)
@@ -39,7 +41,7 @@ export class Home extends Component {
                 <View
                     style={{
                         height: 48,
-                        borderBottomColor: COLORS.black,
+                        borderBottomColor: COLORS.brown,
                         borderBottomWidth: 1,
                     }}>
                     <Header
@@ -55,15 +57,15 @@ export class Home extends Component {
                             justifyContent: 'center',
                             alignItems: 'center',
                         }}>
-                            <Text style={{ ...FONTS.h2 }}>VI HUU DUC</Text>
-                            <Text style={{ ...FONTS.body2 }}>1-1-1111</Text>
+                            <Text style={{ ...FONTS.Medium1 }}>VI HUU DUC</Text>
+                            <Text style={{ ...FONTS.light1 }}>1-1-1111</Text>
                         </View>
 
                         {/*Information */}
                         <View style={{ flex: 1 }}>
-                            <View style={{ flexDirection: 'row', paddingTop: 16, justifyContent: 'center' }}>
-                                <Text style={{ fontFamily: 'Roboto-Regular', fontSize: 20 }}>Số chủ đạo: </Text>
-                                <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 20 }}>9</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                                <Text style={{ ...FONTS.body2 }}>Số chủ đạo: </Text>
+                                <Text style={{ ...FONTS.h2 }}>9</Text>
                             </View>
                             <View>
                                 {/* FlatList */}
@@ -75,7 +77,6 @@ export class Home extends Component {
                                     keyExtractor={item => item.id}
                                 />
                             </View>
-
                         </View>
                     </View>
                 </ScrollView>
@@ -90,23 +91,6 @@ export class Home extends Component {
 
 }
 
-// const renderItem=({item})=>(
-//     <Item title={item.title} 
-//         describe={item.describe} 
-//         onPress={()=>console.log("ABC")}
-//     />
-// );
-// const Item = ({ title, describe}) => (
-//     <View>
-//         <TouchableOpacity
-//             style={styles.item}
-//         >
-//             <Text style={styles.title}>{title}</Text>
-//             {/* <Text style={styles.describe}>{describe}</Text> */}
-//             <TextCollapse text={describe} />
-//         </TouchableOpacity>
-//     </View>
-// );
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -116,17 +100,18 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
         margin: 16,
-        paddingLeft: 8
+        paddingTop: 8,
+        paddingLeft: 8,
+        paddingBottom: 8,
+        borderRadius: 20,
+
     },
     title: {
-        fontFamily: 'Roboto-Regular',
-        fontSize: 17,
-        textDecorationLine: 'underline',
-        margin: 6
+        ...FONTS.body3,
+        margin: 6,
     },
     describe: {
-        fontFamily: 'Roboto-Regular',
-        fontSize: 17,
+        ...FONTS.light3,
         margin: 6
     }
 })
