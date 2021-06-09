@@ -1,12 +1,66 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import React, { Component } from 'react';
 import {
     View, StyleSheet, Text, Image, TextInput, TouchableOpacity, Dimensions,
-    AsyncStorageStatic
 } from 'react-native';
 
 import { COLORS, FONTS, images } from '../../constants';
 
 export class InputScreen extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            name: '',
+            birthDate: '',
+        }
+
+        this.getData()
+        // this.removeData()
+    }
+
+
+    handleSubmit = async () => {
+        console.log("Start to explore")
+
+        try {
+
+            await AsyncStorage.setItem('userName', this.state.name)
+
+            console.log("Successfully to save username")
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    getData = async () => {
+        try {
+            const value = await AsyncStorage.getItem('userName')
+            if (value !== null) {
+                this.setState({
+                    name: value
+                })
+            } else {
+                this.setState({
+                    name: '',
+                })
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    removeData = async () => {
+        console.log("Remove")
+        try {
+            await AsyncStorage.removeItem('userName')
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
 
     render() {
         const buttonWidth = Dimensions.get('window').width - 32;
@@ -51,9 +105,11 @@ export class InputScreen extends Component {
                                         color: COLORS.white,
                                     }}
 
-                                    // placeholder="Enter your name"
                                     placeholderTextColor={COLORS.gray}
-                                // defaultValue="Nguyen Thanh Long"
+                                    defaultValue={this.state.name}
+                                    value={this.state.name}
+                                    onChangeText={(text) => this.setState({ name: text })}
+                                    returnKeyType="go"
                                 />
                             </View>
                             <View style={{
@@ -88,19 +144,15 @@ export class InputScreen extends Component {
 
                     {/* Button  */}
                     <View style={{ flex: 1, alignItems: 'center' }}>
-                        <TouchableOpacity style={{
-                            top: 50,
-                            width: buttonWidth,
-                            height: 50,
-                            backgroundColor: COLORS.primary,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            borderRadius: 20,
-                        }}>
+                        <TouchableOpacity
+                            style={[styles.button, { width: buttonWidth }]}
+                            onPress={this.handleSubmit}
+                        >
                             <Text style={{ ...FONTS.body3 }}> Khám phá </Text>
                         </TouchableOpacity>
 
                     </View>
+
 
                 </View>
             </View>
@@ -122,5 +174,14 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         position: 'absolute',
+    },
+
+    button: {
+        top: 50,
+        height: 50,
+        backgroundColor: COLORS.primary,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 20,
     }
 })
