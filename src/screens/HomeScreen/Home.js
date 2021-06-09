@@ -16,8 +16,6 @@ export class Home extends Component {
             isVisible: false
         }
 
-        // calculator.calNumber("23112000")
-        // calculator.nameInfo("Vi huu duc")
     }
 
 

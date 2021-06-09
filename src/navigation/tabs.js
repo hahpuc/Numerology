@@ -38,10 +38,7 @@ const Tabs = () => {
     const getTabBarVisibility = (route) => {
         const routeName = getFocusedRouteNameFromRoute(route);
 
-        if (routeName === 'Setting'
-            || routeName === 'BirthChartResult'
-            || routeName === 'InputScreen'
-        ) {
+        if (routeName === 'InputScreen') {
             return false;
         }
 
@@ -104,9 +101,7 @@ const Tabs = () => {
                 })}
             />
             <Tab.Screen name="BirthChart" component={BirthChartContainer}
-                options={({ route }) => ({
-                    tabBarVisible: getTabBarVisibility(route)
-                })}
+
             />
             <Tab.Screen name="Pyramid" component={PyramidPeak} />
         </Tab.Navigator>
