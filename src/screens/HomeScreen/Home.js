@@ -1,22 +1,36 @@
 import React, { Component } from 'react';
-import { SafeAreaView, Text, View, Image, StyleSheet, FlatList } from 'react-native';
+import { SafeAreaView, Text, View, Image, StyleSheet, FlatList, TouchableOpacity, ScrollView, VirtualizedList, LogBox } from 'react-native';
 import { COLORS, FONTS, icons } from '../../constants';
 import Header from '../../components/header.js'
-
-import { LifePathNumber } from '../../../data/LifePathNumber';
+import { CardNumber } from '../../components';
+import { CardInformationModal } from '../../components/CardInformationModal';
+import TextCollapse from 'react-native-text-collapse';
 import calculator from '../../helper/calculator';
+import { LifePathNumber } from '../../../data/LifePathNumber';
+
 export class Home extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            data: LifePathNumber
+            DATAA: LifePathNumber[1]['Số 3'],
+            cardInformationVisible: false
         }
-
-        calculator.calNumber("23112000")
-        calculator.nameInfo("Vi huu duc")
     }
 
+    onNumberPress(number) {
+        console.log("PRESSSSS", number)
+        this.setState({
+            cardInformationVisible: !this.state.cardInformationVisible
+        })
+    }
+    renderItemComponent = (item, index) => (
+        <TouchableOpacity style={styles.item}
+            onPress={() => this.onNumberPress("3")}>
+            <Text style={styles.title}>{item.title}</Text>
+            <Text style={styles.describe}>{item.describe}</Text>
+        </TouchableOpacity>
+    );
 
     render() {
         return (
@@ -26,83 +40,73 @@ export class Home extends Component {
                     style={{
                         height: 48,
                         borderBottomColor: COLORS.black,
-                        borderBottomWidth: 1
+                        borderBottomWidth: 1,
                     }}>
-                    <Header headerText={'HOME'} />
+                    <Header
+                        headerText={'HOME'}
+                        navigateToSetting={() => this.props.navigation.push("Setting")}
+                    />
                 </View>
+                <ScrollView showsVerticalScrollIndicator={false}>
+                    <View style={{ flex: 1, paddingBottom: 16, }}>
+                        {/*Name and BirthDate */}
+                        <View style={{
+                            height: 100,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}>
+                            <Text style={{ ...FONTS.h2 }}>VI HUU DUC</Text>
+                            <Text style={{ ...FONTS.body2 }}>1-1-1111</Text>
+                        </View>
 
-                {/*Name and BirthDate */}
-                <View style={{
-                    height: '15%',
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}>
-                    <Text style={{ ...FONTS.h2 }}>VI HUU DUC</Text>
-                    <Text style={{ ...FONTS.body2 }}>1-1-1111</Text>
-                </View>
+                        {/*Information */}
+                        <View style={{ flex: 1 }}>
+                            <View style={{ flexDirection: 'row', paddingTop: 16, justifyContent: 'center' }}>
+                                <Text style={{ fontFamily: 'Roboto-Regular', fontSize: 20 }}>Số chủ đạo: </Text>
+                                <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 20 }}>9</Text>
+                            </View>
+                            <View>
+                                {/* FlatList */}
+                                <FlatList
+                                    //horizontal={true}
+                                    data={this.state.DATAA}
+                                    scrollEnabled={true}
+                                    renderItem={({ item, index }) => this.renderItemComponent(item, index)}
+                                    keyExtractor={item => item.id}
+                                />
+                            </View>
 
-                <View style={{ flex: 1 }}>
-                    <View style={{ flexDirection: 'row', paddingTop: 16, justifyContent: 'center' }}>
-                        <Text style={{ fontFamily: 'Roboto-Regular', fontSize: 20 }}>Số chủ đạo: </Text>
-                        <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 20 }}>9</Text>
+                        </View>
                     </View>
+                </ScrollView>
 
-                    {/* FlatList */}
-                    <View>
-                        <FlatList
-                            data={DATA}
-                            renderItem={renderItem}
-                            keyExtractor={item => item.id}
-                        />
-                    </View>
-
-                </View>
-
+                <CardInformationModal
+                    isVisible={this.state.cardInformationVisible}
+                    onRequestClose={() => this.setState({ cardInformationVisible: !this.state.cardInformationVisible })}
+                />
             </SafeAreaView>
         )
     }
+
 }
 
-const DATA = [ // Sau thì dùng cái trong file data.js nha
-    // thêm scroll view vào nữa 
-    {
-        id: 1,
-        title: 'Mục đích sống',
-        describe: 'Người số 9 luôn tự cảm thấy mình đầy trách nhiệm. Họ phù hợp với nghệ thuật và các lĩnh vực nhân văn hơn là với khoa học hay thương mại. Rất nhiều người đi đầu trong lĩnh vực văn...'
-    },
-    {
-        id: 2,
-        title: 'Đặc điểm nổi bật',
-        describe: 'Có hoài bão, có trách nhiệm, có lý tưởng là ba giá trị nổi bật trong con đường tiến hóa của Người số 9, nhưng trên hết, trách nhiệm với bản thân mới là điểm nhấn đặc biệt của họ...'
-    },
-    {
-        id: 3,
-        title: 'Khuynh hướng cần khắc phục',
-        describe: 'Khi người Số 9 không áp được những lý tưởng mà họ đặt ra cho người khác lên chính bản thân mình, họ trở nên tiêu cực. Họ cần đặc biệt lưu ý để không trở thành nạn nhân của thói đạo đức...'
-    },
-    {
-        id: 4,
-        title: 'Hướng phát triển',
-        describe: 'Khi người Số 9 không áp được những lý tưởng mà họ đặt ra cho người khác lên chính bản thân mình, họ trở nên tiêu cực. Họ cần đặc biệt lưu ý để không trở thành nạn nhân của thói đạo đức...'
-    },
-    {
-        id: 5,
-        title: 'Nghề nghiệp phù hợp',
-        describe: 'Khi người Số 9 không áp được những lý tưởng mà họ đặt ra cho người khác lên chính bản thân mình, họ trở nên tiêu cực. Họ cần đặc biệt lưu ý để không trở thành nạn nhân của thói đạo đức...'
-    },
-];
-
-const Item = ({ title, describe }) => (
-    <View style={styles.item}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.describe}>{describe}</Text>
-    </View>
-);
-
-const renderItem = ({ item }) => (
-    <Item title={item.title} describe={item.describe} />
-);
-
+// const renderItem=({item})=>(
+//     <Item title={item.title} 
+//         describe={item.describe} 
+//         onPress={()=>console.log("ABC")}
+//     />
+// );
+// const Item = ({ title, describe}) => (
+//     <View>
+//         <TouchableOpacity
+//             style={styles.item}
+//         >
+//             <Text style={styles.title}>{title}</Text>
+//             {/* <Text style={styles.describe}>{describe}</Text> */}
+//             <TextCollapse text={describe} />
+//         </TouchableOpacity>
+//     </View>
+// );
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -111,7 +115,8 @@ const styles = StyleSheet.create({
     item: {
         borderColor: 'black',
         borderWidth: 1,
-        margin: 16
+        margin: 16,
+        paddingLeft: 8
     },
     title: {
         fontFamily: 'Roboto-Regular',

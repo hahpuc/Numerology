@@ -6,6 +6,11 @@ export const search = require('../assets/icons/search_icon.png');
 export const setting = require('../assets/icons/setting-icon.png')
 export const back = require('../assets/icons/back_icon.png')
 export const cancel = require('../assets/icons/cancel_icon.png')
+export const home = require('../assets/icons/home_icon.png')
+export const birthchart = require('../assets/icons/birthchart_icon.png')
+export const pyramid = require('../assets/icons/pyramid_icon.png')
+export const profile = require('../assets/icons/profile_icon.png')
+export const chevron = require('../assets/icons/chevron.png')
 
 export default {
   camera,
@@ -15,5 +20,10 @@ export default {
   search,
   setting,
   back,
-  cancel
+  cancel,
+  home,
+  birthchart,
+  pyramid,
+  profile,
+  chevron
 };

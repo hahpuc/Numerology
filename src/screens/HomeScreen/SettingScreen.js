@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, SafeAreaView, TouchableOpacity, Dimensions, Scr
 import { CardNumber } from '../../components';
 import { COLORS, FONTS, icons } from '../../constants';
 
-export class BirthChartResultScreen extends Component {
+export class SettingScreen extends Component {
 
 
     onNumberPress(number) {
@@ -20,7 +20,6 @@ export class BirthChartResultScreen extends Component {
                     <TouchableOpacity
                         style={{ marginLeft: 16, height: 24, width: 24 }}
                         onPress={() => {
-                            console.log("BACKKK to Home")
                             this.props.navigation.pop()
                         }}
                     >
@@ -33,14 +32,40 @@ export class BirthChartResultScreen extends Component {
                             }}
                         />
                     </TouchableOpacity>
-                    <Text style={{ ...FONTS.largeTitle, flex: 1, textAlign: 'center' }}>Các con số ngày sinh</Text>
+                    <Text style={{ ...FONTS.largeTitle, flex: 1, textAlign: 'center' }}>Setting</Text>
                     <View style={{ marginRight: 16, height: 24, width: 24 }} />
                 </View>
 
-                {/* Information */}
+                {/* Body */}
                 <View style={styles.container}>
 
+                    <TouchableOpacity
+                        style={styles.button}
 
+                        onPress={() => {
+                            this.props.navigation.push('InputScreen')
+                        }}
+                    >
+                        <Image
+                            source={icons.profile}
+                            style={{
+                                height: 24,
+                                width: 24,
+                            }}
+                            resizeMode='contain'
+                        />
+                        <Text style={{ paddingLeft: 8, flex: 1, ...FONTS.light3 }}>Thay đổi thông tin</Text>
+                        <Image
+                            source={icons.chevron}
+                            style={{
+                                height: 24,
+                                width: 24,
+                                tintColor: COLORS.black
+                            }}
+
+                            resizeMode='contain'
+                        />
+                    </TouchableOpacity>
 
                 </View>
 
@@ -67,9 +92,12 @@ const styles = StyleSheet.create({
     },
     button: {
         height: 50,
-        backgroundColor: COLORS.secondary,
-        justifyContent: 'center',
+        flexDirection: 'row',
         alignItems: 'center',
-        borderRadius: 20,
+        paddingLeft: 16,
+        paddingRight: 16,
+        borderBottomLeftRadius: 16,
+        borderBottomColor: COLORS.brown,
+        borderBottomWidth: 1,
     }
 })

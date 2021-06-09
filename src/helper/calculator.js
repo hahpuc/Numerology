@@ -14,6 +14,7 @@ const LetterCV = {
 }
 
 const calculator = {
+    // Life Path Number
     isMasterNumber(num) {
         return num == '10' || num == '11' || num == '22'
     },
@@ -25,8 +26,41 @@ const calculator = {
             number = '' + eval(('' + number).split('').join(plus))
         }
 
-        console.log(number)
+        return {
+            lifePath: number
+        }
     },
+    // Soul Number 
+    isSoulMasterNumber(num) {
+        return num == "1" || num == "11" || num == "10"
+    },
+
+    calSoulNumber(number) {  ///Soul: 1 -> 11 
+        var plus = "+"
+
+        while (number.length > 1 && !calculator.isSoulMasterNumber(number)) {
+            number = '' + eval(('' + number).split('').join(plus))
+        }
+
+        return number
+    },
+
+    // Outer Express Number 
+    isOuterMasterNumber(num) {
+        return num == "1" || num == "11" || num == "10" || num == "22"
+    },
+
+    calOuterNumber(number) {  ///Outer: 1 -> 11 , 22
+        var plus = "+"
+
+        while (number.length > 1 && !calculator.isOuterMasterNumber(number)) {
+            number = '' + eval(('' + number).split('').join(plus))
+        }
+
+        return number
+    },
+
+    // Name
     nameInfo(name) {
         var upperName = name.toUpperCase()
 
@@ -44,18 +78,29 @@ const calculator = {
             }
         }
 
-        console.log(vowelArray)
-        console.log(consonantArray)
+        /*console.log(vowelArray)
+        console.log(consonantArray)*/
 
         // Soul: con số linh hồn - Cộng tổng các số ở phần nguyên âm (0)
         // Outer Expression: con số Biểu Đạt - Cộng tổng các số ở phần phụ âm (1)
-        var soulSum = '0'
-        var outerSum = '0'
+        var soul = ''
+        var outer = ''
         for (var i = 0; i < vowelArray.length; ++i) {
-            if (consonantArray[i]) {
-                // outerNumber += 
+            if (consonantArray[i] == '0') {
+                soul += vowelArray[i]
             }
+            else
+                outer += vowelArray[i]
         }
+
+        /* console.log("Soul", soul)
+        console.log("Outer", outer) */
+
+        return {
+            soul: this.calSoulNumber(soul),
+            outer: this.calOuterNumber(outer),
+        }
+
     }
 
 }
