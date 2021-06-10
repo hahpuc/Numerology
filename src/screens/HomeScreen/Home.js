@@ -11,22 +11,26 @@ import { LifePathNumber } from '../../../data/LifePathNumber';
 export class Home extends Component {
     constructor(props) {
         super(props)
-
+        
         this.state = {
-            DATAA: LifePathNumber[1]['Số 3'],
-            cardInformationVisible: false
+            DATA: LifePathNumber[0][2],
+            cardInformationVisible: false,
+            lifePathNum:9,
+            cardtitle:'A',
+            carddescribe:'B'
         }
     }
 
-    onNumberPress(number) {
-        console.log("PRESSSSS", number)
+    onNumberPress(title,describe) {
         this.setState({
+            cardtitle:title,
+            carddescribe:describe,
             cardInformationVisible: !this.state.cardInformationVisible
         })
     }
     renderItemComponent = (item, index) => (
         <TouchableOpacity style={styles.item}
-            onPress={() => this.onNumberPress("3")}>
+            onPress={() => this.onNumberPress(item.title,item.describe)}>
             <Text style={styles.title}>{item.title}</Text>
             <TextCollapse style={styles.describe} text={item.describe}></TextCollapse>
         </TouchableOpacity>
@@ -69,8 +73,8 @@ export class Home extends Component {
                                 {/* FlatList */}
                                 <FlatList
                                     //horizontal={true}
-                                    data={this.state.DATAA}
-                                    scrollEnabled={true}
+                                    data={this.state.DATA}
+                                    scrollEnabled={false}
                                     renderItem={({ item, index }) => this.renderItemComponent(item, index)}
                                     keyExtractor={item => item.id}
                                 />
@@ -81,6 +85,8 @@ export class Home extends Component {
                 </ScrollView>
 
                 <CardInformationModal
+                    cardTitle={this.state.cardtitle}
+                    cardDescribe={this.state.carddescribe}
                     isVisible={this.state.cardInformationVisible}
                     onRequestClose={() => this.setState({ cardInformationVisible: !this.state.cardInformationVisible })}
                 />
@@ -90,23 +96,6 @@ export class Home extends Component {
 
 }
 
-// const renderItem=({item})=>(
-//     <Item title={item.title} 
-//         describe={item.describe} 
-//         onPress={()=>console.log("ABC")}
-//     />
-// );
-// const Item = ({ title, describe}) => (
-//     <View>
-//         <TouchableOpacity
-//             style={styles.item}
-//         >
-//             <Text style={styles.title}>{title}</Text>
-//             {/* <Text style={styles.describe}>{describe}</Text> */}
-//             <TextCollapse text={describe} />
-//         </TouchableOpacity>
-//     </View>
-// );
 const styles = StyleSheet.create({
     container: {
         flex: 1,

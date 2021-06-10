@@ -84,6 +84,6 @@ const styles = StyleSheet.create({
         fontSize: 17,
         margin: 6,
         color: COLORS.black,
-        textAlign: 'justify'
+        textAlign: 'justify',
     },
 })
