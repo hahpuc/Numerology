@@ -7,6 +7,7 @@ import { CardInformationModal } from '../../components/CardInformationModal';
 import calculator from '../../helper/calculator';
 import TextCollapse from '../../components/TextCollapse.js'
 import { LifePathNumber } from '../../../data/LifePathNumber';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
@@ -15,11 +16,43 @@ export class Home extends Component {
         super(props)
 
         this.state = {
+            name: '',
+            birthdate: '',
+            lifePathNumber: '0',
             DATAA: LifePathNumber[1]['Số 3'],
             cardInformationVisible: false
         }
 
+        this.getData()
     }
+
+    getData = async () => {
+
+        // Get Username + BirthDate 
+        try {
+            const username = await AsyncStorage.getItem('userName')
+            const birthdate = await AsyncStorage.getItem('birthDate')
+
+            // Get LifePathNumber 
+            var number = calculator.calNumber(birthdate)
+            console.log("LIFE PATH: ", number)
+            if (username !== null) {
+                this.setState({
+                    name: username,
+                    birthdate: birthdate,
+                    lifePathNumber: number.lifePath
+                })
+            } else {
+                this.setState({
+                    name: '',
+                    birthdate: '',
+                })
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
 
     onNumberPress(number) {
         console.log("PRESSSSS", number)
@@ -58,15 +91,15 @@ export class Home extends Component {
                             justifyContent: 'center',
                             alignItems: 'center',
                         }}>
-                            <Text style={{ ...FONTS.Medium1 }}>VI HUU DUC</Text>
-                            <Text style={{ ...FONTS.light1 }}>1-1-1111</Text>
+                            <Text style={{ ...FONTS.Medium1 }}>{this.state.name}</Text>
+                            <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
                         </View>
 
                         {/*Information */}
                         <View style={{ flex: 1 }}>
                             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                 <Text style={{ ...FONTS.body2 }}>Số chủ đạo: </Text>
-                                <Text style={{ ...FONTS.h2 }}>9</Text>
+                                <Text style={{ ...FONTS.h2 }}>{this.state.lifePathNumber}</Text>
                             </View>
                             <View>
                                 {/* FlatList */}

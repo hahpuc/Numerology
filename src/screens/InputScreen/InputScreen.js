@@ -140,9 +140,9 @@ export class InputScreen extends Component {
                                 date={this.state.date}
                                 mode="date"
                                 placeholder="Select Date"
-                                format="YYYY-MM-DD"
-                                minDate="1900-01-01"
-                                maxDate="2030-12-30"
+                                format="DD-MM-YYYY"
+                                minDate="01-01-1900"
+                                maxDate="30-12-2033"
                                 confirmBtnText="Confirm"
                                 cancelBtnText="Cancel"
                                 showIcon={false}
