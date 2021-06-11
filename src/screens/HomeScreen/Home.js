@@ -16,22 +16,18 @@ export class Home extends Component {
         super(props)
         
         this.state = {
-            DATA: LifePathNumber[0][2],
             cardInformationVisible: false,
-            lifePathNum:9,
             cardtitle:'A',
-            carddescribe:'B'
+            carddescribe:'B',
             name: '',
             birthdate: '',
-            lifePathNumber: '0',
-            DATAA: LifePathNumber[1]['Số 3'],
+            lifePathNumber: 9,
             cardInformationVisible: false
         }
 
         this.getData()
     }
 
-    onNumberPress(title,describe) {
     getData = async () => {
 
         // Get Username + BirthDate 
@@ -60,8 +56,7 @@ export class Home extends Component {
     }
 
 
-    onNumberPress(number) {
-        console.log("PRESSSSS", number)
+    onNumberPress(title,describe) {
         this.setState({
             cardtitle:title,
             carddescribe:describe,
@@ -99,7 +94,7 @@ export class Home extends Component {
                             justifyContent: 'center',
                             alignItems: 'center',
                         }}>
-                            <Text style={{ ...FONTS.Medium1 }}>{this.state.name}</Text>
+                            <Text style={{ ...FONTS.Medium1 }}>{this.state.name.toUpperCase()}</Text>
                             <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
                         </View>
 
@@ -113,7 +108,7 @@ export class Home extends Component {
                                 {/* FlatList */}
                                 <FlatList
                                     //horizontal={true}
-                                    data={this.state.DATA}
+                                    data={LifePathNumber[this.state.lifePathNumber-2][this.state.lifePathNumber]}
                                     scrollEnabled={false}
                                     renderItem={({ item, index }) => this.renderItemComponent(item, index)}
                                     keyExtractor={item => item.id}
@@ -151,6 +146,9 @@ const styles = StyleSheet.create({
 
     },
     title: {
+        fontWeight:'bold',
+        textAlign:'center',
+        //textDecorationLine:'underline',
         ...FONTS.body3,
         margin: 6,
     },
