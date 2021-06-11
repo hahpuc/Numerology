@@ -14,12 +14,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export class Home extends Component {
     constructor(props) {
         super(props)
-
+        
         this.state = {
+            cardInformationVisible: false,
+            cardtitle:'A',
+            carddescribe:'B',
             name: '',
             birthdate: '',
-            lifePathNumber: '0',
-            DATAA: LifePathNumber[1]['Số 3'],
+            lifePathNumber: 9,
             cardInformationVisible: false
         }
 
@@ -54,15 +56,16 @@ export class Home extends Component {
     }
 
 
-    onNumberPress(number) {
-        console.log("PRESSSSS", number)
+    onNumberPress(title,describe) {
         this.setState({
+            cardtitle:title,
+            carddescribe:describe,
             cardInformationVisible: !this.state.cardInformationVisible
         })
     }
     renderItemComponent = (item, index) => (
         <TouchableOpacity style={styles.item}
-            onPress={() => this.onNumberPress("3")}>
+            onPress={() => this.onNumberPress(item.title,item.describe)}>
             <Text style={styles.title}>{item.title}</Text>
             <TextCollapse style={styles.describe} text={item.describe}></TextCollapse>
         </TouchableOpacity>
@@ -91,7 +94,7 @@ export class Home extends Component {
                             justifyContent: 'center',
                             alignItems: 'center',
                         }}>
-                            <Text style={{ ...FONTS.Medium1 }}>{this.state.name}</Text>
+                            <Text style={{ ...FONTS.Medium1 }}>{this.state.name.toUpperCase()}</Text>
                             <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
                         </View>
 
@@ -105,8 +108,8 @@ export class Home extends Component {
                                 {/* FlatList */}
                                 <FlatList
                                     //horizontal={true}
-                                    data={this.state.DATAA}
-                                    scrollEnabled={true}
+                                    data={LifePathNumber[this.state.lifePathNumber-2][this.state.lifePathNumber]}
+                                    scrollEnabled={false}
                                     renderItem={({ item, index }) => this.renderItemComponent(item, index)}
                                     keyExtractor={item => item.id}
                                 />
@@ -116,6 +119,8 @@ export class Home extends Component {
                 </ScrollView>
 
                 <CardInformationModal
+                    cardTitle={this.state.cardtitle}
+                    cardDescribe={this.state.carddescribe}
                     isVisible={this.state.cardInformationVisible}
                     onRequestClose={() => this.setState({ cardInformationVisible: !this.state.cardInformationVisible })}
                 />
@@ -141,6 +146,9 @@ const styles = StyleSheet.create({
 
     },
     title: {
+        fontWeight:'bold',
+        textAlign:'center',
+        //textDecorationLine:'underline',
         ...FONTS.body3,
         margin: 6,
     },

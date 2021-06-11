@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Modal, Text, Image, TouchableOpacity } from 'react-native';
+import { View, ScrollView, StyleSheet, Modal, Text, Image, TouchableOpacity } from 'react-native';
 import { COLORS, FONTS, icons } from '../constants';
 
 
@@ -30,22 +30,25 @@ export class CardInformationModal extends Component {
                                     }}
                                 />
                             </TouchableOpacity>
-                            <Text style={{ flex: 1, textAlign: 'center', ...FONTS.light3 }}> Thông tin số </Text>
+                            <Text style={{ flex: 1, textAlign: 'center', ...FONTS.light3,textDecorationLine: 'underline', }}> {this.props.cardTitle} </Text>
                             <View style={{ height: 24, width: 24 }}></View>
                         </View>
 
                         {/* Information  */}
-                        <View style={{ flex: 1, paddingLeft: 16, paddingRight: 16, justifyContent: 'center' }}>
+                        <ScrollView>
+                            <View style={{ flex: 1, paddingLeft: 16, paddingRight: 16, justifyContent: 'center' }}>
+                                <Text style={styles.info}>{this.props.cardDescribe}</Text>
+                            </View>
 
-                            <Text style={{ ...FONTS.light3 }}>
+                            {/* <Text style={{ ...FONTS.light3 }}>
                                 Người Số 9 luôn tự cảm thấy mình đây trách nhiệm. Họ phù hợp với nghệ thuật và các lĩnh vực nhân văn hơn là với khoa học hay thương mại.
 
                                 Rất nhiều người đi đầu trong lĩnh vực văn hóa hoặc xuất sắc trong ngành diễn xuất có Con số chủ đạo là Số 9 - họ đều có lý tưởng cống hiến cháy bỏng cho sự nghiệp và cho cuộc sống, mặc dù các ý tưởng của họ không phải lúc nào cũng ứng dụng được. Vì thế, một điều quan trọng trong
 
                                 MỤC ĐÍCH SỐNG của họ chính là học cách biến lý tưởng thành thực tế.
 
-                            </Text>
-                        </View>
+                            </Text> */}
+                        </ScrollView>
 
                     </View>
                 </View>
@@ -79,4 +82,9 @@ const styles = StyleSheet.create({
 
         elevation: 10
     },
+    info:{
+        ...FONTS.light3,        
+        marginTop:54,
+        textAlign:'justify'
+    }
 })
