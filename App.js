@@ -18,8 +18,6 @@ const App = () => {
       <Tabs />
       {/* <InputScreen /> */}
     </NavigationContainer>
-
-
   );
 };
 

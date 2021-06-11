@@ -20,6 +20,10 @@ const calculator = {
     },
 
     calNumber(number) {
+
+        number = number.replace(/-/g, '')
+
+        console.log("BirthDateNew: ", number)
         var plus = "+"
 
         while (number.length > 1 && !calculator.isMasterNumber(number)) {
@@ -96,6 +100,7 @@ const calculator = {
         /* console.log("Soul", soul)
         console.log("Outer", outer) */
 
+        console.log("NAME: ", name)
         return {
             soul: this.calSoulNumber(soul),
             outer: this.calOuterNumber(outer),

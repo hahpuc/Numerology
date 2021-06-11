@@ -7,16 +7,52 @@ import { CardInformationModal } from '../../components/CardInformationModal';
 import calculator from '../../helper/calculator';
 import TextCollapse from '../../components/TextCollapse.js'
 import { LifePathNumber } from '../../../data/LifePathNumber';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
 
 export class Home extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
+            name: '',
+            birthdate: '',
+            lifePathNumber: '0',
             DATAA: LifePathNumber[1]['Số 3'],
             cardInformationVisible: false
         }
+
+        this.getData()
     }
+
+    getData = async () => {
+
+        // Get Username + BirthDate 
+        try {
+            const username = await AsyncStorage.getItem('userName')
+            const birthdate = await AsyncStorage.getItem('birthDate')
+
+            // Get LifePathNumber 
+            var number = calculator.calNumber(birthdate)
+            console.log("LIFE PATH: ", number)
+            if (username !== null) {
+                this.setState({
+                    name: username,
+                    birthdate: birthdate,
+                    lifePathNumber: number.lifePath
+                })
+            } else {
+                this.setState({
+                    name: '',
+                    birthdate: '',
+                })
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
 
     onNumberPress(number) {
         console.log("PRESSSSS", number)
@@ -39,7 +75,7 @@ export class Home extends Component {
                 <View
                     style={{
                         height: 48,
-                        borderBottomColor: COLORS.black,
+                        borderBottomColor: COLORS.brown,
                         borderBottomWidth: 1,
                     }}>
                     <Header
@@ -55,15 +91,15 @@ export class Home extends Component {
                             justifyContent: 'center',
                             alignItems: 'center',
                         }}>
-                            <Text style={{ ...FONTS.h2 }}>VI HUU DUC</Text>
-                            <Text style={{ ...FONTS.body2 }}>1-1-1111</Text>
+                            <Text style={{ ...FONTS.Medium1 }}>{this.state.name}</Text>
+                            <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
                         </View>
 
                         {/*Information */}
                         <View style={{ flex: 1 }}>
-                            <View style={{ flexDirection: 'row', paddingTop: 16, justifyContent: 'center' }}>
-                                <Text style={{ fontFamily: 'Roboto-Regular', fontSize: 20 }}>Số chủ đạo: </Text>
-                                <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 20 }}>9</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                                <Text style={{ ...FONTS.body2 }}>Số chủ đạo: </Text>
+                                <Text style={{ ...FONTS.h2 }}>{this.state.lifePathNumber}</Text>
                             </View>
                             <View>
                                 {/* FlatList */}
@@ -75,7 +111,6 @@ export class Home extends Component {
                                     keyExtractor={item => item.id}
                                 />
                             </View>
-
                         </View>
                     </View>
                 </ScrollView>
@@ -90,23 +125,6 @@ export class Home extends Component {
 
 }
 
-// const renderItem=({item})=>(
-//     <Item title={item.title} 
-//         describe={item.describe} 
-//         onPress={()=>console.log("ABC")}
-//     />
-// );
-// const Item = ({ title, describe}) => (
-//     <View>
-//         <TouchableOpacity
-//             style={styles.item}
-//         >
-//             <Text style={styles.title}>{title}</Text>
-//             {/* <Text style={styles.describe}>{describe}</Text> */}
-//             <TextCollapse text={describe} />
-//         </TouchableOpacity>
-//     </View>
-// );
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -116,20 +134,18 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
         margin: 16,
-        paddingLeft: 8
+        paddingTop: 8,
+        paddingLeft: 8,
+        paddingBottom: 8,
+        borderRadius: 20,
+
     },
     title: {
-        fontFamily: 'Roboto-Regular',
-        fontSize: 17,
-        textDecorationLine: 'underline',
-        fontWeight: 'bold',
+        ...FONTS.body3,
         margin: 6,
     },
     describe: {
-        // fontFamily: 'Roboto-Regular',
-        // fontSize: 17,
-        // margin: 6,
-        // textAlign:'center',
-        // justifyContent:'center'
+        ...FONTS.light3,
+        margin: 6
     }
 })
