@@ -4,8 +4,8 @@ import { COLORS, FONTS, icons } from '../../constants';
 import Header from '../../components/header.js'
 import { CardNumber } from '../../components';
 import { CardInformationModal } from '../../components/CardInformationModal';
-import TextCollapse from 'react-native-text-collapse';
 import calculator from '../../helper/calculator';
+import TextCollapse from '../../components/TextCollapse.js'
 import { LifePathNumber } from '../../../data/LifePathNumber';
 
 
@@ -31,7 +31,7 @@ export class Home extends Component {
         <TouchableOpacity style={styles.item}
             onPress={() => this.onNumberPress("3")}>
             <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.describe}>{item.describe}</Text>
+            <TextCollapse style={styles.describe} text={item.describe}></TextCollapse>
         </TouchableOpacity>
     );
 
