@@ -18,6 +18,7 @@ export class Home extends Component {
             DATAA: LifePathNumber[1]['Số 3'],
             cardInformationVisible: false
         }
+
     }
 
     onNumberPress(number) {

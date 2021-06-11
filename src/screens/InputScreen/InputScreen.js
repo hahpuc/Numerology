@@ -7,6 +7,10 @@ import {
 
 import { COLORS, FONTS, images } from '../../constants';
 
+import ultilities from '../../helper/ultilities';
+
+import DatePicker from 'react-native-datepicker'
+
 export class InputScreen extends Component {
 
     constructor(props) {
@@ -14,10 +18,11 @@ export class InputScreen extends Component {
 
         this.state = {
             name: '',
-            birthDate: '',
+            date: '',
         }
 
         this.getData()
+
         // this.removeData()
     }
 
@@ -26,10 +31,10 @@ export class InputScreen extends Component {
         console.log("Start to explore")
 
         try {
-
             await AsyncStorage.setItem('userName', this.state.name)
+            await AsyncStorage.setItem('birthDate', this.state.date)
 
-            console.log("Successfully to save username")
+            console.log("Successfully to save username & birthdate")
         } catch (error) {
             console.log(error)
         }
@@ -37,14 +42,17 @@ export class InputScreen extends Component {
 
     getData = async () => {
         try {
-            const value = await AsyncStorage.getItem('userName')
-            if (value !== null) {
+            const username = await AsyncStorage.getItem('userName')
+            const birthdate = await AsyncStorage.getItem('birthDate')
+            if (username !== null) {
                 this.setState({
-                    name: value
+                    name: username,
+                    date: birthdate
                 })
             } else {
                 this.setState({
                     name: '',
+                    date: '',
                 })
             }
         } catch (e) {
@@ -56,6 +64,7 @@ export class InputScreen extends Component {
         console.log("Remove")
         try {
             await AsyncStorage.removeItem('userName')
+            await AsyncStorage.removeItem('birthDate')
         } catch (e) {
             console.log(e)
         }
@@ -83,8 +92,10 @@ export class InputScreen extends Component {
                 {/* Input Frame  */}
                 <View style={styles.inputFrame}>
 
+                    <View style={{ height: '10%' }} />
+
                     {/* Label  */}
-                    <View style={{ paddingLeft: 16, flex: 1, justifyContent: 'center' }}>
+                    <View style={{ paddingLeft: 16, flex: 0.8, justifyContent: 'center', }}>
                         <Text style={{ ...FONTS.logoTitle, color: COLORS.primary }}>Khám phá</Text>
                         <Text style={{ ...FONTS.logoTitle, color: COLORS.primary }}>Bản thân</Text>
                         <Text style={{ ...FONTS.logoTitle, color: COLORS.primary }}>Bằng những con số</Text>
@@ -109,7 +120,7 @@ export class InputScreen extends Component {
                                     defaultValue={this.state.name}
                                     value={this.state.name}
                                     onChangeText={(text) => this.setState({ name: text })}
-                                    returnKeyType="go"
+                                    returnKeyType='done'
                                 />
                             </View>
                             <View style={{
@@ -121,39 +132,53 @@ export class InputScreen extends Component {
                         <View style={{ paddingTop: 16 }}>
                             <Text style={{ color: COLORS.primary, fontSize: 17 }}>Ngày sinh</Text>
 
-                            <View style={{ height: 48 }}>
-                                <TextInput
-                                    style={{
-                                        height: '100%',
+                            <DatePicker
+                                style={{
+                                    paddingTop: 16,
+                                    width: buttonWidth,
+                                }}
+                                date={this.state.date}
+                                mode="date"
+                                placeholder="Select Date"
+                                format="YYYY-MM-DD"
+                                minDate="1900-01-01"
+                                maxDate="2030-12-30"
+                                confirmBtnText="Confirm"
+                                cancelBtnText="Cancel"
+                                showIcon={false}
+                                customStyles={{
+                                    dateText: {
+                                        color: 'white',
                                         fontSize: 17,
-                                        color: COLORS.white,
-                                    }}
+                                    }
+                                }}
+                                onDateChange={(date) => { this.setState({ date: date }) }}
+                            />
 
-                                    // placeholder="Enter your birth date"
-                                    placeholderTextColor={COLORS.gray}
-                                // defaultValue="Nguyen Thanh Long"
-                                />
-                            </View>
-                            <View style={{
-                                height: 1,
-                                backgroundColor: COLORS.white
-                            }} />
                         </View>
 
                     </View>
 
                     {/* Button  */}
-                    <View style={{ flex: 1, alignItems: 'center' }}>
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                         <TouchableOpacity
-                            style={[styles.button, { width: buttonWidth }]}
+                            style={{
+
+                                height: 50,
+                                width: buttonWidth,
+                                backgroundColor: COLORS.primary,
+                                borderRadius: 20,
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}
+
                             onPress={this.handleSubmit}
                         >
-                            <Text style={{ ...FONTS.body3 }}> Khám phá </Text>
+                            <Text style={{ ...FONTS.body3 }}>Khám phá</Text>
                         </TouchableOpacity>
-
                     </View>
 
-
+                    <View style={{ height: 50 }}></View>
                 </View>
             </View>
         )
@@ -163,11 +188,12 @@ export class InputScreen extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        // justifyContent: 'center',
         // backgroundColor: COLORS.lightGray
     },
     inputFrame: {
-        height: '80%',
+        height: '100%',
+        // backgroundColor: 'red',
     },
 
     background: {
@@ -180,8 +206,8 @@ const styles = StyleSheet.create({
         top: 50,
         height: 50,
         backgroundColor: COLORS.primary,
-        justifyContent: 'center',
-        alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
         borderRadius: 20,
     }
 })

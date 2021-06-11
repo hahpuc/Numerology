@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
 import { COLORS, FONTS } from '../../constants';
 import calculator from '../../helper/calculator';
+import ultilities from '../../helper/ultilities';
 
 export class PyramidPeak extends Component {
 
@@ -32,6 +33,11 @@ export class PyramidPeak extends Component {
                 }
             ]
         }
+
+        var lifePath = calculator.calNumber("04-04-2000")
+        var name = calculator.nameInfo(ultilities.removeVietNameseTone("Nguyễn Thành Long"))
+        console.log(lifePath)
+        console.log(name)
     }
 
     render() {
