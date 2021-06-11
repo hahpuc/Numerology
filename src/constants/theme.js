@@ -65,6 +65,16 @@ export const FONTS = {
   light2: { fontFamily: 'Roboto-Light', fontSize: SIZES.body2, lineHeight: 30 },
   light3: { fontFamily: 'Roboto-Light', fontSize: SIZES.body3, lineHeight: 22 },
   light4: { fontFamily: 'Roboto-Light', fontSize: SIZES.body4, lineHeight: 22 },
+
+  thin1: { fontFamily: 'Roboto-Thin', fontSize: SIZES.body1, lineHeight: 36 },
+  thin2: { fontFamily: 'Roboto-Thin', fontSize: SIZES.body2, lineHeight: 30 },
+  thin3: { fontFamily: 'Roboto-Thin', fontSize: SIZES.body3, lineHeight: 22 },
+  thin4: { fontFamily: 'Roboto-Thin', fontSize: SIZES.body4, lineHeight: 22 },
+
+  Medium1: { fontFamily: 'Roboto-Medium', fontSize: SIZES.body1, lineHeight: 36 },
+  Medium2: { fontFamily: 'Roboto-Medium', fontSize: SIZES.body2, lineHeight: 30 },
+  Medium3: { fontFamily: 'Roboto-Medium', fontSize: SIZES.body3, lineHeight: 22 },
+  Medium4: { fontFamily: 'Roboto-Medium', fontSize: SIZES.body4, lineHeight: 22 },
 };
 
 const appTheme = { COLORS, SIZES, FONTS };

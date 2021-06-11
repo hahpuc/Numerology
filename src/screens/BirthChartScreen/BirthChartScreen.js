@@ -28,7 +28,7 @@ export class BirthChartScreen extends Component {
             <SafeAreaView style={styles.safeArea}>
                 {/* Header  */}
                 <View style={styles.header}>
-                    <Text style={{ ...FONTS.largeTitle }}>Birth Chart</Text>
+                    <Text style={{ ...FONTS.largeTitle }}>Khám phá ngày sinh</Text>
                 </View>
 
                 <ScrollView showsVerticalScrollIndicator={false}>
