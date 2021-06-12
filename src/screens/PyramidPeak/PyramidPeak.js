@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
 import { COLORS, FONTS } from '../../constants';
 import calculator from '../../helper/calculator';
 import ultilities from '../../helper/ultilities';
+import TextCollapse from '../../components/TextCollapse';
 
 export class PyramidPeak extends Component {
 
@@ -69,7 +70,7 @@ export class PyramidPeak extends Component {
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <Text style={{ ...FONTS.light3 }}>{this.state.data[0].describe}</Text>
+                                    <TextCollapse text={this.state.data[0].describe} initialTextLength ={80} ></TextCollapse>
                                 </View>
                             </View>
                         </View>
@@ -82,7 +83,7 @@ export class PyramidPeak extends Component {
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <Text style={{ ...FONTS.light3 }}>{this.state.data[1].describe}</Text>
+                                    <TextCollapse text={this.state.data[1].describe} initialTextLength ={80} ></TextCollapse>
                                 </View>
                             </View>
                         </View>
@@ -95,7 +96,7 @@ export class PyramidPeak extends Component {
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <Text style={{ ...FONTS.light3 }}>{this.state.data[2].describe}</Text>
+                                    <TextCollapse text={this.state.data[2].describe} initialTextLength ={80}></TextCollapse>
                                 </View>
                             </View>
                         </View>
@@ -108,7 +109,7 @@ export class PyramidPeak extends Component {
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <Text style={{ ...FONTS.light3 }}>{this.state.data[3].describe}</Text>
+                                    <TextCollapse text={this.state.data[3].describe} initialTextLength ={80}></TextCollapse>
                                 </View>
                             </View>
                         </View>

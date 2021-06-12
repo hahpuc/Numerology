@@ -14,15 +14,16 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export class Home extends Component {
     constructor(props) {
         super(props)
-        
+
         this.state = {
             cardInformationVisible: false,
-            cardtitle:'A',
-            carddescribe:'B',
+            cardtitle: ' ',
+            carddescribe: ' ',
             name: '',
             birthdate: '',
             lifePathNumber: 9,
-            cardInformationVisible: false
+            cardInformationVisible: false,
+            indexLifePathNumber: 8
         }
 
         this.getData()
@@ -47,8 +48,13 @@ export class Home extends Component {
             } else {
                 this.setState({
                     name: '',
-                    birthdate: '',
+                    birthdate: ''
                 })
+            }
+            if (number.lifePath == 22)
+                this.setState({ indexLifePathNumber: 10 })
+            else {
+                this.setState({indexLifePathNumber:number.lifePath-2})
             }
         } catch (e) {
             console.log(e)
@@ -56,16 +62,16 @@ export class Home extends Component {
     }
 
 
-    onNumberPress(title,describe) {
+    onNumberPress(title, describe) {
         this.setState({
-            cardtitle:title,
-            carddescribe:describe,
+            cardtitle: title,
+            carddescribe: describe,
             cardInformationVisible: !this.state.cardInformationVisible
         })
     }
     renderItemComponent = (item, index) => (
         <TouchableOpacity style={styles.item}
-            onPress={() => this.onNumberPress(item.title,item.describe)}>
+            onPress={() => this.onNumberPress(item.title, item.describe)}>
             <Text style={styles.title}>{item.title}</Text>
             <TextCollapse style={styles.describe} text={item.describe}></TextCollapse>
         </TouchableOpacity>
@@ -108,7 +114,7 @@ export class Home extends Component {
                                 {/* FlatList */}
                                 <FlatList
                                     //horizontal={true}
-                                    data={LifePathNumber[this.state.lifePathNumber-2][this.state.lifePathNumber]}
+                                    data={LifePathNumber[this.state.indexLifePathNumber][this.state.lifePathNumber]}
                                     scrollEnabled={false}
                                     renderItem={({ item, index }) => this.renderItemComponent(item, index)}
                                     keyExtractor={item => item.id}
@@ -146,14 +152,12 @@ const styles = StyleSheet.create({
 
     },
     title: {
-        fontWeight:'bold',
-        textAlign:'center',
+        fontWeight: 'bold',
+        textAlign: 'center',
         //textDecorationLine:'underline',
         ...FONTS.body3,
         margin: 6,
     },
     describe: {
-        ...FONTS.light3,
-        margin: 6
     }
 })
