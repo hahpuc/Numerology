@@ -34,10 +34,11 @@ export class PyramidPeak extends Component {
             ]
         }
 
-        var lifePath = calculator.calNumber("04-04-2000")
-        var name = calculator.nameInfo(ultilities.removeVietNameseTone("Nguyễn Thành Long"))
-        console.log(lifePath)
-        console.log(name)
+        // var lifePath = calculator.calNumber("04-04-2000")
+        // var name = calculator.nameInfo(ultilities.removeVietNameseTone("Nguyễn Thành Long"))
+        // console.log(lifePath)
+        // console.log(name)
+        // console.log(calculator.filterBirthChart('04042000', 'Nguyen Thanh Long'))
     }
 
     render() {

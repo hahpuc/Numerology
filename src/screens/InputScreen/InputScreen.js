@@ -150,6 +150,10 @@ export class InputScreen extends Component {
                                     dateText: {
                                         color: 'white',
                                         fontSize: 17,
+                                    },
+                                    datePicker: {
+                                        backgroundColor: '#cfcfc4',
+                                        // color: 'black'
                                     }
                                 }}
                                 onDateChange={(date) => { this.setState({ date: date }) }}

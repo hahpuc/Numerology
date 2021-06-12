@@ -9,16 +9,14 @@ import TextCollapse from '../../components/TextCollapse.js'
 import { LifePathNumber } from '../../../data/LifePathNumber';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-
 export class Home extends Component {
     constructor(props) {
         super(props)
-        
+
         this.state = {
             cardInformationVisible: false,
-            cardtitle:'A',
-            carddescribe:'B',
+            cardtitle: 'A',
+            carddescribe: 'B',
             name: '',
             birthdate: '',
             lifePathNumber: 9,
@@ -29,7 +27,6 @@ export class Home extends Component {
     }
 
     getData = async () => {
-
         // Get Username + BirthDate 
         try {
             const username = await AsyncStorage.getItem('userName')
@@ -37,7 +34,6 @@ export class Home extends Component {
 
             // Get LifePathNumber 
             var number = calculator.calNumber(birthdate)
-            console.log("LIFE PATH: ", number)
             if (username !== null) {
                 this.setState({
                     name: username,
@@ -56,16 +52,16 @@ export class Home extends Component {
     }
 
 
-    onNumberPress(title,describe) {
+    onNumberPress(title, describe) {
         this.setState({
-            cardtitle:title,
-            carddescribe:describe,
+            cardtitle: title,
+            carddescribe: describe,
             cardInformationVisible: !this.state.cardInformationVisible
         })
     }
     renderItemComponent = (item, index) => (
         <TouchableOpacity style={styles.item}
-            onPress={() => this.onNumberPress(item.title,item.describe)}>
+            onPress={() => this.onNumberPress(item.title, item.describe)}>
             <Text style={styles.title}>{item.title}</Text>
             <TextCollapse style={styles.describe} text={item.describe}></TextCollapse>
         </TouchableOpacity>
@@ -94,7 +90,7 @@ export class Home extends Component {
                             justifyContent: 'center',
                             alignItems: 'center',
                         }}>
-                            <Text style={{ ...FONTS.Medium1 }}>{this.state.name.toUpperCase()}</Text>
+                            <Text style={{ ...FONTS.body1 }}>{this.state.name}</Text>
                             <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
                         </View>
 
@@ -108,7 +104,7 @@ export class Home extends Component {
                                 {/* FlatList */}
                                 <FlatList
                                     //horizontal={true}
-                                    data={LifePathNumber[this.state.lifePathNumber-2][this.state.lifePathNumber]}
+                                    data={LifePathNumber[this.state.lifePathNumber - 2][this.state.lifePathNumber]}
                                     scrollEnabled={false}
                                     renderItem={({ item, index }) => this.renderItemComponent(item, index)}
                                     keyExtractor={item => item.id}
@@ -141,13 +137,14 @@ const styles = StyleSheet.create({
         margin: 16,
         paddingTop: 8,
         paddingLeft: 8,
+        paddingRight: 8,
         paddingBottom: 8,
         borderRadius: 20,
 
     },
     title: {
-        fontWeight:'bold',
-        textAlign:'center',
+        fontWeight: 'bold',
+        textAlign: 'center',
         //textDecorationLine:'underline',
         ...FONTS.body3,
         margin: 6,
