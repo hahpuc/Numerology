@@ -35,6 +35,7 @@ export class InputScreen extends Component {
             await AsyncStorage.setItem('birthDate', this.state.date)
 
             console.log("Successfully to save username & birthdate")
+            this.props.navigation.popToTop()
         } catch (error) {
             console.log(error)
         }

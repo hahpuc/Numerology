@@ -27,6 +27,13 @@ export class BirthChartScreen extends Component {
         this.getData()
     }
 
+    componentDidUpdate(prevState) {
+        if (this.state != prevState) {
+            this.getData()
+        }
+    }
+
+
     getData = async () => {
         // Get Username + BirthDate 
         try {

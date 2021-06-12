@@ -11,6 +11,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export class Home extends Component {
     constructor(props) {
+        console.log("CONSTRUCTOR")
         super(props)
 
         this.state = {
@@ -24,6 +25,13 @@ export class Home extends Component {
         }
 
         this.getData()
+    }
+
+    componentDidUpdate(prevState) {
+        // console.log("COMPONENT DID UPDATE")
+        if (this.state.name != prevState.name) {
+            this.getData()
+        }
     }
 
     getData = async () => {

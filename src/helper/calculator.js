@@ -118,8 +118,6 @@ const calculator = {
         number = number.replace(/-/g, '')
         name = name.toUpperCase()
 
-        console.log(name, number)
-
         // Filter in number 
         for (var i = 0; i < number.length; ++i) {
             if (number[i] == 0) continue
