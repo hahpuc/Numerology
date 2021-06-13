@@ -7,9 +7,9 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import Tabs from './src/navigation/tabs';
 import { BirthChartScreen } from './src/screens/BirthChartScreen/BirthChartScreen';
 import { View } from 'react-native';
-import { InputScreen } from './src/screens/InputScreen/InputScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import calculator from './src/helper/calculator';
+import { LoadingScreen } from './src/screens/InputScreen/LoadingScreen';
 
 // Tabs
 const Stack = createStackNavigator();
@@ -62,6 +62,7 @@ class App extends Component {
       <NavigationContainer>
         {/* <this.ContentView /> */}
         <Tabs />
+        {/* <LoadingScreen /> */}
       </NavigationContainer>
     )
   }
