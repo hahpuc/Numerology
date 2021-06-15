@@ -4,6 +4,12 @@ import { COLORS, FONTS } from '../../constants';
 import calculator from '../../helper/calculator';
 import ultilities from '../../helper/ultilities';
 import TextCollapse from '../../components/TextCollapse';
+import { PyramidPeakData } from '../../../data/PyramidPeakData';
+import { CardInformationModal } from '../../components/CardInformationModal';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
+
 
 export class PyramidPeak extends Component {
 
@@ -11,37 +17,53 @@ export class PyramidPeak extends Component {
         super(props)
 
         this.state = {
-            data: [
-                {
-                    id: 0,
-                    age: 26,
-                    describe: "Những người Số 2 đặc biệt có năng lực làm việc dưới trướng một người lãnh đạo năng động. Nếu không gặp được nhà lãnh đạo như thế, họ có thể cảm thấy lạc lối. Thường thì bản thân những người này khó trờ thành nhà lãnh đạo, cũng hiếm khi có tham vọng lãnh đạo, nhưng họ có một khả năng độc đáo trong việc tìm kiếm và hợp tác với những người hoặc những tổ chức đánh giá cao sự tận tụy của họ. Vai trò đặc biệt của họ là hỗ trợ bằng sự trung thành, tận tụy cùng trực giác của họ. "
-                },
-                {
-                    id: 1,
-                    age: 35,
-                    describe: "Những người Số 2 đặc biệt có năng lực làm việc dưới trướng một người lãnh đạo năng động. Nếu không gặp được nhà lãnh đạo như thế, họ có thể cảm thấy lạc lối. Thường thì bản thân những người này khó trờ thành nhà lãnh đạo, cũng hiếm khi có tham vọng lãnh đạo, nhưng họ có một khả năng độc đáo trong việc tìm kiếm và hợp tác với những người hoặc những tổ chức đánh giá cao sự tận tụy của họ. Vai trò đặc biệt của họ là hỗ trợ bằng sự trung thành, tận tụy cùng trực giác của họ. "
-                },
-                {
-                    id: 2,
-                    age: 44,
-                    describe: "Những người Số 2 đặc biệt có năng lực làm việc dưới trướng một người lãnh đạo năng động. Nếu không gặp được nhà lãnh đạo như thế, họ có thể cảm thấy lạc lối. Thường thì bản thân những người này khó trờ thành nhà lãnh đạo, cũng hiếm khi có tham vọng lãnh đạo, nhưng họ có một khả năng độc đáo trong việc tìm kiếm và hợp tác với những người hoặc những tổ chức đánh giá cao sự tận tụy của họ. Vai trò đặc biệt của họ là hỗ trợ bằng sự trung thành, tận tụy cùng trực giác của họ. "
-                },
-                {
-                    id: 3,
-                    age: 53,
-                    describe: "Những người Số 2 đặc biệt có năng lực làm việc dưới trướng một người lãnh đạo năng động. Nếu không gặp được nhà lãnh đạo như thế, họ có thể cảm thấy lạc lối. Thường thì bản thân những người này khó trờ thành nhà lãnh đạo, cũng hiếm khi có tham vọng lãnh đạo, nhưng họ có một khả năng độc đáo trong việc tìm kiếm và hợp tác với những người hoặc những tổ chức đánh giá cao sự tận tụy của họ. Vai trò đặc biệt của họ là hỗ trợ bằng sự trung thành, tận tụy cùng trực giác của họ. "
-                }
-            ]
+            name: '',
+            birthdate: '',
+            lifePathNumber: 8,
+            age:34,
+            cardInformationVisible: false,
         }
-
-        var lifePath = calculator.calNumber("04-04-2000")
-        var name = calculator.nameInfo(ultilities.removeVietNameseTone("Nguyễn Thành Long"))
-        console.log(lifePath)
-        console.log(name)
+        this.getData()
     }
 
+    getData = async () => {
+        // Get Username + BirthDate 
+        try {
+            const username = await AsyncStorage.getItem('userName')
+            const birthdate = await AsyncStorage.getItem('birthDate')
+
+            // Get LifePathNumber 
+            var number = calculator.calNumber(birthdate)
+            console.log("LIFE PATH: ", number)
+            if (username !== null) {
+                this.setState({
+                    name: username,
+                    birthdate: birthdate,
+                    lifePathNumber: number.lifePath,
+                    age:36-lifePathNumber
+                })
+                console.log('bbbbbbbbbbbbbbbbbb',this.state)
+            } else {
+                this.setState({
+                    name: '',
+                    birthdate: ''
+                })
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    //     console.log(PyramidPeakData[0][1].content)
+    //     var lifePath = calculator.calNumber("04-04-2000")
+    //     var name = calculator.nameInfo(ultilities.removeVietNameseTone("Nguyễn Thành Long"))
+    //     console.log(lifePath)
+    //     console.log(name)
+    // }
+
+
     render() {
+        console.log("aaaaaaaaaaaaaaaaaaaa",this.state)
         return (
 
             <SafeAreaView style={styles.safeArea}>
@@ -66,11 +88,11 @@ export class PyramidPeak extends Component {
                         <View style={{ height: 100, marginTop: 16 }}>
                             <View style={styles.item}>
                                 <View style={{ backgroundColor: COLORS.brownCard, borderTopLeftRadius: 20, borderBottomLeftRadius: 20, width: '30%', height: 98, justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{this.state.data[0].age}</Text>
+                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{this.state.age}</Text>
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <TextCollapse text={this.state.data[0].describe} initialTextLength ={80} ></TextCollapse>
+                                    <TextCollapse text={PyramidPeakData[0][1].content} initialTextLength={80} ></TextCollapse>
                                 </View>
                             </View>
                         </View>
@@ -79,11 +101,11 @@ export class PyramidPeak extends Component {
                         <View style={{ height: 100, marginTop: 16 }}>
                             <View style={styles.item}>
                                 <View style={{ backgroundColor: COLORS.brownCard, borderTopLeftRadius: 20, borderBottomLeftRadius: 20, width: '30%', height: 98, justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{this.state.data[1].age}</Text>
+                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{this.state.age + 9}</Text>
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <TextCollapse text={this.state.data[1].describe} initialTextLength ={80} ></TextCollapse>
+                                    <TextCollapse text={PyramidPeakData[0][1].content} initialTextLength={80} ></TextCollapse>
                                 </View>
                             </View>
                         </View>
@@ -92,11 +114,11 @@ export class PyramidPeak extends Component {
                         <View style={{ height: 100, marginTop: 16 }}>
                             <View style={styles.item}>
                                 <View style={{ backgroundColor: COLORS.brownCard, borderTopLeftRadius: 20, borderBottomLeftRadius: 20, width: '30%', height: 98, justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{this.state.data[2].age}</Text>
+                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{PyramidPeakData[0][1].content}</Text>
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <TextCollapse text={this.state.data[2].describe} initialTextLength ={80}></TextCollapse>
+                                    <TextCollapse text={PyramidPeakData[0][1].content} initialTextLength={80}></TextCollapse>
                                 </View>
                             </View>
                         </View>
@@ -105,11 +127,11 @@ export class PyramidPeak extends Component {
                         <View style={{ height: 100, marginTop: 16 }}>
                             <View style={styles.item}>
                                 <View style={{ backgroundColor: COLORS.brownCard, borderTopLeftRadius: 20, borderBottomLeftRadius: 20, width: '30%', height: 98, justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{this.state.data[3].age}</Text>
+                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{PyramidPeakData[0][1].content}</Text>
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <TextCollapse text={this.state.data[3].describe} initialTextLength ={80}></TextCollapse>
+                                    <TextCollapse text={PyramidPeakData[0][1].content} initialTextLength={80}></TextCollapse>
                                 </View>
                             </View>
                         </View>
