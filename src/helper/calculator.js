@@ -1,3 +1,4 @@
+import { Value } from "react-native-reanimated"
 
 const LetterToNumber = {
     "A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8, "I": 9,
@@ -14,16 +15,15 @@ const LetterCV = {
 }
 
 const calculator = {
-    // Life Path Number
+    // --------------------- LIFE PATH NUMBER 
     isMasterNumber(num) {
         return num == '10' || num == '11' || num == '22'
     },
 
     calNumber(number) {
-
         number = number.replace(/-/g, '')
 
-        console.log("BirthDateNew: ", number)
+        // console.log("BirthDateNew: ", number)
         var plus = "+"
 
         while (number.length > 1 && !calculator.isMasterNumber(number)) {
@@ -64,7 +64,7 @@ const calculator = {
         return number
     },
 
-    // Name
+    // --------------------------- NAME
     nameInfo(name) {
         var upperName = name.toUpperCase()
 
@@ -100,14 +100,42 @@ const calculator = {
         /* console.log("Soul", soul)
         console.log("Outer", outer) */
 
-        console.log("NAME: ", name)
+        // console.log("NAME: ", name)
         return {
             soul: this.calSoulNumber(soul),
             outer: this.calOuterNumber(outer),
         }
 
-    }
+    },
 
+    // --------------- BIRTH CHART FILTER 
+    filterBirthChart(number, name) {
+        var result = [];
+        for (var i = 0; i < 9; ++i) {
+            result[i] = ''
+        }
+
+        number = number.replace(/-/g, '')
+        name = name.toUpperCase()
+
+        // Filter in number 
+        for (var i = 0; i < number.length; ++i) {
+            if (number[i] == 0) continue
+
+            var index = parseInt(number[i])
+            result[index - 1] += number[i]
+        }
+
+        // Filter in name 
+        for (var i = 0; i < name.length; ++i) {
+            if (name[i] == ' ') continue
+
+            var value = LetterToNumber[name[i]]
+            result[value - 1] += value.toString()
+        }
+
+        return result
+    }
 }
 
 export default calculator;

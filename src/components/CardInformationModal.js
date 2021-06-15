@@ -30,7 +30,7 @@ export class CardInformationModal extends Component {
                                     }}
                                 />
                             </TouchableOpacity>
-                            <Text style={{ flex: 1, textAlign: 'center', ...FONTS.light3,textDecorationLine: 'underline', }}> {this.props.cardTitle} </Text>
+                            <Text style={{ flex: 1, textAlign: 'center', ...FONTS.body3 }}> {this.props.cardTitle} </Text>
                             <View style={{ height: 24, width: 24 }}></View>
                         </View>
 
@@ -82,9 +82,9 @@ const styles = StyleSheet.create({
 
         elevation: 10
     },
-    info:{
-        ...FONTS.light3,        
-        marginTop:54,
-        textAlign:'justify'
+    info: {
+        ...FONTS.light3,
+        marginTop: 54,
+        textAlign: 'justify'
     }
 })

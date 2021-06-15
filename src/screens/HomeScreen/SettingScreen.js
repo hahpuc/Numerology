@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, SafeAreaView, TouchableOpacity, Dimensions, ScrollView, Image } from 'react-native';
+import { ImageBackground, Text, View, StyleSheet, SafeAreaView, TouchableOpacity, Dimensions, ScrollView, Image } from 'react-native';
 import { CardNumber } from '../../components';
-import { COLORS, FONTS, icons } from '../../constants';
+import { COLORS, FONTS, icons, images } from '../../constants';
 
 export class SettingScreen extends Component {
 
@@ -14,62 +14,82 @@ export class SettingScreen extends Component {
         const buttonWidth = Dimensions.get('window').width - 64;
 
         return (
-            <SafeAreaView style={styles.safeArea}>
-                {/* Header  */}
-                <View style={styles.header}>
-                    <TouchableOpacity
-                        style={{ marginLeft: 16, height: 24, width: 24 }}
-                        onPress={() => {
-                            this.props.navigation.pop()
-                        }}
-                    >
-                        <Image
-                            source={icons.back}
-                            resizeMode='contain'
-                            style={{
-                                height: 24,
-                                width: 24,
+
+            <View style={{ flex: 1 }}>
+
+                <ImageBackground
+                    source={images.background_Setting}
+                    resizeMode='cover'
+                    style={{
+                        height: '100%',
+                        width: '100%',
+                        position: 'absolute'
+                    }}>
+
+                </ImageBackground>
+
+                <SafeAreaView style={styles.safeArea}>
+                    {/* Header  */}
+                    <View style={styles.header}>
+                        <TouchableOpacity
+                            style={{ marginLeft: 16, height: 24, width: 24 }}
+                            onPress={() => {
+                                this.props.navigation.pop()
                             }}
-                        />
-                    </TouchableOpacity>
-                    <Text style={{ ...FONTS.largeTitle, flex: 1, textAlign: 'center' }}>Setting</Text>
-                    <View style={{ marginRight: 16, height: 24, width: 24 }} />
-                </View>
+                        >
+                            <Image
+                                source={icons.back}
+                                resizeMode='contain'
+                                style={{
+                                    height: 24,
+                                    width: 24,
+                                }}
+                            />
+                        </TouchableOpacity>
+                        <Text style={{ ...FONTS.largeTitle, flex: 1, textAlign: 'center' }}>Setting</Text>
+                        <View style={{ marginRight: 16, height: 24, width: 24 }} />
+                    </View>
 
-                {/* Body */}
-                <View style={styles.container}>
+                    {/* Body */}
+                    <View style={styles.container}>
 
-                    <TouchableOpacity
-                        style={styles.button}
+                        <TouchableOpacity
+                            style={styles.button}
 
-                        onPress={() => {
-                            this.props.navigation.push('InputScreen')
-                        }}
-                    >
-                        <Image
-                            source={icons.profile}
-                            style={{
-                                height: 24,
-                                width: 24,
+                            onPress={() => {
+                                this.props.navigation.push('InputScreen')
                             }}
-                            resizeMode='contain'
-                        />
-                        <Text style={{ paddingLeft: 8, flex: 1, ...FONTS.light3 }}>Thay đổi thông tin</Text>
-                        <Image
-                            source={icons.chevron}
-                            style={{
-                                height: 24,
-                                width: 24,
-                                tintColor: COLORS.black
-                            }}
+                        >
+                            <Image
+                                source={icons.profile}
+                                style={{
+                                    height: 24,
+                                    width: 24,
+                                }}
+                                resizeMode='contain'
+                            />
+                            <Text style={{ paddingLeft: 8, flex: 1, ...FONTS.light3 }}>Thay đổi thông tin</Text>
+                            <Image
+                                source={icons.chevron}
+                                style={{
+                                    height: 24,
+                                    width: 24,
+                                    tintColor: COLORS.black
+                                }}
 
-                            resizeMode='contain'
-                        />
-                    </TouchableOpacity>
+                                resizeMode='contain'
+                            />
+                        </TouchableOpacity>
 
-                </View>
+                    </View>
 
-            </SafeAreaView>
+                </SafeAreaView>
+
+            </View>
+
+
+
+
 
         )
     }
@@ -77,11 +97,12 @@ export class SettingScreen extends Component {
 
 const styles = StyleSheet.create({
     safeArea: {
-        backgroundColor: COLORS.primary
+        flex: 1,
+        // backgroundColor: COLORS.primary
     },
     container: {
         height: '100%',
-        backgroundColor: COLORS.primary
+        // backgroundColor: COLORS.primary
     },
     header: {
         height: 48,

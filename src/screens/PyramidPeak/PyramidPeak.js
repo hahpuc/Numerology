@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
-import { COLORS, FONTS } from '../../constants';
+import { COLORS, FONTS, images } from '../../constants';
 import calculator from '../../helper/calculator';
 import ultilities from '../../helper/ultilities';
 import TextCollapse from '../../components/TextCollapse';

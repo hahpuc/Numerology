@@ -35,6 +35,7 @@ export class InputScreen extends Component {
             await AsyncStorage.setItem('birthDate', this.state.date)
 
             console.log("Successfully to save username & birthdate")
+            this.props.navigation.popToTop()
         } catch (error) {
             console.log(error)
         }
@@ -150,6 +151,10 @@ export class InputScreen extends Component {
                                     dateText: {
                                         color: 'white',
                                         fontSize: 17,
+                                    },
+                                    datePicker: {
+                                        backgroundColor: '#cfcfc4',
+                                        // color: 'black'
                                     }
                                 }}
                                 onDateChange={(date) => { this.setState({ date: date }) }}
