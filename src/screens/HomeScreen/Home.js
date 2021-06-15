@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { SafeAreaView, Text, View, Image, StyleSheet, FlatList, TouchableOpacity, ScrollView, VirtualizedList, LogBox } from 'react-native';
-import { COLORS, FONTS, icons } from '../../constants';
+import { SafeAreaView, Text, View, Image, StyleSheet, FlatList, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
+import { COLORS, FONTS, icons, images } from '../../constants';
 import Header from '../../components/header.js'
 import { CardNumber } from '../../components';
 import { CardInformationModal } from '../../components/CardInformationModal';
@@ -9,16 +9,15 @@ import TextCollapse from '../../components/TextCollapse.js'
 import { LifePathNumber } from '../../../data/LifePathNumber';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-
 export class Home extends Component {
     constructor(props) {
+        console.log("CONSTRUCTOR")
         super(props)
-        
+
         this.state = {
             cardInformationVisible: false,
-            cardtitle:'A',
-            carddescribe:'B',
+            cardtitle: 'A',
+            carddescribe: 'B',
             name: '',
             birthdate: '',
             lifePathNumber: 9,
@@ -28,8 +27,14 @@ export class Home extends Component {
         this.getData()
     }
 
-    getData = async () => {
+    componentDidUpdate(prevState) {
+        // console.log("COMPONENT DID UPDATE")
+        if (this.state.name != prevState.name) {
+            this.getData()
+        }
+    }
 
+    getData = async () => {
         // Get Username + BirthDate 
         try {
             const username = await AsyncStorage.getItem('userName')
@@ -37,7 +42,6 @@ export class Home extends Component {
 
             // Get LifePathNumber 
             var number = calculator.calNumber(birthdate)
-            console.log("LIFE PATH: ", number)
             if (username !== null) {
                 this.setState({
                     name: username,
@@ -56,16 +60,16 @@ export class Home extends Component {
     }
 
 
-    onNumberPress(title,describe) {
+    onNumberPress(title, describe) {
         this.setState({
-            cardtitle:title,
-            carddescribe:describe,
+            cardtitle: title,
+            carddescribe: describe,
             cardInformationVisible: !this.state.cardInformationVisible
         })
     }
     renderItemComponent = (item, index) => (
         <TouchableOpacity style={styles.item}
-            onPress={() => this.onNumberPress(item.title,item.describe)}>
+            onPress={() => this.onNumberPress(item.title, item.describe)}>
             <Text style={styles.title}>{item.title}</Text>
             <TextCollapse style={styles.describe} text={item.describe}></TextCollapse>
         </TouchableOpacity>
@@ -73,58 +77,74 @@ export class Home extends Component {
 
     render() {
         return (
-            <SafeAreaView style={styles.container}>
-                {/*Header */}
-                <View
+
+            <View style={{ flex: 1 }}>
+                <ImageBackground
+                    source={images.background2}
+                    resizeMode='cover'
                     style={{
-                        height: 48,
-                        borderBottomColor: COLORS.brown,
-                        borderBottomWidth: 1,
+                        height: '100%',
+                        width: '100%',
+                        position: 'absolute'
                     }}>
-                    <Header
-                        headerText={'HOME'}
-                        navigateToSetting={() => this.props.navigation.push("Setting")}
-                    />
-                </View>
-                <ScrollView showsVerticalScrollIndicator={false}>
-                    <View style={{ flex: 1, paddingBottom: 16, }}>
-                        {/*Name and BirthDate */}
-                        <View style={{
-                            height: 100,
-                            justifyContent: 'center',
-                            alignItems: 'center',
+
+                </ImageBackground>
+
+                <SafeAreaView style={styles.container}>
+                    {/*Header */}
+                    <View
+                        style={{
+                            height: 48,
+                            borderBottomColor: COLORS.brown,
+                            borderBottomWidth: 1,
                         }}>
-                            <Text style={{ ...FONTS.Medium1 }}>{this.state.name.toUpperCase()}</Text>
-                            <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
-                        </View>
-
-                        {/*Information */}
-                        <View style={{ flex: 1 }}>
-                            <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                                <Text style={{ ...FONTS.body2 }}>Số chủ đạo: </Text>
-                                <Text style={{ ...FONTS.h2 }}>{this.state.lifePathNumber}</Text>
-                            </View>
-                            <View>
-                                {/* FlatList */}
-                                <FlatList
-                                    //horizontal={true}
-                                    data={LifePathNumber[this.state.lifePathNumber-2][this.state.lifePathNumber]}
-                                    scrollEnabled={false}
-                                    renderItem={({ item, index }) => this.renderItemComponent(item, index)}
-                                    keyExtractor={item => item.id}
-                                />
-                            </View>
-                        </View>
+                        <Header
+                            headerText={'HOME'}
+                            navigateToSetting={() => this.props.navigation.push("Setting")}
+                        />
                     </View>
-                </ScrollView>
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                        <View style={{ flex: 1, paddingBottom: 16, }}>
+                            {/*Name and BirthDate */}
+                            <View style={{
+                                height: 100,
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}>
+                                <Text style={{ ...FONTS.body1 }}>{this.state.name}</Text>
+                                <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
+                            </View>
 
-                <CardInformationModal
-                    cardTitle={this.state.cardtitle}
-                    cardDescribe={this.state.carddescribe}
-                    isVisible={this.state.cardInformationVisible}
-                    onRequestClose={() => this.setState({ cardInformationVisible: !this.state.cardInformationVisible })}
-                />
-            </SafeAreaView>
+                            {/*Information */}
+                            <View style={{ flex: 1 }}>
+                                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                                    <Text style={{ ...FONTS.body2 }}>Số chủ đạo: </Text>
+                                    <Text style={{ ...FONTS.h2 }}>{this.state.lifePathNumber}</Text>
+                                </View>
+                                <View>
+                                    {/* FlatList */}
+                                    <FlatList
+                                        //horizontal={true}
+                                        data={LifePathNumber[this.state.lifePathNumber - 2][this.state.lifePathNumber]}
+                                        scrollEnabled={false}
+                                        renderItem={({ item, index }) => this.renderItemComponent(item, index)}
+                                        keyExtractor={item => item.id}
+                                    />
+                                </View>
+                            </View>
+                        </View>
+                    </ScrollView>
+
+                    <CardInformationModal
+                        cardTitle={this.state.cardtitle}
+                        cardDescribe={this.state.carddescribe}
+                        isVisible={this.state.cardInformationVisible}
+                        onRequestClose={() => this.setState({ cardInformationVisible: !this.state.cardInformationVisible })}
+                    />
+                </SafeAreaView>
+
+            </View>
+
         )
     }
 
@@ -133,7 +153,6 @@ export class Home extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: COLORS.primary,
     },
     item: {
         borderColor: 'black',
@@ -141,13 +160,14 @@ const styles = StyleSheet.create({
         margin: 16,
         paddingTop: 8,
         paddingLeft: 8,
+        paddingRight: 8,
         paddingBottom: 8,
         borderRadius: 20,
 
     },
     title: {
-        fontWeight:'bold',
-        textAlign:'center',
+        fontWeight: 'bold',
+        textAlign: 'center',
         //textDecorationLine:'underline',
         ...FONTS.body3,
         margin: 6,
