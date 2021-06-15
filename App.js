@@ -10,6 +10,7 @@ import { View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import calculator from './src/helper/calculator';
 import { LoadingScreen } from './src/screens/InputScreen/LoadingScreen';
+import { InputScreen } from './src/screens/InputScreen/InputScreen';
 
 // Tabs
 const Stack = createStackNavigator();
@@ -19,10 +20,13 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      isLoading: true,
       username: '',
       birthdate: '',
     }
     this.getData()
+
+    
   }
 
   getData = async () => {
@@ -47,35 +51,47 @@ class App extends Component {
     }
   }
 
+  async componentDidMount() {
+    // Preload data from an external API
+    // Preload data using AsyncStorage
+    const data = await this.performTimeConsumingTask();
+    if (data !== null) {
+      this.setState({ isLoading: false });
+    }
+  }
+
+  performTimeConsumingTask = async () => {
+    return new Promise((resolve) =>
+      setTimeout(
+        () => { resolve('result') },
+        2000
+      )
+    );
+  }
+
   ContentView = () => {
     return (
-      (!this.state.username && !this.state.birthdate) ?
-        <InputScreen />
-        :
+      (this.state.username && this.state.birthdate) ?
         <Tabs />
+        :
+        <InputScreen />
     )
   }
 
   render() {
-    console.log("STATE INPUT:", this.state)
+
+    if (this.state.isLoading) {
+      return <LoadingScreen />
+    }
+
     return (
       <NavigationContainer>
-        {/* <this.ContentView /> */}
-        <Tabs />
-        {/* <LoadingScreen /> */}
+        <this.ContentView />
+        {/* <Tabs /> */}
       </NavigationContainer>
     )
   }
 }
-
-// const App = () => {
-//   return (
-//     <NavigationContainer>
-//       <Tabs />
-//       {/* <InputScreen /> */}
-//     </NavigationContainer>
-//   );
-// };
 
 export default () => {
   return <App />;

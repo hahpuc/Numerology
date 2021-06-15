@@ -16,10 +16,7 @@ export class LoadingScreen extends Component {
 
     constructor(props) {
         super(props)
-
-
     }
-
 
     render() {
         const buttonWidth = Dimensions.get('window').width - 32;
@@ -37,15 +34,6 @@ export class LoadingScreen extends Component {
 
                 </ImageBackground>
 
-                <SafeAreaView style={{ flex: 1 }}>
-
-                    {/* Header  */}
-                    <View style={styles.header}>
-                        <Text style={{ ...FONTS.largeTitle }}>Độ tuổi đạt bốn đỉnh cao</Text>
-                    </View>
-
-
-                </SafeAreaView>
             </View>
 
 
