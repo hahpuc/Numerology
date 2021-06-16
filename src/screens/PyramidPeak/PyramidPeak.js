@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView,TouchableOpacity } from 'react-native';
 import { COLORS, FONTS, images } from '../../constants';
 import calculator from '../../helper/calculator';
 import ultilities from '../../helper/ultilities';
@@ -7,8 +7,7 @@ import TextCollapse from '../../components/TextCollapse';
 import { PyramidPeakData } from '../../../data/PyramidPeakData';
 import { CardInformationModal } from '../../components/CardInformationModal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-
+import pyramidCalculator from '../../helper/pyramidCalculator';
 
 
 export class PyramidPeak extends Component {
@@ -20,8 +19,14 @@ export class PyramidPeak extends Component {
             name: '',
             birthdate: '',
             lifePathNumber: 8,
-            age:34,
             cardInformationVisible: false,
+            cardtitle: ' ',
+            carddescribe: ' ',
+            age:32,
+            firstPeak:1,
+            secondPeak:1,
+            thirdPeak:1,
+            fourthPeak:1
         }
         this.getData()
     }
@@ -34,16 +39,33 @@ export class PyramidPeak extends Component {
 
             // Get LifePathNumber 
             var number = calculator.calNumber(birthdate)
-            console.log("LIFE PATH: ", number)
-            if (username !== null) {
+            var numberTop = pyramidCalculator.calNumberPyramid(birthdate)
+
+            if (username !== null && number.lifePath!=22) {
                 this.setState({
                     name: username,
                     birthdate: birthdate,
                     lifePathNumber: number.lifePath,
-                    age:36-lifePathNumber
+                    age: 36 - number.lifePath,
+                    firstPeak: numberTop.firstTop,
+                    secondPeak: numberTop.secondTop,
+                    thirdPeak: numberTop.thirdTop,
+                    fourthPeak: numberTop.fourthTop
                 })
-                console.log('bbbbbbbbbbbbbbbbbb',this.state)
-            } else {
+            }
+            else if( number.lifePath==22){
+                this.setState({
+                    name: username,
+                    birthdate: birthdate,
+                    lifePathNumber: number.lifePath,
+                    age:32,
+                    firstPeak: numberTop.firstTop,
+                    secondPeak: numberTop.secondTop,
+                    thirdPeak: numberTop.thirdTop,
+                    fourthPeak: numberTop.fourthTop
+                })
+            }
+            else {
                 this.setState({
                     name: '',
                     birthdate: ''
@@ -54,6 +76,7 @@ export class PyramidPeak extends Component {
         }
     }
 
+
     //     console.log(PyramidPeakData[0][1].content)
     //     var lifePath = calculator.calNumber("04-04-2000")
     //     var name = calculator.nameInfo(ultilities.removeVietNameseTone("Nguyễn Thành Long"))
@@ -61,9 +84,15 @@ export class PyramidPeak extends Component {
     //     console.log(name)
     // }
 
+    onItemPress(title, describe) {
+        this.setState({
+            cardtitle: title,
+            carddescribe: describe,
+            cardInformationVisible: !this.state.cardInformationVisible
+        })
+    }
 
     render() {
-        console.log("aaaaaaaaaaaaaaaaaaaa",this.state)
         return (
 
             <SafeAreaView style={styles.safeArea}>
@@ -76,69 +105,79 @@ export class PyramidPeak extends Component {
                 <View style={styles.container} >
 
                     {/* Title  */}
-                    <View style={{ height: 50, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                    <TouchableOpacity style={{ height: 50, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+
                         <Text style={{ fontFamily: 'Roboto-Light', fontSize: 20 }}>Số chủ đạo: </Text>
-                        <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 20 }}>9</Text>
-                    </View>
+                        <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 20 }}>{this.state.lifePathNumber}</Text>
+                    </TouchableOpacity>
 
                     {/* Info */}
                     <View style={{ flex: 1 }}>
 
                         {/* Item 1 */}
-                        <View style={{ height: 100, marginTop: 16 }}>
+                        <TouchableOpacity style={{ height: 100, marginTop: 16 }}
+                            onPress={() => this.onItemPress("Năm " + this.state.age + " tuổi\n" + "Con số: " + this.state.firstPeak, PyramidPeakData[this.state.firstPeak-1][this.state.firstPeak].content)}>
                             <View style={styles.item}>
                                 <View style={{ backgroundColor: COLORS.brownCard, borderTopLeftRadius: 20, borderBottomLeftRadius: 20, width: '30%', height: 98, justifyContent: 'center', alignItems: 'center' }}>
                                     <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{this.state.age}</Text>
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <TextCollapse text={PyramidPeakData[0][1].content} initialTextLength={80} ></TextCollapse>
+                                    <TextCollapse text={PyramidPeakData[this.state.firstPeak-1][this.state.firstPeak].content} initialTextLength={80} ></TextCollapse>
                                 </View>
                             </View>
-                        </View>
+                        </TouchableOpacity>
 
                         {/* Item 2 */}
-                        <View style={{ height: 100, marginTop: 16 }}>
+                        <TouchableOpacity style={{ height: 100, marginTop: 16 }} 
+                            onPress={() => this.onItemPress("Năm " + (this.state.age + 9) + " tuổi\n" + "Con số: " + this.state.secondPeak, PyramidPeakData[this.state.secondPeak-1][this.state.secondPeak].content)}>
                             <View style={styles.item}>
                                 <View style={{ backgroundColor: COLORS.brownCard, borderTopLeftRadius: 20, borderBottomLeftRadius: 20, width: '30%', height: 98, justifyContent: 'center', alignItems: 'center' }}>
                                     <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{this.state.age + 9}</Text>
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <TextCollapse text={PyramidPeakData[0][1].content} initialTextLength={80} ></TextCollapse>
+                                    <TextCollapse text={PyramidPeakData[this.state.secondPeak-1][this.state.secondPeak].content} initialTextLength={80} ></TextCollapse>
                                 </View>
                             </View>
-                        </View>
+                        </TouchableOpacity>
 
                         {/* Item 3 */}
-                        <View style={{ height: 100, marginTop: 16 }}>
+                        <TouchableOpacity style={{ height: 100, marginTop: 16 }}
+                            onPress={() => this.onItemPress("Năm " + (this.state.age + 18) + " tuổi\n" + "Con số: " + this.state.thirdPeak, PyramidPeakData[this.state.thirdPeak-1][this.state.thirdPeak].content)}>
                             <View style={styles.item}>
                                 <View style={{ backgroundColor: COLORS.brownCard, borderTopLeftRadius: 20, borderBottomLeftRadius: 20, width: '30%', height: 98, justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{PyramidPeakData[0][1].content}</Text>
+                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{this.state.age + 18}</Text>
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <TextCollapse text={PyramidPeakData[0][1].content} initialTextLength={80}></TextCollapse>
+                                    <TextCollapse text={PyramidPeakData[this.state.thirdPeak-1][this.state.thirdPeak].content} initialTextLength={80}></TextCollapse>
                                 </View>
                             </View>
-                        </View>
+                        </TouchableOpacity>
 
                         {/* Item 4 */}
-                        <View style={{ height: 100, marginTop: 16 }}>
+                        <TouchableOpacity style={{ height: 100, marginTop: 16 }}
+                            onPress={() => this.onItemPress("Năm " + (this.state.age + 27) + " tuổi\n" + "Con số: " + this.state.fourthPeak, PyramidPeakData[this.state.fourthPeak-1][this.state.fourthPeak].content)}>
                             <View style={styles.item}>
                                 <View style={{ backgroundColor: COLORS.brownCard, borderTopLeftRadius: 20, borderBottomLeftRadius: 20, width: '30%', height: 98, justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{PyramidPeakData[0][1].content}</Text>
+                                    <Text style={{ ...FONTS.logoTitle, color: COLORS.white }}>{this.state.age + 27}</Text>
                                 </View>
                                 <View style={{ width: 1, backgroundColor: COLORS.black }}></View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }}>
-                                    <TextCollapse text={PyramidPeakData[0][1].content} initialTextLength={80}></TextCollapse>
+                                    <TextCollapse text={PyramidPeakData[this.state.fourthPeak-1][this.state.fourthPeak].content} initialTextLength={80}></TextCollapse>
                                 </View>
                             </View>
-                        </View>
-
-
+                        </TouchableOpacity>
                     </View>
                 </View>
+
+                <CardInformationModal
+                        cardTitle={this.state.cardtitle}
+                        cardDescribe={this.state.carddescribe}
+                        isVisible={this.state.cardInformationVisible}
+                        onRequestClose={() => this.setState({ cardInformationVisible: !this.state.cardInformationVisible })}
+                    />
             </SafeAreaView>
         )
     }

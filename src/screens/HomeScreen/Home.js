@@ -28,12 +28,12 @@ export class Home extends Component {
         this.getData()
     }
 
-    componentDidUpdate(prevState) {
-        // console.log("COMPONENT DID UPDATE")
-        if (this.state.name != prevState.name) {
-            this.getData()
-        }
-    }
+    // componentDidUpdate(prevState) {
+    //     // console.log("COMPONENT DID UPDATE")
+    //     if (this.state.name != prevState.name) {
+    //         this.getData()
+    //     }
+    // }
 
     getData = async () => {
         // Get Username + BirthDate 
@@ -73,6 +73,7 @@ export class Home extends Component {
             cardInformationVisible: !this.state.cardInformationVisible
         })
     }
+    
     renderItemComponent = (item, index) => (
         <TouchableOpacity style={styles.item}
             onPress={() => this.onNumberPress(item.title, item.describe)}>
@@ -117,7 +118,7 @@ export class Home extends Component {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}>
-                                <Text style={{ ...FONTS.body1 }}>{this.state.name}</Text>
+                                <Text style={{ ...FONTS.body1 }}>{this.state.name.toUpperCase()}</Text>
                                 <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
                             </View>
 
