@@ -24,7 +24,7 @@ export class LoadingScreen extends Component {
         return (
             <View style={{ flex: 1 }}>
                 <ImageBackground
-                    source={images.background2}
+                    source={images.loadingScreen}
                     resizeMode='cover'
                     style={{
                         height: '100%',

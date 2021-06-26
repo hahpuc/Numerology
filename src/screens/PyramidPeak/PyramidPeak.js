@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, SafeAreaView,TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView, TouchableOpacity } from 'react-native';
 import { COLORS, FONTS, images } from '../../constants';
 import calculator from '../../helper/calculator';
 import ultilities from '../../helper/ultilities';
@@ -22,11 +22,11 @@ export class PyramidPeak extends Component {
             cardInformationVisible: false,
             cardtitle: ' ',
             carddescribe: ' ',
-            age:32,
-            firstPeak:1,
-            secondPeak:1,
-            thirdPeak:1,
-            fourthPeak:1
+            age: 32,
+            firstPeak: 1,
+            secondPeak: 1,
+            thirdPeak: 1,
+            fourthPeak: 1
         }
         this.getData()
     }
@@ -41,7 +41,7 @@ export class PyramidPeak extends Component {
             var number = calculator.calNumber(birthdate)
             var numberTop = pyramidCalculator.calNumberPyramid(birthdate)
 
-            if (username !== null && number.lifePath!=22) {
+            if (username !== null && number.lifePath != 22) {
                 this.setState({
                     name: username,
                     birthdate: birthdate,
@@ -53,12 +53,12 @@ export class PyramidPeak extends Component {
                     fourthPeak: numberTop.fourthTop
                 })
             }
-            else if( number.lifePath==22){
+            else if (number.lifePath == 22) {
                 this.setState({
                     name: username,
                     birthdate: birthdate,
                     lifePathNumber: number.lifePath,
-                    age:32,
+                    age: 32,
                     firstPeak: numberTop.firstTop,
                     secondPeak: numberTop.secondTop,
                     thirdPeak: numberTop.thirdTop,
@@ -173,11 +173,11 @@ export class PyramidPeak extends Component {
                 </View>
 
                 <CardInformationModal
-                        cardTitle={this.state.cardtitle}
-                        cardDescribe={this.state.carddescribe}
-                        isVisible={this.state.cardInformationVisible}
-                        onRequestClose={() => this.setState({ cardInformationVisible: !this.state.cardInformationVisible })}
-                    />
+                    cardTitle={this.state.cardtitle}
+                    cardDescribe={this.state.carddescribe}
+                    isVisible={this.state.cardInformationVisible}
+                    onRequestClose={() => this.setState({ cardInformationVisible: !this.state.cardInformationVisible })}
+                />
             </SafeAreaView>
         )
     }

@@ -12,6 +12,7 @@ import CheckIsolated from '../../helper/CheckIsolated';
 export class BirthChartScreen extends Component {
 
     constructor(props) {
+
         super(props)
 
         this.state = {
@@ -29,15 +30,28 @@ export class BirthChartScreen extends Component {
             cardtitle: ' ',
             carddescribe: ' ',
 
+            unsubscribe: undefined,
         }
-
-        this.getData()
-
     }
 
-    componentDidUpdate(prevState) {
-        if (this.state != prevState) {
+
+    componentDidMount() {
+        this.getData()
+
+        const unsubscribe = this.props.navigation.addListener('focus', () => {
+            console.log('BIRTH CHART- Focus')
             this.getData()
+        });
+
+        // Return the function to unsubscribe from the event so it gets removed on unmount
+        this.setState({ unsubscribe: unsubscribe })
+    }
+
+    componentWillUnmount() {
+        if (this.state.unsubscribe) {
+
+            console.log("BIRTH CHART: - Unsubsribe()")
+            this.state.unsubscribe()
         }
     }
 
