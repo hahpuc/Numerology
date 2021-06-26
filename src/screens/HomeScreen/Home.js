@@ -11,7 +11,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export class Home extends Component {
     constructor(props) {
-        console.log("HOME - CONSTRUCTOR")
         super(props)
 
         this.state = {
@@ -29,7 +28,6 @@ export class Home extends Component {
     }
 
     componentDidMount() {
-        console.log("HOME - Component Did Mount")
 
         this.getData()
         const unsubscribe = this.props.navigation.addListener('focus', () => {
@@ -42,7 +40,6 @@ export class Home extends Component {
     }
 
     componentWillUnmount() {
-        console.log("HOME: - COMPONENT WILL UNMOUNT")
         if (this.state.unsubscribe) {
 
             console.log("HOME: - Unsubsribe()")
@@ -99,7 +96,6 @@ export class Home extends Component {
 
     render() {
 
-        console.log("HOME - Render")
         return (
 
             <View style={{ flex: 1 }}>

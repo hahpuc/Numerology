@@ -12,7 +12,6 @@ export class BirthChartScreen extends Component {
 
     constructor(props) {
 
-        console.log("BIRTH CHART: CONSTRUCTOR")
         super(props)
 
         this.state = {
@@ -33,7 +32,6 @@ export class BirthChartScreen extends Component {
 
 
     componentDidMount() {
-        console.log("BIRTH CHART: COMPONENT DID MOUNT")
         this.getData()
 
         const unsubscribe = this.props.navigation.addListener('focus', () => {
@@ -46,7 +44,6 @@ export class BirthChartScreen extends Component {
     }
 
     componentWillUnmount() {
-        console.log("BIRTH CHART: - COMPONENT WILL UNMOUNT")
         if (this.state.unsubscribe) {
 
             console.log("BIRTH CHART: - Unsubsribe()")

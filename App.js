@@ -19,7 +19,6 @@ class App extends Component {
 
   constructor(props) {
 
-    console.log("App - COnstructor")
     super(props)
     this.state = {
       isLoading: true,
@@ -59,7 +58,6 @@ class App extends Component {
 
   async componentDidMount() {
 
-    console.log("App - Component Did Mount")
 
     // Preload data from an external API
     // Preload data using AsyncStorage
