@@ -18,15 +18,19 @@ const Stack = createStackNavigator();
 class App extends Component {
 
   constructor(props) {
+
+    console.log("App - COnstructor")
     super(props)
     this.state = {
       isLoading: true,
       username: '',
       birthdate: '',
+
+      result: 'Error',
     }
     this.getData()
 
-    
+
   }
 
   getData = async () => {
@@ -39,11 +43,13 @@ class App extends Component {
         this.setState({
           username: username,
           birthdate: birthdate,
+          result: 'Successfully',
         })
       } else {
         this.setState({
           username: '',
           birthdate: '',
+          result: 'Error',
         })
       }
     } catch (e) {
@@ -52,6 +58,9 @@ class App extends Component {
   }
 
   async componentDidMount() {
+
+    console.log("App - Component Did Mount")
+
     // Preload data from an external API
     // Preload data using AsyncStorage
     const data = await this.performTimeConsumingTask();
@@ -69,13 +78,27 @@ class App extends Component {
     );
   }
 
+  handleSubmit = (value) => {
+    console.log("Result: ", value)
+
+    this.setState({
+      result: value
+    })
+  }
+
+  componentDidUpdate(prevProp, prevState) {
+
+    if (prevState.result != this.state.result) {
+      this.getData()
+    }
+  }
+
   ContentView = () => {
-    return (
-      (this.state.username && this.state.birthdate) ?
-        <Tabs />
-        :
-        <InputScreen />
-    )
+    if (this.state.result == 'Error' || this.state.username == '' || this.state.birthdate == '')
+      return <InputScreen type='FirstScreen' handleSubmit={this.handleSubmit} />
+
+    else (this.state.result == 'Successfully' && this.state.username != '' && this.state.birthdate != '')
+    return <Tabs />
   }
 
   render() {

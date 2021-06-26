@@ -11,6 +11,8 @@ import { BirthChartData, DataBirth } from '../../../data/BirthChartData';
 export class BirthChartScreen extends Component {
 
     constructor(props) {
+
+        console.log("BIRTH CHART: CONSTRUCTOR")
         super(props)
 
         this.state = {
@@ -25,15 +27,30 @@ export class BirthChartScreen extends Component {
             filterChart: '',
             cardtitle: ' ',
             carddescribe: ' ',
+            unsubscribe: undefined,
         }
-
-        this.getData()
-
     }
 
-    componentDidUpdate(prevState) {
-        if (this.state != prevState) {
+
+    componentDidMount() {
+        console.log("BIRTH CHART: COMPONENT DID MOUNT")
+        this.getData()
+
+        const unsubscribe = this.props.navigation.addListener('focus', () => {
+            console.log('BIRTH CHART- Focus')
             this.getData()
+        });
+
+        // Return the function to unsubscribe from the event so it gets removed on unmount
+        this.setState({ unsubscribe: unsubscribe })
+    }
+
+    componentWillUnmount() {
+        console.log("BIRTH CHART: - COMPONENT WILL UNMOUNT")
+        if (this.state.unsubscribe) {
+
+            console.log("BIRTH CHART: - Unsubsribe()")
+            this.state.unsubscribe()
         }
     }
 

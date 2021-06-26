@@ -11,7 +11,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export class Home extends Component {
     constructor(props) {
-        console.log("CONSTRUCTOR")
+        console.log("HOME - CONSTRUCTOR")
         super(props)
 
         this.state = {
@@ -22,18 +22,33 @@ export class Home extends Component {
             birthdate: '',
             lifePathNumber: 9,
             cardInformationVisible: false,
-            indexLifePathNumber: 8
-        }
+            indexLifePathNumber: 8,
 
-        this.getData()
+            unsubscribe: undefined,
+        }
     }
 
-    // componentDidUpdate(prevState) {
-    //     // console.log("COMPONENT DID UPDATE")
-    //     if (this.state.name != prevState.name) {
-    //         this.getData()
-    //     }
-    // }
+    componentDidMount() {
+        console.log("HOME - Component Did Mount")
+
+        this.getData()
+        const unsubscribe = this.props.navigation.addListener('focus', () => {
+            console.log('HOME - Focus')
+            this.getData()
+        });
+
+        // Return the function to unsubscribe from the event so it gets removed on unmount
+        this.setState({ unsubscribe: unsubscribe })
+    }
+
+    componentWillUnmount() {
+        console.log("HOME: - COMPONENT WILL UNMOUNT")
+        if (this.state.unsubscribe) {
+
+            console.log("HOME: - Unsubsribe()")
+            this.state.unsubscribe()
+        }
+    }
 
     getData = async () => {
         // Get Username + BirthDate 
@@ -73,7 +88,7 @@ export class Home extends Component {
             cardInformationVisible: !this.state.cardInformationVisible
         })
     }
-    
+
     renderItemComponent = (item, index) => (
         <TouchableOpacity style={styles.item}
             onPress={() => this.onNumberPress(item.title, item.describe)}>
@@ -83,6 +98,8 @@ export class Home extends Component {
     );
 
     render() {
+
+        console.log("HOME - Render")
         return (
 
             <View style={{ flex: 1 }}>
@@ -110,38 +127,38 @@ export class Home extends Component {
                             navigateToSetting={() => this.props.navigation.push("Setting")}
                         />
                     </View>
-                    <ScrollView showsVerticalScrollIndicator={false}>
-                        <View style={{ flex: 1, paddingBottom: 16, }}>
-                            {/*Name and BirthDate */}
-                            <View style={{
-                                height: 100,
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                            }}>
-                                <Text style={{ ...FONTS.body1 }}>{this.state.name.toUpperCase()}</Text>
-                                <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
+                    {/* <ScrollView showsVerticalScrollIndicator={false}> */}
+                    <View style={{ flex: 1, paddingBottom: 16, }}>
+                        {/*Name and BirthDate */}
+                        <View style={{
+                            height: 100,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}>
+                            <Text style={{ ...FONTS.body1 }}>{this.state.name}</Text>
+                            <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
+                        </View>
+
+
+                        {/*Information */}
+                        <View style={{ flex: 1 }}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                                <Text style={{ ...FONTS.body2 }}>Số chủ đạo: </Text>
+                                <Text style={{ ...FONTS.h2 }}>{this.state.lifePathNumber}</Text>
                             </View>
-
-
-                            {/*Information */}
-                            <View style={{ flex: 1 }}>
-                                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                                    <Text style={{ ...FONTS.body2 }}>Số chủ đạo: </Text>
-                                    <Text style={{ ...FONTS.h2 }}>{this.state.lifePathNumber}</Text>
-                                </View>
-                                <View>
-                                    {/* FlatList */}
-                                    <FlatList
-                                        //horizontal={true}
-                                        data={LifePathNumber[this.state.indexLifePathNumber][this.state.lifePathNumber]}
-                                        scrollEnabled={false}
-                                        renderItem={({ item, index }) => this.renderItemComponent(item, index)}
-                                        keyExtractor={item => item.id}
-                                    />
-                                </View>
+                            <View>
+                                {/* FlatList */}
+                                <FlatList
+                                    //horizontal={true}
+                                    data={LifePathNumber[this.state.indexLifePathNumber][this.state.lifePathNumber]}
+                                    scrollEnabled={false}
+                                    renderItem={({ item, index }) => this.renderItemComponent(item, index)}
+                                    keyExtractor={item => item.id}
+                                />
                             </View>
                         </View>
-                    </ScrollView>
+                    </View>
+                    {/* </ScrollView> */}
 
                     <CardInformationModal
                         cardTitle={this.state.cardtitle}
