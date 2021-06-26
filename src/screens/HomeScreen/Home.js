@@ -8,6 +8,7 @@ import calculator from '../../helper/calculator';
 import TextCollapse from '../../components/TextCollapse.js'
 import { LifePathNumber } from '../../../data/LifePathNumber';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { LogBox } from 'react-native';
 
 export class Home extends Component {
     constructor(props) {
@@ -27,6 +28,11 @@ export class Home extends Component {
 
         this.getData()
     }
+
+    componentDidMount() {
+        LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
+    }
+
 
     // componentDidUpdate(prevState) {
     //     // console.log("COMPONENT DID UPDATE")
@@ -81,6 +87,7 @@ export class Home extends Component {
             <TextCollapse style={styles.describe} text={item.describe}></TextCollapse>
         </TouchableOpacity>
     );
+
 
     render() {
         return (

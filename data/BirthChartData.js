@@ -1,8 +1,8 @@
 export const BirthChartData = {
     // Số 1 
     '': {
-        title: 'Rỗng',
-        describe: 'Rỗng'
+        title: '',
+        describe: ''
     },
     '1':
     {
@@ -56,7 +56,7 @@ export const BirthChartData = {
     {
         id: 1,
         title: 'Hai số 2',
-        describe: "Như đã đề cập ở trên, cặp số 22 trong Biểu đồ ngày sinh là một lợi thế to lớn để một người phát triển trực giác và độ nhạy cảm. Nhưng người sở hữu cặp số 22 cần có ý thức sử dụng lợi thế này, nếu không nó sẽ bị mai một. \n\nTrực giác và độ nhạy cảm lý tưởng này giúp người có cặp số 22 đạt được trí thông minh trên mức trung bình, dựa trên khả năng thấu hiểu trời cho đối với con người và sự việc. Khi nói đến việc đánh giá người khác qua ấn tượng đầu tiên, trực giác của những người này cực đáng tin cậy, với độ chính xác và nhanh chóng đáng kinh ngạc. Họ gân như lập tức nhận ra người khác đối với họ có chân thành hay không, miễn là họ không để “cái tôi” hay trí tưởng tượng của mình nhảy vào và làm biến màu trực giác nguyên thủy mà họ có. \n\nNếu được biểu đạt theo cách tích cực, trực giác nhạy bén và cân bằng này sẽ thu hút họ vào nhiều khía cạnh của đời sống con người. Thông thường, họ sẽ xử lý những việc này rất suôn sẻ và thành công, nhưng họ cũng cần chú ý để tránh bị lôi kéo vào quá nhiều vụ việc. Điều đó có thể làm tổn hại hạnh phúc gia đình của họ. Cần nhớ rằng cân bằng mới là chìa khóa mở cửa thành công. "
+        describe: "Cặp số 22 trong Biểu đồ ngày sinh là một lợi thế to lớn để một người phát triển trực giác và độ nhạy cảm. Nhưng người sở hữu cặp số 22 cần có ý thức sử dụng lợi thế này, nếu không nó sẽ bị mai một. \n\nTrực giác và độ nhạy cảm lý tưởng này giúp người có cặp số 22 đạt được trí thông minh trên mức trung bình, dựa trên khả năng thấu hiểu trời cho đối với con người và sự việc. Khi nói đến việc đánh giá người khác qua ấn tượng đầu tiên, trực giác của những người này cực đáng tin cậy, với độ chính xác và nhanh chóng đáng kinh ngạc. Họ gân như lập tức nhận ra người khác đối với họ có chân thành hay không, miễn là họ không để “cái tôi” hay trí tưởng tượng của mình nhảy vào và làm biến màu trực giác nguyên thủy mà họ có. \n\nNếu được biểu đạt theo cách tích cực, trực giác nhạy bén và cân bằng này sẽ thu hút họ vào nhiều khía cạnh của đời sống con người. Thông thường, họ sẽ xử lý những việc này rất suôn sẻ và thành công, nhưng họ cũng cần chú ý để tránh bị lôi kéo vào quá nhiều vụ việc. Điều đó có thể làm tổn hại hạnh phúc gia đình của họ. Cần nhớ rằng cân bằng mới là chìa khóa mở cửa thành công. "
     },
 
     '222':
@@ -240,7 +240,7 @@ export const BirthChartData = {
     {
         id: 1,
         title: ' và bị cô lập',
-        ndescribe: "Sự xuất hiện của những số 7 bị cô lập có ý nghĩa rằng những bài học hy sinh đến với bạn trong một, hai hoặc cả 8 khía cạnh đề cập ở trên (tùy thuộc theo số lượng số 7 xuất hiện trong ô này) sẽ lặp đi lặp lại, với mức độ ngày càng nặng nề hơn, mỗi lúc một cam go hơn... cho đến khi bạn nhận ra bài học mà bạn cần phải học. Chỉ khi đó, những “bài học” như vậy mới dừng lại. \n\nVì vậy, những người thuộc nhóm này không còn cách nào khác ngoài việc dũng cảm nhìn vào sự thật để nhận ra giá trị to lớn của “Số 7 bị cô lập”: Số 7 đại điện cho sự lĩnh hội những triết lý sâu sắc, do đó bản thân người sở hữu những “Số 7 bị cô lập” sẽ có khả năng vượt trội trong việc cảm nhận những triết lý này. "
+        describe: "Ý nghĩa Số 7 bị cô lập \n\nSự xuất hiện của những số 7 bị cô lập có ý nghĩa rằng những bài học hy sinh đến với bạn trong một, hai hoặc cả 8 khía cạnh đề cập ở trên (tùy thuộc theo số lượng số 7 xuất hiện trong ô này) sẽ lặp đi lặp lại, với mức độ ngày càng nặng nề hơn, mỗi lúc một cam go hơn... cho đến khi bạn nhận ra bài học mà bạn cần phải học. Chỉ khi đó, những “bài học” như vậy mới dừng lại. \n\nVì vậy, những người thuộc nhóm này không còn cách nào khác ngoài việc dũng cảm nhìn vào sự thật để nhận ra giá trị to lớn của “Số 7 bị cô lập”: Số 7 đại điện cho sự lĩnh hội những triết lý sâu sắc, do đó bản thân người sở hữu những “Số 7 bị cô lập” sẽ có khả năng vượt trội trong việc cảm nhận những triết lý này. "
     },
 
 
@@ -249,7 +249,7 @@ export const BirthChartData = {
     {
         id: 1,
         title: 'Không có số 7',
-        describe: "Những người thiếu số 7 trên Biểu đỏ ngày sinh sẽ nằm trong hai trường hợp: \n\nHoặc là họ đã vượt qua bài học hy sinh trong những kiếp sống trước, nên kiếp này không cần học lại nữa (thật đáng mừng); hoặc là họ chưa hiểu được giá trị của sự hy sinh và phải chủ động nỗ lực để hiểu được giá trị này (trường hợp này phổ biến hơn). \n\nNói cách khác, các trường hợp không có số 7 trong ngày sinh sẽ thuộc một trong hai nhóm: Hoặc là linh hồn đã rất già (đã vượt qua “bài kiểm tra” hy sinh này); Hoặc là linh hồn còn khá non trẻ, chưa học tới “bài hy sinh”. Đây là nhóm chiếm đa số. Bởi vì sớm muộn chúng ta cũng phải bước vô chặng “bài thi hy sinh” này, nên nếu ai biết nghĩ thì đời này chúng ta hãy chủ động “hy sinh ở thể chủ động” để tránh rơi vào trường hợp bị vũ trụ “bắt phải hy sinh” với nhiều tốn thất nặng nề. “Hy sinh chủ động” ở đây có thể hiểu là hy sinh phần thời gian của mình để giúp đỡ người khác, hoặc muôn loài, hoặc môi trường; hy sinh một phần tiền bạc mình kiếm được cho các hoạt động hay tổ chức thiện nguyện; hy sinh tình yêu của mình cho những người già neo đơn, trẻ em mỏ côi cơ nhờ hay người ốm đau bệnh tật thiếu người chăm sóc, hy sinh tâm sức của mình cho cha mẹ, người lớn tuổi... "
+        describe: "Những người thiếu số 7 trên Biểu đồ ngày sinh sẽ nằm trong hai trường hợp: \n\nHoặc là họ đã vượt qua bài học hy sinh trong những kiếp sống trước, nên kiếp này không cần học lại nữa (thật đáng mừng); hoặc là họ chưa hiểu được giá trị của sự hy sinh và phải chủ động nỗ lực để hiểu được giá trị này (trường hợp này phổ biến hơn). \n\nNói cách khác, các trường hợp không có số 7 trong ngày sinh sẽ thuộc một trong hai nhóm: Hoặc là linh hồn đã rất già (đã vượt qua “bài kiểm tra” hy sinh này); Hoặc là linh hồn còn khá non trẻ, chưa học tới “bài hy sinh”. Đây là nhóm chiếm đa số. Bởi vì sớm muộn chúng ta cũng phải bước vô chặng “bài thi hy sinh” này, nên nếu ai biết nghĩ thì đời này chúng ta hãy chủ động “hy sinh ở thể chủ động” để tránh rơi vào trường hợp bị vũ trụ “bắt phải hy sinh” với nhiều tốn thất nặng nề. “Hy sinh chủ động” ở đây có thể hiểu là hy sinh phần thời gian của mình để giúp đỡ người khác, hoặc muôn loài, hoặc môi trường; hy sinh một phần tiền bạc mình kiếm được cho các hoạt động hay tổ chức thiện nguyện; hy sinh tình yêu của mình cho những người già neo đơn, trẻ em mỏ côi cơ nhờ hay người ốm đau bệnh tật thiếu người chăm sóc, hy sinh tâm sức của mình cho cha mẹ, người lớn tuổi... "
     },
 
     // Số 8
@@ -327,7 +327,7 @@ export const BirthChartData = {
     {
         id: 1,
         title: ' và bị cô lập',
-        describe: "Khi số 9 xuất hiện nhiều trong Biểu đồ ngày sinh có nghĩa là nhiều con số khác sẽ vắng mặt. Và nếu quanh số 9 thiếu những số 5, 6 và 8, thì người sở hữu biểu đồ này hoặc sẽ có tính lý tưởng thiếu thực tế, hoặc có tham vọng không thể thực hiện, hoặc cả hai yếu tố này cùng lúc. Nếu chỉ có một số 9 bị cô lập, đó là tín hiệu cho thấy tham vọng hoặc hoài bão không được thực hiện. Hai số 9 bị cô lập cho thấy lý tưởng thiếu thực tế. Trường hợp có ba hay bốn số 9 bị cô lập thì có thể cho thấy cả hai yếu tố trên. \n\nVới những gì chúng ta đã biết từ cách khắc phục những con số cô lập khác (như số 1, 3, 7), ta có thể “điển” các con số ảo vào các ô trống trên biểu đồ bằng cách thực hiện các hoạt động mang yếu tố đặc trưng của các số 5, 6 và 8. Trong đó, các hoạt động làm tăng đặc trưng của số 5 là quan trọng nhất nếu Biểu đồ ngày sinh không có số 7, vì số 5 này sẽ nối số 9 với đặc điểm biểu đạt thông qua “cái tôi” của số 1, tạo thành trục chéo 1-5-9. Nếu biểu đồ có sẵn số 7, sức mạnh của cả 5 và 8 đều cần được phát triển để kích hoạt tối đa sự liên kết giữa tính lý tưởng và tham vọng của số 9 với Trục ngang Thể chất, vốn gắn liền với tính thực tế. "
+        describe: "\nÝ nghĩa số 9 bị cô lập \n\nKhi số 9 xuất hiện nhiều trong Biểu đồ ngày sinh có nghĩa là nhiều con số khác sẽ vắng mặt. Và nếu quanh số 9 thiếu những số 5, 6 và 8, thì người sở hữu biểu đồ này hoặc sẽ có tính lý tưởng thiếu thực tế, hoặc có tham vọng không thể thực hiện, hoặc cả hai yếu tố này cùng lúc. Nếu chỉ có một số 9 bị cô lập, đó là tín hiệu cho thấy tham vọng hoặc hoài bão không được thực hiện. Hai số 9 bị cô lập cho thấy lý tưởng thiếu thực tế. Trường hợp có ba hay bốn số 9 bị cô lập thì có thể cho thấy cả hai yếu tố trên. \n\nVới những gì chúng ta đã biết từ cách khắc phục những con số cô lập khác (như số 1, 3, 7), ta có thể “điển” các con số ảo vào các ô trống trên biểu đồ bằng cách thực hiện các hoạt động mang yếu tố đặc trưng của các số 5, 6 và 8. Trong đó, các hoạt động làm tăng đặc trưng của số 5 là quan trọng nhất nếu Biểu đồ ngày sinh không có số 7, vì số 5 này sẽ nối số 9 với đặc điểm biểu đạt thông qua “cái tôi” của số 1, tạo thành trục chéo 1-5-9. Nếu biểu đồ có sẵn số 7, sức mạnh của cả 5 và 8 đều cần được phát triển để kích hoạt tối đa sự liên kết giữa tính lý tưởng và tham vọng của số 9 với Trục ngang Thể chất, vốn gắn liền với tính thực tế. "
     },
 
 
