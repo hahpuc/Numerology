@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import React, { Component } from 'react';
 import {
-    View, StyleSheet, Text, Image, TextInput, TouchableOpacity, Dimensions,
+    View, StyleSheet, Text, Image, TextInput, TouchableOpacity, Dimensions, Alert
 } from 'react-native';
 
 import { COLORS, FONTS, images } from '../../constants';
@@ -21,24 +21,55 @@ export class InputScreen extends Component {
             date: '',
         }
 
-        this.getData()
-
-        // this.removeData()
+        console.log("Input Type", this.props.type)
     }
 
 
     handleSubmit = async () => {
-        console.log("Start to explore")
 
-        try {
-            await AsyncStorage.setItem('userName', this.state.name)
-            await AsyncStorage.setItem('birthDate', this.state.date)
+        if (this.state.name == '' || this.state.date == '') {
+            Alert.alert(
+                "Something wrong!",
+                "Please fill in all the field",
+                [
+                    { text: "OK", onPress: () => console.log("OK Pressed") }
+                ]
+            )
 
-            console.log("Successfully to save username & birthdate")
-            this.props.navigation.popToTop()
-        } catch (error) {
-            console.log(error)
+            return
         }
+
+        if (this.props.type == 'FirstScreen') {
+            console.log("HANDLE SUBMIT INPUT IN FIRST SCREEN")
+
+            try {
+                await AsyncStorage.setItem('userName', this.state.name)
+                await AsyncStorage.setItem('birthDate', this.state.date)
+
+                this.props.handleSubmit("Successfully")
+            } catch (error) {
+                this.props.handleSubmit("Error")
+            }
+        }
+        else {
+            console.log("Reload Data Input")
+
+            try {
+                await AsyncStorage.setItem('userName', this.state.name)
+                await AsyncStorage.setItem('birthDate', this.state.date)
+
+                console.log("Successfully to save username & birthdate")
+                this.props.navigation.popToTop()
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+    }
+
+    componentDidMount() {
+        this.getData()
+        // this.removeData()
     }
 
     getData = async () => {
