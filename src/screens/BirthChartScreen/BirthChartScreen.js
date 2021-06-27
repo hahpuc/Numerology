@@ -24,9 +24,15 @@ export class BirthChartScreen extends Component {
                 outer: '',
             },
             filterChart: '',
+
+            //Card Information
             cardtitle: ' ',
             carddescribe: ' ',
             unsubscribe: undefined,
+
+            //Những số bị cô lập
+            isolatedTitle: '',
+            isolatedDescribe: ''
         }
     }
 
@@ -50,7 +56,6 @@ export class BirthChartScreen extends Component {
             this.state.unsubscribe()
         }
     }
-
 
     getData = async () => {
         // Get Username + BirthDate 
@@ -87,14 +92,58 @@ export class BirthChartScreen extends Component {
         }
     }
 
-
-    onNumberPress(number) {
+    // Đổ data vào cardInformation
+    onNumberPress(numberfilled, numbercard) {
+        this.isIsolated(numbercard)
+        console.log(numberfilled, numbercard, this.state.isolatedTitle, this.state.isolatedDescribe)
+        // if(numberfilled == '' && numbercard == 7 )
+        // {
+        //     this.setState({
+        //         cardtitle: BirthChartData['Not7'].title,
+        //         carddescribe:BirthChartData['Not7'].describe
+        //     })
+        // }
         this.setState({
-            //cardtitle: number,
-            cardtitle: BirthChartData[number].title,
-            carddescribe: BirthChartData[number].describe,
+            cardtitle: BirthChartData[numberfilled].title + this.state.isolatedTitle,
+            carddescribe: BirthChartData[numberfilled].describe + '\n\n' + this.state.isolatedDescribe,
             cardInformationVisible: !this.state.cardInformationVisible
         })
+    }
+
+    // Kiểm tra số bị cô lập và thiếu số 7 và 9
+    isIsolated(num) {
+
+        if (this.state.filterChart[4] == '' && (num == 1 || num == 3 || num == 7 || num == 9)) {
+
+            if (num == 1 && this.state.filterChart[0] != '' && this.state.filterChart[1] == '' && this.state.filterChart[3] == '')
+                this.state.isolatedTitle = BirthChartData['1CL'].title
+            this.state.isolatedDescribe = BirthChartData['1CL'].describe
+
+            if (num == 3 && this.state.filterChart[2] != '' && this.state.filterChart[1] == '' && this.state.filterChart[5] == '')
+                this.state.isolatedTitle = BirthChartData['3CL'].title
+            this.state.isolatedDescribe = BirthChartData['3CL'].describe
+
+            if (num == 7 && this.state.filterChart[6] != '' && this.state.filterChart[3] == '' && this.state.filterChart[7] == '')
+                this.state.isolatedTitle = BirthChartData['7CL'].title
+            this.state.isolatedDescribe = BirthChartData['7CL'].describe
+
+            if (num == 9 && this.state.filterChart[8] != '' && this.state.filterChart[5] == '' && this.state.filterChart[7] == '')
+                this.state.isolatedTitle = BirthChartData['9CL'].title
+            this.state.isolatedDescribe = BirthChartData['9CL'].describe
+        }
+
+        else if (this.state.filterChart[6] == '' && num == 7) {
+            this.state.isolatedTitle = BirthChartData['Not7'].title
+            this.state.isolatedDescribe = BirthChartData['Not7'].describe
+        }
+
+        else if (this.state.filterChart[8] == '' && num == 9) {
+            this.state.isolatedTitle = BirthChartData['Not9'].title
+            this.state.isolatedDescribe = BirthChartData['Not9'].describe
+        }
+        else
+            this.state.isolatedTitle = ''
+        this.state.isolatedDescribe = ''
     }
 
     render() {
@@ -119,21 +168,21 @@ export class BirthChartScreen extends Component {
                             <View style={{ marginTop: 16, flexDirection: 'row' }}>
                                 <TouchableOpacity
                                     style={{ paddingLeft: 16 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[2])}
+                                    onPress={() => this.onNumberPress(this.state.filterChart[2], 3)}
                                 >
                                     <CardNumber color={COLORS.brownCard} title='Trí não' number={this.state.filterChart[2]} />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[5])}
+                                    onPress={() => this.onNumberPress(this.state.filterChart[5], 6)}
                                 >
                                     <CardNumber color={COLORS.brownCard} title='Sáng tạo' number={this.state.filterChart[5]} />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[8])}
+                                    onPress={() => this.onNumberPress(this.state.filterChart[8], 9)}
                                 >
                                     <CardNumber color={COLORS.brownCard} title='Lý tưởng' number={this.state.filterChart[8]} />
                                 </TouchableOpacity>
@@ -143,14 +192,14 @@ export class BirthChartScreen extends Component {
                             <View style={{ marginTop: 16, flexDirection: 'row' }}>
                                 <TouchableOpacity
                                     style={{ paddingLeft: 16 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[1])}
+                                    onPress={() => this.onNumberPress(this.state.filterChart[1], 2)}
                                 >
                                     <CardNumber color={COLORS.brownCard} title='Trực giác' number={this.state.filterChart[1]} />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[4])}
+                                    onPress={() => this.onNumberPress(this.state.filterChart[4], 5)}
 
                                 >
                                     <CardNumber color={COLORS.brownCard} title='Cảm xúc' number={this.state.filterChart[4]} />
@@ -158,7 +207,7 @@ export class BirthChartScreen extends Component {
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[7])}
+                                    onPress={() => this.onNumberPress(this.state.filterChart[7], 8)}
                                 >
                                     <CardNumber color={COLORS.brownCard} title='Nghĩa vụ' number={this.state.filterChart[7]} />
                                 </TouchableOpacity>
@@ -168,21 +217,21 @@ export class BirthChartScreen extends Component {
                             <View style={{ marginTop: 16, flexDirection: 'row' }}>
                                 <TouchableOpacity
                                     style={{ paddingLeft: 16 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[0])}
+                                    onPress={() => this.onNumberPress(this.state.filterChart[0], 1)}
                                 >
                                     <CardNumber color={COLORS.brownCard} title='Tính cách' number={this.state.filterChart[0]} />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[3])}
+                                    onPress={() => this.onNumberPress(this.state.filterChart[3], 4)}
                                 >
                                     <CardNumber color={COLORS.brownCard} title='Thực tế' number={this.state.filterChart[3]} />
                                 </TouchableOpacity>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[6])}
+                                    onPress={() => this.onNumberPress(this.state.filterChart[6], 7)}
                                 >
                                     <CardNumber color={COLORS.brownCard} title='Hy sinh' number={this.state.filterChart[6]} />
                                 </TouchableOpacity>
