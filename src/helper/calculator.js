@@ -116,7 +116,7 @@ const calculator = {
         }
 
         number = number.replace(/-/g, '')
-        name = name.toUpperCase()
+        //name = name.toUpperCase()
 
         // Filter in number 
         for (var i = 0; i < number.length; ++i) {
@@ -127,12 +127,12 @@ const calculator = {
         }
 
         // Filter in name 
-        for (var i = 0; i < name.length; ++i) {
-            if (name[i] == ' ') continue
+        // for (var i = 0; i < name.length; ++i) {
+        //     if (name[i] == ' ') continue
 
-            var value = LetterToNumber[name[i]]
-            result[value - 1] += value.toString()
-        }
+        //     var value = LetterToNumber[name[i]]
+        //     result[value - 1] += value.toString()
+        // }
 
         return result
     }
