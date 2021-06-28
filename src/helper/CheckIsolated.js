@@ -27,19 +27,18 @@ const CheckIsolated={
             {
                 isolatedTitle = BirthChartData['9CL'].title
                 isolatedDescribe = BirthChartData['9CL'].describe
-            }
-
-            if (Chart[6] == '' && number == 7) {
-                isolatedTitle = BirthChartData['Not7'].title
-                isolatedDescribe = BirthChartData['Not7'].describe
-            }
-    
-            if (Chart[8] == '' && number == 9) {
-                isolatedTitle = BirthChartData['Not9'].title
-                isolatedDescribe = BirthChartData['Not9'].describe
-            }           
+            }       
 
         }
+        if (Chart[6] == '' && number == 7) {
+            isolatedTitle = BirthChartData['Not7'].title
+            isolatedDescribe = BirthChartData['Not7'].describe
+        }
+
+        if (Chart[8] == '' && number == 9) {
+            isolatedTitle = BirthChartData['Not9'].title
+            isolatedDescribe = BirthChartData['Not9'].describe
+        }    
         return {isolatedTitle,isolatedDescribe}
     }
 }
