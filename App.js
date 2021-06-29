@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 
 // Screens
 // import { PlantDetail } from './screens/';
 import Tabs from './src/navigation/tabs';
-import { BirthChartScreen } from './src/screens/BirthChartScreen/BirthChartScreen';
-import { View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import calculator from './src/helper/calculator';
 import { LoadingScreen } from './src/screens/InputScreen/LoadingScreen';
 import { InputScreen } from './src/screens/InputScreen/InputScreen';
 
-// Tabs
-const Stack = createStackNavigator();
 
 class App extends Component {
 
