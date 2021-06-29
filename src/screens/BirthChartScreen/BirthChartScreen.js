@@ -1,9 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, SafeAreaView, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, SafeAreaView, TouchableOpacity, Dimensions, ScrollView, ImageBackground } from 'react-native';
 import { CardNumber } from '../../components';
 import { CardInformationModal } from '../../components/CardInformationModal';
-import { COLORS, FONTS } from '../../constants';
+import { COLORS, FONTS, images } from '../../constants';
 import calculator from '../../helper/calculator';
 import ultilities from '../../helper/ultilities';
 import { BirthChartData, DataBirth } from '../../../data/BirthChartData';
@@ -154,160 +154,176 @@ export class BirthChartScreen extends Component {
         const buttonWidth = Dimensions.get('window').width - 32;
 
         return (
-            <SafeAreaView style={styles.safeArea}>
-                {/* Header  */}
-                <View style={styles.header}>
-                    <Text style={{ ...FONTS.largeTitle }}>Khám phá ngày sinh</Text>
-                </View>
 
-                <ScrollView showsVerticalScrollIndicator={false}>
-                    {/* Chart  */}
-                    <View style={styles.container}>
-                        <View style={{}}>
-                            <View style={{ marginTop: 16, height: 32, paddingLeft: 16 }}>
-                                <Text style={{ ...FONTS.light2 }}>{this.state.typeName}</Text>
-                            </View>
+            <View style={{ flex: 1 }}>
+                <ImageBackground
+                    source={images.background2}
+                    resizeMode='cover'
+                    style={{
+                        height: '100%',
+                        width: '100%',
+                        position: 'absolute'
+                    }}>
 
-                            {/* 3 - 6 - 9 */}
-                            <View style={{ marginTop: 16, flexDirection: 'row' }}>
-                                <TouchableOpacity
-                                    style={{ paddingLeft: 16 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[2], 3)}
-                                >
-                                    <CardNumber color={COLORS.brownCard} title='Trí não' number={this.state.filterChart[2]} />
-                                </TouchableOpacity>
+                </ImageBackground>
 
-                                <TouchableOpacity
-                                    style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[5], 6)}
-                                >
-                                    <CardNumber color={COLORS.brownCard} title='Sáng tạo' number={this.state.filterChart[5]} />
-                                </TouchableOpacity>
+                <SafeAreaView style={{ flex: 1 }}>
+                    {/* Header  */}
+                    <View style={styles.header}>
+                        <Text style={{ ...FONTS.largeTitle }}>Khám phá ngày sinh</Text>
+                    </View>
 
-                                <TouchableOpacity
-                                    style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[8], 9)}
-                                >
-                                    <CardNumber color={COLORS.brownCard} title='Lý tưởng' number={this.state.filterChart[8]} />
-                                </TouchableOpacity>
-                            </View>
-
-                            {/* 2 - 5 - 8 */}
-                            <View style={{ marginTop: 16, flexDirection: 'row' }}>
-                                <TouchableOpacity
-                                    style={{ paddingLeft: 16 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[1], 2)}
-                                >
-                                    <CardNumber color={COLORS.brownCard} title='Trực giác' number={this.state.filterChart[1]} />
-                                </TouchableOpacity>
-
-                                <TouchableOpacity
-                                    style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[4], 5)}
-
-                                >
-                                    <CardNumber color={COLORS.brownCard} title='Cảm xúc' number={this.state.filterChart[4]} />
-                                </TouchableOpacity>
-
-                                <TouchableOpacity
-                                    style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[7], 8)}
-                                >
-                                    <CardNumber color={COLORS.brownCard} title='Nghĩa vụ' number={this.state.filterChart[7]} />
-                                </TouchableOpacity>
-                            </View>
-
-                            {/* 1 - 4 - 7 */}
-                            <View style={{ marginTop: 16, flexDirection: 'row' }}>
-                                <TouchableOpacity
-                                    style={{ paddingLeft: 16 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[0], 1)}
-                                >
-                                    <CardNumber color={COLORS.brownCard} title='Tính cách' number={this.state.filterChart[0]} />
-                                </TouchableOpacity>
-
-                                <TouchableOpacity
-                                    style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[3], 4)}
-                                >
-                                    <CardNumber color={COLORS.brownCard} title='Thực tế' number={this.state.filterChart[3]} />
-                                </TouchableOpacity>
-
-                                <TouchableOpacity
-                                    style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress(this.state.filterChart[6], 7)}
-                                >
-                                    <CardNumber color={COLORS.brownCard} title='Hy sinh' number={this.state.filterChart[6]} />
-                                </TouchableOpacity>
-                            </View>
-
-                            {/* Button  */}
-                            <View style={{ marginTop: 16, marginBottom: 16, height: 50, alignItems: 'center' }}>
-                                <TouchableOpacity
-                                    style={[styles.button, { width: buttonWidth }]}
-                                    // onPress={() => { this.props.navigation.push("BirthChartResult") }}
-                                    onPress={this.handleChangeToNameType}
-                                >
-                                    <Text style={{ ...FONTS.body3, color: COLORS.white }}> Khám phá </Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-
-                        {/* Personal Number  */}
-                        <View style={{}}>
-                            <View style={{ height: 32, paddingLeft: 16 }}>
-                                <Text style={{ ...FONTS.light2 }}>Con số cá nhân</Text>
-                            </View>
-
-                            <View style={{ marginBottom: 16, marginTop: 16, flexDirection: 'row' }}>
-                                <TouchableOpacity
-                                    style={{ paddingLeft: 16 }}
-                                    onPress={() => this.onOuterNumberPress(this.state.number.outer)}
-                                >
-                                    <CardNumber color={COLORS.brownCard} title='Số biểu đạt' number={this.state.number.outer} />
-                                </TouchableOpacity>
-
-                                <View
-                                    style={{ paddingLeft: 8 }}
-                                // onPress={() => this.onNumberPress("4")}
-                                >
-                                    <CardNumber color={COLORS.orangeCard} title='Số chủ đạo' number={this.state.number.lifePath} />
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                        {/* Chart  */}
+                        <View style={styles.container}>
+                            <View style={{}}>
+                                <View style={{ marginTop: 16, height: 32, paddingLeft: 16 }}>
+                                    <Text style={{ ...FONTS.light2 }}>{this.state.typeName}</Text>
                                 </View>
 
-                                <TouchableOpacity
-                                    style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onSoulNumberPress(this.state.number.soul)}
-                                >
-                                    <CardNumber color={COLORS.brownCard} title='Số linh hồn' number={this.state.number.soul} />
-                                </TouchableOpacity>
+                                {/* 3 - 6 - 9 */}
+                                <View style={{ marginTop: 16, flexDirection: 'row' }}>
+                                    <TouchableOpacity
+                                        style={{ paddingLeft: 16 }}
+                                        onPress={() => this.onNumberPress(this.state.filterChart[2], 3)}
+                                    >
+                                        <CardNumber color={COLORS.brownCard} title='Trí não' number={this.state.filterChart[2]} />
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity
+                                        style={{ paddingLeft: 8 }}
+                                        onPress={() => this.onNumberPress(this.state.filterChart[5], 6)}
+                                    >
+                                        <CardNumber color={COLORS.brownCard} title='Sáng tạo' number={this.state.filterChart[5]} />
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity
+                                        style={{ paddingLeft: 8 }}
+                                        onPress={() => this.onNumberPress(this.state.filterChart[8], 9)}
+                                    >
+                                        <CardNumber color={COLORS.brownCard} title='Lý tưởng' number={this.state.filterChart[8]} />
+                                    </TouchableOpacity>
+                                </View>
+
+                                {/* 2 - 5 - 8 */}
+                                <View style={{ marginTop: 16, flexDirection: 'row' }}>
+                                    <TouchableOpacity
+                                        style={{ paddingLeft: 16 }}
+                                        onPress={() => this.onNumberPress(this.state.filterChart[1], 2)}
+                                    >
+                                        <CardNumber color={COLORS.brownCard} title='Trực giác' number={this.state.filterChart[1]} />
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity
+                                        style={{ paddingLeft: 8 }}
+                                        onPress={() => this.onNumberPress(this.state.filterChart[4], 5)}
+
+                                    >
+                                        <CardNumber color={COLORS.brownCard} title='Cảm xúc' number={this.state.filterChart[4]} />
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity
+                                        style={{ paddingLeft: 8 }}
+                                        onPress={() => this.onNumberPress(this.state.filterChart[7], 8)}
+                                    >
+                                        <CardNumber color={COLORS.brownCard} title='Nghĩa vụ' number={this.state.filterChart[7]} />
+                                    </TouchableOpacity>
+                                </View>
+
+                                {/* 1 - 4 - 7 */}
+                                <View style={{ marginTop: 16, flexDirection: 'row' }}>
+                                    <TouchableOpacity
+                                        style={{ paddingLeft: 16 }}
+                                        onPress={() => this.onNumberPress(this.state.filterChart[0], 1)}
+                                    >
+                                        <CardNumber color={COLORS.brownCard} title='Tính cách' number={this.state.filterChart[0]} />
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity
+                                        style={{ paddingLeft: 8 }}
+                                        onPress={() => this.onNumberPress(this.state.filterChart[3], 4)}
+                                    >
+                                        <CardNumber color={COLORS.brownCard} title='Thực tế' number={this.state.filterChart[3]} />
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity
+                                        style={{ paddingLeft: 8 }}
+                                        onPress={() => this.onNumberPress(this.state.filterChart[6], 7)}
+                                    >
+                                        <CardNumber color={COLORS.brownCard} title='Hy sinh' number={this.state.filterChart[6]} />
+                                    </TouchableOpacity>
+                                </View>
+
+                                {/* Button  */}
+                                <View style={{ marginTop: 16, marginBottom: 16, height: 50, alignItems: 'center' }}>
+                                    <TouchableOpacity
+                                        style={[styles.button, { width: buttonWidth }]}
+                                        // onPress={() => { this.props.navigation.push("BirthChartResult") }}
+                                        onPress={this.handleChangeToNameType}
+                                    >
+                                        <Text style={{ ...FONTS.body3, color: COLORS.white }}> Khám phá </Text>
+                                    </TouchableOpacity>
+                                </View>
                             </View>
 
-                            <View style={{ height: 50 }}></View>
+                            {/* Personal Number  */}
+                            <View style={{}}>
+                                <View style={{ height: 32, paddingLeft: 16 }}>
+                                    <Text style={{ ...FONTS.light2 }}>Con số cá nhân</Text>
+                                </View>
 
+                                <View style={{ marginBottom: 16, marginTop: 16, flexDirection: 'row' }}>
+                                    <TouchableOpacity
+                                        style={{ paddingLeft: 16 }}
+                                        onPress={() => this.onOuterNumberPress(this.state.number.outer)}
+                                    >
+                                        <CardNumber color={COLORS.brownCard} title='Số biểu đạt' number={this.state.number.outer} />
+                                    </TouchableOpacity>
+
+                                    <View
+                                        style={{ paddingLeft: 8 }}
+                                    // onPress={() => this.onNumberPress("4")}
+                                    >
+                                        <CardNumber color={COLORS.orangeCard} title='Số chủ đạo' number={this.state.number.lifePath} />
+                                    </View>
+
+                                    <TouchableOpacity
+                                        style={{ paddingLeft: 8 }}
+                                        onPress={() => this.onSoulNumberPress(this.state.number.soul)}
+                                    >
+                                        <CardNumber color={COLORS.brownCard} title='Số linh hồn' number={this.state.number.soul} />
+                                    </TouchableOpacity>
+                                </View>
+
+                                <View style={{ height: 50 }}></View>
+
+                            </View>
                         </View>
-                    </View>
-                </ScrollView>
+                    </ScrollView>
 
-                <CardInformationModal
-                    cardTitle={this.state.cardtitle}
-                    cardDescribe={this.state.carddescribe}
-                    isVisible={this.state.cardInformationVisible}
-                    onRequestClose={() => this.setState({ cardInformationVisible: !this.state.cardInformationVisible })}
-                />
+                    <CardInformationModal
+                        cardTitle={this.state.cardtitle}
+                        cardDescribe={this.state.carddescribe}
+                        isVisible={this.state.cardInformationVisible}
+                        onRequestClose={() => this.setState({ cardInformationVisible: !this.state.cardInformationVisible })}
+                    />
 
-            </SafeAreaView>
+                </SafeAreaView>
 
+            </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
     safeArea: {
-        backgroundColor: COLORS.primary
+        backgroundColor: COLORS.primary,
+        flex: 1,
     },
     container: {
-        height: '100%',
-        backgroundColor: COLORS.primary
+        // height: '100%',
+        // backgroundColor: COLORS.primary
+        flex: 1
     },
     header: {
         height: 48,
