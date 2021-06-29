@@ -16,26 +16,26 @@ export class CardInformationModal extends Component {
                     <View style={styles.container}>
 
                         {/* Header  */}
-                        <View style={{ paddingLeft: 16, paddingRight: 16, height: 48, flexDirection: 'row', alignItems: 'center' }}>
+                        <View style={{ marginTop: 16, paddingLeft: 16, paddingRight: 16, height: 48, flexDirection: 'row', alignItems: 'center' }}>
                             <TouchableOpacity
-                                style={{ height: 16, width: 16 }}
+                                style={{ height: 18, width: 18 }}
                                 onPress={this.props.onRequestClose}
                             >
                                 <Image
                                     source={icons.cancel}
                                     resizeMode='contain'
                                     style={{
-                                        height: 16,
-                                        width: 16,
+                                        height: 18,
+                                        width: 18,
                                     }}
                                 />
                             </TouchableOpacity>
                             <Text style={{ flex: 1, textAlign: 'center', ...FONTS.body3 }}> {this.props.cardTitle} </Text>
-                            <View style={{ height: 24, width: 24 }}></View>
+                            <View style={{ height: 18, width: 18 }}></View>
                         </View>
 
                         {/* Information  */}
-                        <ScrollView>
+                        <ScrollView showsVerticalScrollIndicator={false}>
                             <View style={{ flex: 1, paddingLeft: 16, paddingRight: 16, justifyContent: 'center' }}>
                                 <Text style={styles.info}>{this.props.cardDescribe}</Text>
                             </View>
@@ -84,7 +84,8 @@ const styles = StyleSheet.create({
     },
     info: {
         ...FONTS.light3,
-        marginTop: 54,
+        marginTop: 20,
+        marginBottom: 20,
         textAlign: 'justify'
     }
 })
