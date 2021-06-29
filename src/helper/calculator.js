@@ -109,14 +109,13 @@ const calculator = {
     },
 
     // --------------- BIRTH CHART FILTER 
-    filterBirthChart(number, name) {
+    filterBirthChart(number) {
         var result = [];
         for (var i = 0; i < 9; ++i) {
             result[i] = ''
         }
 
         number = number.replace(/-/g, '')
-        //name = name.toUpperCase()
 
         // Filter in number 
         for (var i = 0; i < number.length; ++i) {
@@ -126,13 +125,34 @@ const calculator = {
             result[index - 1] += number[i]
         }
 
-        // Filter in name 
-        // for (var i = 0; i < name.length; ++i) {
-        //     if (name[i] == ' ') continue
+        return result
+    },
 
-        //     var value = LetterToNumber[name[i]]
-        //     result[value - 1] += value.toString()
-        // }
+    filterFullBirthChart(number, name) {
+
+        var result = [];
+        for (var i = 0; i < 9; ++i) {
+            result[i] = ''
+        }
+
+        number = number.replace(/-/g, '')
+        name = name.toUpperCase()
+
+        // Filter in number 
+        for (var i = 0; i < number.length; ++i) {
+            if (number[i] == 0) continue
+
+            var index = parseInt(number[i])
+            result[index - 1] += number[i]
+        }
+
+        // Filter in name
+        for (var i = 0; i < name.length; ++i) {
+            if (name[i] == ' ') continue
+
+            var value = LetterToNumber[name[i]]
+            result[value - 1] += value.toString()
+        }
 
         return result
     }

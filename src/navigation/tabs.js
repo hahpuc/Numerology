@@ -11,6 +11,7 @@ import { BirthChartScreen } from '../screens/BirthChartScreen/BirthChartScreen';
 import { PyramidPeak } from '../screens/PyramidPeak/PyramidPeak';
 import { HomeContainer } from '../screens/HomeScreen/HomeContainer';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/core';
+import { PyramidPeakContainer } from '../screens/PyramidPeak/PyramidPeakContainer';
 
 const Tab = createBottomTabNavigator();
 
@@ -103,7 +104,7 @@ const Tabs = () => {
             <Tab.Screen name="BirthChart" component={BirthChartContainer}
 
             />
-            <Tab.Screen name="Pyramid" component={PyramidPeak} />
+            <Tab.Screen name="Pyramid" component={PyramidPeakContainer} />
         </Tab.Navigator>
     );
 };

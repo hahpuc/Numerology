@@ -142,7 +142,7 @@ export class Home extends Component {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}>
-                                <Text style={{ ...FONTS.body1 }}>{this.state.name.toUpperCase()}</Text>
+                                <Text style={{ ...FONTS.body1 }}>{this.state.name}</Text>
                                 <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
                             </View>
 

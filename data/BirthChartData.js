@@ -2,7 +2,7 @@ export const BirthChartData = {
     // Số 1 
     '': {
         title: '',
-        describe: ''
+        describe: 'Không có con số này'
     },
     '1':
     {
@@ -31,7 +31,7 @@ export const BirthChartData = {
     '11111':
     {
         id: 1,
-        title: 'Nhiều hơn năm số 1',
+        title: 'Quá nhiều số 1',
         describe: "Với năm hay sáu số 1 trên Biểu đồ ngày sinh, 'cái tôi' thường bị đề nén để giảm bớt các khó khăn trong việc diễn đạt cảm xúc cá nhân. Những người trẻ tuổi thuộc nhóm này thường cảm thấy buồn vì bị mọi người xung quanh hiểu lầm. Điều này dẫn đến sự tách rời, từ đó gây ra sự cô độc. Họ có thể phát triển theo hướng bị ám ảnh với ngoại hình và hành động của mình, cũng như thường gắn rất nhiều gương trong nhà nhưng lại có xu hướng giấu chúng đi để tránh người khác nghĩ họ quá tự tôn. Nhưng họ vẫn bí mật ngắm mình trong gương mỗi khi có dịp. Tính vị kỷ và “tự lừa mình” này có thể gây ra sự mất cân bằng về tâm thần. \n\nChúng ta có thể giúp trẻ thuộc nhóm có quá nhiều số 1 gia tăng nhận thức bằng cách cho chúng tham gia nhiều hoạt động nghệ thuật khác nhau, như viết lách, làm thơ, vẽ, làm đỏ gốm, v.v... Điều này có thể áp dụng được cho trẻ ở mọi lứa tuổi."
     },
     // Số 1 bị cô lập
@@ -39,7 +39,7 @@ export const BirthChartData = {
     {
         id: 1,
         title: 'và bị cô lập',
-        describe: "Trong trường hợp bạn có một số 1 và rất nhiều con số 3, 6, 7, 8 hoặc 9 lặp lại, số 1 của bạn sẽ bị cô lập trên Biểu đồ ngày sinh. Đây là một trường hợp đặc biệt, cần lưu ý. \n\nCụ thể, nếu xung quanh con số 1 của bạn thiếu số 2, số 5, số 4, thì tự nhiên con số 1 của bạn trở thành một “ốc đào cô đơn”. Điều này thể hiện rõ nét vì sao những người có Biểu đồ ngày sinh như thế thường cảm thấy cô độc và không ai hiểu mình. Những người này thường có nhiều con số ở hàng ngang ở trên cùng hơn (trục Trí não, tức số 3, 6 hoặc 9), hoặc có hẳn một Mũi tên Hoạt động (7-8-9). Đối với những trường hợp này, họ rất dễ bị hiểu lầm trong những điều họ nói, những việc họ làm, hoặc thấy khó giải thích được cho rõ, cho đứng những lời nói hay hành động của mình. \n\nNếu các con số còn lại trong biểu đồ của họ nhấn mạnh ở trục ngang trên cùng, những người này có thể bị hiểu lầm là lười biếng hoặc không đáng tin cậy, vì rất nhiều ý tưởng của họ không được hiện thực hóa, hoặc họ hứa nhưng hiếm khi chịu làm. Điểu này khiến họ không còn được tin cây nữa. Nhưng khổ nỗi là trong cuộc sống hằng ngày, những người xung quanh họ đều thấy được điều này, chỉ có bản thân họ thì không! Đó là vì bản chất “cái tôi” trong họ quá mạnh mẽ, tạo ra một ốc đảo lẻ loi trong họ. "
+        describe: "Ý nghĩa số 1 cô lập: \n\nTrong trường hợp bạn có một số 1 và rất nhiều con số 3, 6, 7, 8 hoặc 9 lặp lại, số 1 của bạn sẽ bị cô lập trên Biểu đồ ngày sinh. Đây là một trường hợp đặc biệt, cần lưu ý. \n\nCụ thể, nếu xung quanh con số 1 của bạn thiếu số 2, số 5, số 4, thì tự nhiên con số 1 của bạn trở thành một “ốc đào cô đơn”. Điều này thể hiện rõ nét vì sao những người có Biểu đồ ngày sinh như thế thường cảm thấy cô độc và không ai hiểu mình. Những người này thường có nhiều con số ở hàng ngang ở trên cùng hơn (trục Trí não, tức số 3, 6 hoặc 9), hoặc có hẳn một Mũi tên Hoạt động (7-8-9). Đối với những trường hợp này, họ rất dễ bị hiểu lầm trong những điều họ nói, những việc họ làm, hoặc thấy khó giải thích được cho rõ, cho đứng những lời nói hay hành động của mình. \n\nNếu các con số còn lại trong biểu đồ của họ nhấn mạnh ở trục ngang trên cùng, những người này có thể bị hiểu lầm là lười biếng hoặc không đáng tin cậy, vì rất nhiều ý tưởng của họ không được hiện thực hóa, hoặc họ hứa nhưng hiếm khi chịu làm. Điểu này khiến họ không còn được tin cây nữa. Nhưng khổ nỗi là trong cuộc sống hằng ngày, những người xung quanh họ đều thấy được điều này, chỉ có bản thân họ thì không! Đó là vì bản chất “cái tôi” trong họ quá mạnh mẽ, tạo ra một ốc đảo lẻ loi trong họ. "
     },
 
 
@@ -76,7 +76,7 @@ export const BirthChartData = {
     '22222':
     {
         id: 1,
-        title: 'Nhiều hơn năm số 2',
+        title: 'Quá nhiều số 2',
         describe: "Những người có ngày sinh mang năm số 2 rất dễ phản ứng với sự nhạy cảm đặc biệt của mình. Họ rất cần sự quan tâm và hướng dẫn cực kỳ tập trung, tận tâm từ cha mẹ, thầy cô, đặc biệt khi họ còn rất nhỏ, và họ thường thử thách lòng kiên nhẫn của những người khác tới tận cùng. "
     },
 
@@ -110,6 +110,12 @@ export const BirthChartData = {
         describe: "Trường hợp hiếm này chỉ có thể xảy ra vào một tháng duy nhất ở mỗi thế kỷ. Ở thế kỷ 20, trường hợp cuối cùng là vào ngày 31/3/1933, nghĩa là người này nếu còn sống thì cũng khá lớn tuổi rồi. Còn ở thế kỷ 21, mãi tới ngày 3/3/2033 mới có Biểu đồ ngày sinh gồm bốn số 3. Vậy nên tôi sẽ không bàn nhiều về trường hợp này. Chúng ta chỉ cần hiểu rằng càng nhiều số 3 trong biểu đồ thì mức độ tưởng tượng càng đậm, vì vậy, khó khăn càng dày."
     },
 
+    '33333':
+    {
+        title: 'Quá nhiều số 3',
+        describe: "Trường hợp hiếm này chỉ có thể xảy ra vào một tháng duy nhất ở mỗi thế kỷ. Ở thế kỷ 20, trường hợp cuối cùng là vào ngày 31/3/1933, nghĩa là người này nếu còn sống thì cũng khá lớn tuổi rồi. Còn ở thế kỷ 21, mãi tới ngày 3/3/2033 mới có Biểu đồ ngày sinh gồm bốn số 3. Vậy nên tôi sẽ không bàn nhiều về trường hợp này. Chúng ta chỉ cần hiểu rằng càng nhiều số 3 trong biểu đồ thì mức độ tưởng tượng càng đậm, vì vậy, khó khăn càng dày."
+    },
+
 
     // Số 3 bị cô lập
 
@@ -117,7 +123,7 @@ export const BirthChartData = {
     {
         id: 1,
         title: 'Số 3 bị cô lập',
-        describe: "Tương tự với số 1, vị trí số 3 nằm ở một góc (góc trái, trên cùng), nên nếu trong ngày sinh của một người có một hay nhiều số 3 và thiếu cùng lúc các số 2, 5, 6 trên biểu đồ thì cụm số 3 này sẽ nằm cô lập trên một “ốc đảo”. Đây được gọi là “Số 3 bị cô lập”, thể hiện tiềm năng manh mẽ về trí não của người có ngày sinh này bị tản mác vì không được nối với Trục ngang Thể chất (trục số 1-4-7) và sức mạnh trí não không được áp dụng vào thực tế. Càng có nhiều số 3 bị “nhốt” trong ốc đảo thì đặc điểm này càng thể hiện rõ. Khi trí tưởng tượng của họ bùng phát theo hướng tiêu cực, những người này hoặc sẽ sa vào hoang tưởng, hoặc sẽ trở thành “anh hùng trong trí tưởng tượng tiêng của họ”.\n\nLuyện tập những hoat động có thể kích hoạt sức mạnh của số 5 trên Biểu đồ ngày sinh, nỗ lực tập biểu đạt bản thân nhiều hơn và rõ ràng hơn. Các bậc cha mẹ có con thuộc nhóm này có thể cho con tham gia các khóa học diễn đạt bản thân, các hoạt động kết nối, tập yoga với các động tác có thể làm thông suốt luân xa (trung tâm năng lượng trong cơ thể) số 5 - nằm ở vùng cổ họng. Các hoạt động này giúp “điền” số 5 “ảo” vào Biểu đồ ngày sinh, giúp số 3 không còn bị cô lập trên “ốc đảo” nữa. "
+        describe: "Ý nghĩa số 3 bị cô lập: \n\nTương tự với số 1, vị trí số 3 nằm ở một góc (góc trái, trên cùng), nên nếu trong ngày sinh của một người có một hay nhiều số 3 và thiếu cùng lúc các số 2, 5, 6 trên biểu đồ thì cụm số 3 này sẽ nằm cô lập trên một “ốc đảo”. Đây được gọi là “Số 3 bị cô lập”, thể hiện tiềm năng manh mẽ về trí não của người có ngày sinh này bị tản mác vì không được nối với Trục ngang Thể chất (trục số 1-4-7) và sức mạnh trí não không được áp dụng vào thực tế. Càng có nhiều số 3 bị “nhốt” trong ốc đảo thì đặc điểm này càng thể hiện rõ. Khi trí tưởng tượng của họ bùng phát theo hướng tiêu cực, những người này hoặc sẽ sa vào hoang tưởng, hoặc sẽ trở thành “anh hùng trong trí tưởng tượng tiêng của họ”.\n\nLuyện tập những hoat động có thể kích hoạt sức mạnh của số 5 trên Biểu đồ ngày sinh, nỗ lực tập biểu đạt bản thân nhiều hơn và rõ ràng hơn. Các bậc cha mẹ có con thuộc nhóm này có thể cho con tham gia các khóa học diễn đạt bản thân, các hoạt động kết nối, tập yoga với các động tác có thể làm thông suốt luân xa (trung tâm năng lượng trong cơ thể) số 5 - nằm ở vùng cổ họng. Các hoạt động này giúp “điền” số 5 “ảo” vào Biểu đồ ngày sinh, giúp số 3 không còn bị cô lập trên “ốc đảo” nữa. "
     },
 
     // Số 4
@@ -140,6 +146,13 @@ export const BirthChartData = {
     {
         id: 1,
         title: 'Ba số 4',
+        describe: "Tất cả những đặc điểm của hai số 4 đều được thể hiện trong Biểu đồ ba số 4, nhưng với cấp độ mãnh liệt hơn, vì những người sở hữu biểu đồ này bị cột chặt vào những giá trị vật chất, đến mức mỗi khi họ có ý thức muốn thoát ra để hướng tới những giá trị cao hơn thì họ lại dễ bị các giá trị vật chất lôi kéo trở lại. Những người nhận thức được sức hút này của chủ nghĩa vật chất phải có ý chí mạnh mẽ và thái độ sẵn sàng tiếp nhận sự chỉ dẫn tận tình thì mới có thể phát triển thêm về mặt trí não, tinh thần hoặc tâm linh.\n\nNhiều người có ba số 4 thường lao vào kiếm tiền đến mức kiệt quệ mà không nhận ra bài học của họ là kiểm soát công việc để hiểu những giá trị mà công việc đó mang đến, chứ không phải vùi đầu làm tôi tớ cho nó. Khi nhận ra điều này và có ý thức thoát khỏi nó, họ sẽ có khả năng cân bằng hơn ở ba khía cạnh thể chất - tinh thần - trí não.\n\nBên cạnh đó, Thảy David, tác giả của quyển The Complete Book of Numerology, còn thấy rằng những người có ba số 4 có khuynh hướng bị yếu hai chân, do họ thường đặt quá nhiều trọng tâm lên phần chi dưới. Họ cần quan tâm đặc biệt đến đâu gối, cổ chân và bàn chân."
+    },
+
+    '4444':
+    {
+        id: 1,
+        title: 'Quá nhiều số 4',
         describe: "Tất cả những đặc điểm của hai số 4 đều được thể hiện trong Biểu đồ ba số 4, nhưng với cấp độ mãnh liệt hơn, vì những người sở hữu biểu đồ này bị cột chặt vào những giá trị vật chất, đến mức mỗi khi họ có ý thức muốn thoát ra để hướng tới những giá trị cao hơn thì họ lại dễ bị các giá trị vật chất lôi kéo trở lại. Những người nhận thức được sức hút này của chủ nghĩa vật chất phải có ý chí mạnh mẽ và thái độ sẵn sàng tiếp nhận sự chỉ dẫn tận tình thì mới có thể phát triển thêm về mặt trí não, tinh thần hoặc tâm linh.\n\nNhiều người có ba số 4 thường lao vào kiếm tiền đến mức kiệt quệ mà không nhận ra bài học của họ là kiểm soát công việc để hiểu những giá trị mà công việc đó mang đến, chứ không phải vùi đầu làm tôi tớ cho nó. Khi nhận ra điều này và có ý thức thoát khỏi nó, họ sẽ có khả năng cân bằng hơn ở ba khía cạnh thể chất - tinh thần - trí não.\n\nBên cạnh đó, Thảy David, tác giả của quyển The Complete Book of Numerology, còn thấy rằng những người có ba số 4 có khuynh hướng bị yếu hai chân, do họ thường đặt quá nhiều trọng tâm lên phần chi dưới. Họ cần quan tâm đặc biệt đến đâu gối, cổ chân và bàn chân."
     },
 
@@ -174,6 +187,13 @@ export const BirthChartData = {
         describe: "Con số này rất hiếm gặp. Người sở hữu cụm số này thường bị căng thẳng dữ dội, khiến cho họ dễ gặp các vấn đề về sức khỏe có liên quan đến vùng bụng và dạ dày. Những người này cũng dễ gặp tai nạn và thường ở trong trạng thái căng thẳng cao độ. Cuộc sống thường tạo ra các “tai nạn” để khiến chúng ta chậm bước lại hoặc quay đầu, nếu chúng ta có lỡ lạc khỏi Con đường tiến hóa của mình. Nhưng nếu không biết tự xem xét tình huống của mình, chúng ta sẽ có nguy cơ gặp thêm nhiều “tai nạn” khác trên hành trình của mình. Đây là điều rất dễ xảy ra với người có bốn số 5 trong Biểu đồ. \n\nNhững người này cũng thường cảm thấy cuộc sống rất khó hiểu, nếu họ không chịu tiếp nhận những sự hướng dẫn khôn ngoan để giúp định hướng cho bản thân mình. "
     },
 
+    '55555':
+    {
+        id: 1,
+        title: 'Quá nhiều số 5',
+        describe: "Con số này rất hiếm gặp. Người sở hữu cụm số này thường bị căng thẳng dữ dội, khiến cho họ dễ gặp các vấn đề về sức khỏe có liên quan đến vùng bụng và dạ dày. Những người này cũng dễ gặp tai nạn và thường ở trong trạng thái căng thẳng cao độ. Cuộc sống thường tạo ra các “tai nạn” để khiến chúng ta chậm bước lại hoặc quay đầu, nếu chúng ta có lỡ lạc khỏi Con đường tiến hóa của mình. Nhưng nếu không biết tự xem xét tình huống của mình, chúng ta sẽ có nguy cơ gặp thêm nhiều “tai nạn” khác trên hành trình của mình. Đây là điều rất dễ xảy ra với người có bốn số 5 trong Biểu đồ. \n\nNhững người này cũng thường cảm thấy cuộc sống rất khó hiểu, nếu họ không chịu tiếp nhận những sự hướng dẫn khôn ngoan để giúp định hướng cho bản thân mình. "
+    },
+
 
     // Số 6
 
@@ -202,6 +222,13 @@ export const BirthChartData = {
     {
         id: 1,
         title: 'Bốn số 6',
+        describe: "Người có bốn số 6 cực kỳ hiếm, xuất hiện chỉ ba lần trong một thế kỷ. Trong thế kỷ 20, ngày sinh cuối cùng có bốn số 6 là ngày 26/6/1966, và may mắn thay, ngày sinh này có các số 1, 2 và 9 giúp giảm bớt sự căng thắng của nhiều số 6 lặp lại. \n\nBốn số 6 thể hiện tiềm năng sáng tạo vượt trội. Mặt khác, các khía cạnh tiêu cực, vốn bị chi phối nặng nề bởi cảm xúc, cũng luôn chực chờ để thao túng những người có bốn số 6 trong biểu đồ. Chính vì vậy, những người này dễ bị lo âu sầu khổ, làm tốn hại đến sức khỏe của họ và các mối quan hệ bạn bè vì những lời phàn nàn không ngớt. Nếu cha mẹ nhìn ra đặc điểm này của đứa trẻ có bốn số 6 ngay từ nhỏ và kiên nhẫn hướng dẫn trẻ phát huy tiêm năng sáng tạo, thì trẻ sẽ không bị chi phối bởi những đặc điểm tiêu cực của bốn số 6. Khi được đối xử bằng tình yêu thương vô điều kiện, những người sở hữu bốn số 6 sẽ dễ dàng tìm được cách tích cực để thể hiện tài năng của mình ở các hoạt động sáng tạo. \n\nTóm lại, những người có số 6 trong ngày sinh sẽ luôn có thiên hướng sáng tạo. Chúng ta càng sớm ý thức được điều này và tập trung mài giũa nó thì càng dễ tránh được những khía cạnh tiêu cực như đã đẻ cập ở trên. Khi đó, năng lượng của bốn số 6 được giải phóng một cách tích cực và sẽ thăng hoa, giúp người sở hữu nó gặt hái được nhiều thành quả tốt đẹp. "
+    },
+
+    '66666':
+    {
+        id: 1,
+        title: 'Quá nhiều số 6',
         describe: "Người có bốn số 6 cực kỳ hiếm, xuất hiện chỉ ba lần trong một thế kỷ. Trong thế kỷ 20, ngày sinh cuối cùng có bốn số 6 là ngày 26/6/1966, và may mắn thay, ngày sinh này có các số 1, 2 và 9 giúp giảm bớt sự căng thắng của nhiều số 6 lặp lại. \n\nBốn số 6 thể hiện tiềm năng sáng tạo vượt trội. Mặt khác, các khía cạnh tiêu cực, vốn bị chi phối nặng nề bởi cảm xúc, cũng luôn chực chờ để thao túng những người có bốn số 6 trong biểu đồ. Chính vì vậy, những người này dễ bị lo âu sầu khổ, làm tốn hại đến sức khỏe của họ và các mối quan hệ bạn bè vì những lời phàn nàn không ngớt. Nếu cha mẹ nhìn ra đặc điểm này của đứa trẻ có bốn số 6 ngay từ nhỏ và kiên nhẫn hướng dẫn trẻ phát huy tiêm năng sáng tạo, thì trẻ sẽ không bị chi phối bởi những đặc điểm tiêu cực của bốn số 6. Khi được đối xử bằng tình yêu thương vô điều kiện, những người sở hữu bốn số 6 sẽ dễ dàng tìm được cách tích cực để thể hiện tài năng của mình ở các hoạt động sáng tạo. \n\nTóm lại, những người có số 6 trong ngày sinh sẽ luôn có thiên hướng sáng tạo. Chúng ta càng sớm ý thức được điều này và tập trung mài giũa nó thì càng dễ tránh được những khía cạnh tiêu cực như đã đẻ cập ở trên. Khi đó, năng lượng của bốn số 6 được giải phóng một cách tích cực và sẽ thăng hoa, giúp người sở hữu nó gặt hái được nhiều thành quả tốt đẹp. "
     },
 
@@ -236,11 +263,18 @@ export const BirthChartData = {
         describe: 'Bản thân đứa trẻ lẫn cha mẹ của những đứa trẻ có bốn số 7, sự hỗ trợ tận tình trong đời sống thực tế và tinh thần là thiết yếu, vì nếu không, cả cha mẹ lẫn đứa trẻ đều sẽ gục ngã dưới gánh nặng mà những tổ hợp những mất mát mang lại. Nhưng một lần nữa, cần phải nhấn mạnh rằng những tốn thất này có thể là những trải nghiệm đáng giá mà qua đó chúng ta sẽ học được những bài học để đời. Lộ trình đây cam go này là không thể tránh được, do đó, tốt nhất là gia đình và bản thân người mang bốn số 7 cần thay đổi quan điểm về cuộc sống, từ "ly nước đã vơi một nửa" sang "ly nước còn đầy một nửa", để có thể vượt qua chặng đường gập ghềnh này'
     },
 
+    '77777':
+    {
+        id: 1,
+        title: 'Quá nhiều số 7',
+        describe: 'Bản thân đứa trẻ lẫn cha mẹ của những đứa trẻ có bốn số 7, sự hỗ trợ tận tình trong đời sống thực tế và tinh thần là thiết yếu, vì nếu không, cả cha mẹ lẫn đứa trẻ đều sẽ gục ngã dưới gánh nặng mà những tổ hợp những mất mát mang lại. Nhưng một lần nữa, cần phải nhấn mạnh rằng những tốn thất này có thể là những trải nghiệm đáng giá mà qua đó chúng ta sẽ học được những bài học để đời. Lộ trình đây cam go này là không thể tránh được, do đó, tốt nhất là gia đình và bản thân người mang bốn số 7 cần thay đổi quan điểm về cuộc sống, từ "ly nước đã vơi một nửa" sang "ly nước còn đầy một nửa", để có thể vượt qua chặng đường gập ghềnh này'
+    },
+
     '7CL':
     {
         id: 1,
         title: ' và bị cô lập',
-        describe: "Ý nghĩa Số 7 bị cô lập \n\nSự xuất hiện của những số 7 bị cô lập có ý nghĩa rằng những bài học hy sinh đến với bạn trong một, hai hoặc cả 8 khía cạnh đề cập ở trên (tùy thuộc theo số lượng số 7 xuất hiện trong ô này) sẽ lặp đi lặp lại, với mức độ ngày càng nặng nề hơn, mỗi lúc một cam go hơn... cho đến khi bạn nhận ra bài học mà bạn cần phải học. Chỉ khi đó, những “bài học” như vậy mới dừng lại. \n\nVì vậy, những người thuộc nhóm này không còn cách nào khác ngoài việc dũng cảm nhìn vào sự thật để nhận ra giá trị to lớn của “Số 7 bị cô lập”: Số 7 đại điện cho sự lĩnh hội những triết lý sâu sắc, do đó bản thân người sở hữu những “Số 7 bị cô lập” sẽ có khả năng vượt trội trong việc cảm nhận những triết lý này. "
+        describe: "Ý nghĩa Số 7 bị cô lập: \n\nSự xuất hiện của những số 7 bị cô lập có ý nghĩa rằng những bài học hy sinh đến với bạn trong một, hai hoặc cả 8 khía cạnh đề cập ở trên (tùy thuộc theo số lượng số 7 xuất hiện trong ô này) sẽ lặp đi lặp lại, với mức độ ngày càng nặng nề hơn, mỗi lúc một cam go hơn... cho đến khi bạn nhận ra bài học mà bạn cần phải học. Chỉ khi đó, những “bài học” như vậy mới dừng lại. \n\nVì vậy, những người thuộc nhóm này không còn cách nào khác ngoài việc dũng cảm nhìn vào sự thật để nhận ra giá trị to lớn của “Số 7 bị cô lập”: Số 7 đại điện cho sự lĩnh hội những triết lý sâu sắc, do đó bản thân người sở hữu những “Số 7 bị cô lập” sẽ có khả năng vượt trội trong việc cảm nhận những triết lý này. "
     },
 
 
@@ -282,6 +316,13 @@ export const BirthChartData = {
         describe: "Những người có bốn số 8 trong ngày sinh thường cực kỳ năng động, đôi khi trở thành “tăng động”. Những đứa trẻ có bốn số 8 không bao giờ chịu ngồi yên, vì đối với chúng thì đây là hành động “bất thường”, khiến cảm xúc của chúng bị dồn nén và cuối cùng sẽ “bùng nổ” thành cảnh gà bay chó sủa. Người thuộc nhóm này cần được dạy để phát triển khả năng định hướng chính xác từ khi còn nhỏ, và nên được đưa đi đó đi đây thường xuyên cho đến khi họ đủ trưởng thành để có thể tự đi một mình. "
     },
 
+    '88888':
+    {
+        id: 1,
+        title: 'Qúa nhiều số 8',
+        describe: "Những người có bốn số 8 trong ngày sinh thường cực kỳ năng động, đôi khi trở thành “tăng động”. Những đứa trẻ có bốn số 8 không bao giờ chịu ngồi yên, vì đối với chúng thì đây là hành động “bất thường”, khiến cảm xúc của chúng bị dồn nén và cuối cùng sẽ “bùng nổ” thành cảnh gà bay chó sủa. Người thuộc nhóm này cần được dạy để phát triển khả năng định hướng chính xác từ khi còn nhỏ, và nên được đưa đi đó đi đây thường xuyên cho đến khi họ đủ trưởng thành để có thể tự đi một mình. "
+    },
+
 
     // Số 9 
 
@@ -317,6 +358,13 @@ export const BirthChartData = {
     {
         id: 1,
         title: 'Năm số 9',
+        describe: "Một số ít đứa trẻ được sinh ra trong tháng 9 năm 1999 có năm số 9 trong ngày sinh của mình. Nếu không có sự trợ giúp của bộ môn Nhân số học, chúng ta gần như không thể hiểu được những người này, và thậm chí khi đã hiểu được thì việc hỗ trợ họ lại là một thử thách lớn hơn nữa. \n\nNhững đặc điểm của bốn số 9 đều có thể được lặp lại ở đây, với mức độ cao hơn. Hy vọng cha mẹ của những đứa trẻ này được trang bị đầy đủ kiến thức về Nhân số học để có thể vượt qua thử thách và dạy các con về tính thực tế và lòng trắc ẩn. "
+    },
+
+    '999999':
+    {
+        id: 1,
+        title: 'Quá nhiều 9',
         describe: "Một số ít đứa trẻ được sinh ra trong tháng 9 năm 1999 có năm số 9 trong ngày sinh của mình. Nếu không có sự trợ giúp của bộ môn Nhân số học, chúng ta gần như không thể hiểu được những người này, và thậm chí khi đã hiểu được thì việc hỗ trợ họ lại là một thử thách lớn hơn nữa. \n\nNhững đặc điểm của bốn số 9 đều có thể được lặp lại ở đây, với mức độ cao hơn. Hy vọng cha mẹ của những đứa trẻ này được trang bị đầy đủ kiến thức về Nhân số học để có thể vượt qua thử thách và dạy các con về tính thực tế và lòng trắc ẩn. "
     },
 
