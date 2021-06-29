@@ -8,6 +8,7 @@ import calculator from '../../helper/calculator';
 import TextCollapse from '../../components/TextCollapse.js'
 import { LifePathNumber } from '../../../data/LifePathNumber';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { LogBox } from 'react-native';
 
 export class Home extends Component {
     constructor(props) {
@@ -37,8 +38,17 @@ export class Home extends Component {
 
         // Return the function to unsubscribe from the event so it gets removed on unmount
         this.setState({ unsubscribe: unsubscribe })
+        LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
     }
 
+
+
+    // componentDidUpdate(prevState) {
+    //     // console.log("COMPONENT DID UPDATE")
+    //     if (this.state.name != prevState.name) {
+    //         this.getData()
+    //     }
+    // }
     componentWillUnmount() {
         if (this.state.unsubscribe) {
 
@@ -94,6 +104,7 @@ export class Home extends Component {
         </TouchableOpacity>
     );
 
+
     render() {
 
         return (
@@ -123,38 +134,38 @@ export class Home extends Component {
                             navigateToSetting={() => this.props.navigation.push("Setting")}
                         />
                     </View>
-                    {/* <ScrollView showsVerticalScrollIndicator={false}> */}
-                    <View style={{ flex: 1, paddingBottom: 16, }}>
-                        {/*Name and BirthDate */}
-                        <View style={{
-                            height: 100,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                        }}>
-                            <Text style={{ ...FONTS.body1 }}>{this.state.name}</Text>
-                            <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
-                        </View>
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                        <View style={{ flex: 1, paddingBottom: 16, }}>
+                            {/*Name and BirthDate */}
+                            <View style={{
+                                height: 100,
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}>
+                                <Text style={{ ...FONTS.body1 }}>{this.state.name.toUpperCase()}</Text>
+                                <Text style={{ ...FONTS.light2 }}>{this.state.birthdate}</Text>
+                            </View>
 
 
-                        {/*Information */}
-                        <View style={{ flex: 1 }}>
-                            <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                                <Text style={{ ...FONTS.body2 }}>Số chủ đạo: </Text>
-                                <Text style={{ ...FONTS.h2 }}>{this.state.lifePathNumber}</Text>
-                            </View>
-                            <View>
-                                {/* FlatList */}
-                                <FlatList
-                                    //horizontal={true}
-                                    data={LifePathNumber[this.state.indexLifePathNumber][this.state.lifePathNumber]}
-                                    scrollEnabled={false}
-                                    renderItem={({ item, index }) => this.renderItemComponent(item, index)}
-                                    keyExtractor={item => item.id}
-                                />
+                            {/*Information */}
+                            <View style={{ flex: 1 }}>
+                                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                                    <Text style={{ ...FONTS.body2 }}>Số chủ đạo: </Text>
+                                    <Text style={{ ...FONTS.h2 }}>{this.state.lifePathNumber}</Text>
+                                </View>
+                                <View>
+                                    {/* FlatList */}
+                                    <FlatList
+                                        //horizontal={true}
+                                        data={LifePathNumber[this.state.indexLifePathNumber][this.state.lifePathNumber]}
+                                        scrollEnabled={false}
+                                        renderItem={({ item, index }) => this.renderItemComponent(item, index)}
+                                        keyExtractor={item => item.id}
+                                    />
+                                </View>
                             </View>
                         </View>
-                    </View>
-                    {/* </ScrollView> */}
+                    </ScrollView>
 
                     <CardInformationModal
                         cardTitle={this.state.cardtitle}

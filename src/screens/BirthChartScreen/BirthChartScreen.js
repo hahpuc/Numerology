@@ -7,6 +7,7 @@ import { COLORS, FONTS } from '../../constants';
 import calculator from '../../helper/calculator';
 import ultilities from '../../helper/ultilities';
 import { BirthChartData, DataBirth } from '../../../data/BirthChartData';
+import CheckIsolated from '../../helper/CheckIsolated';
 
 export class BirthChartScreen extends Component {
 
@@ -33,6 +34,7 @@ export class BirthChartScreen extends Component {
             //Những số bị cô lập
             isolatedTitle: '',
             isolatedDescribe: ''
+
         }
     }
 
@@ -94,56 +96,13 @@ export class BirthChartScreen extends Component {
 
     // Đổ data vào cardInformation
     onNumberPress(numberfilled, numbercard) {
-        this.isIsolated(numbercard)
-        console.log(numberfilled, numbercard, this.state.isolatedTitle, this.state.isolatedDescribe)
-        // if(numberfilled == '' && numbercard == 7 )
-        // {
-        //     this.setState({
-        //         cardtitle: BirthChartData['Not7'].title,
-        //         carddescribe:BirthChartData['Not7'].describe
-        //     })
-        // }
+        var isolated = CheckIsolated.isIsolated(this.state.filterChart, numbercard)
+
         this.setState({
-            cardtitle: BirthChartData[numberfilled].title + this.state.isolatedTitle,
-            carddescribe: BirthChartData[numberfilled].describe + '\n\n' + this.state.isolatedDescribe,
+            cardtitle: BirthChartData[numberfilled].title + isolated.isolatedTitle,
+            carddescribe: BirthChartData[numberfilled].describe + '\n\n' + isolated.isolatedDescribe,
             cardInformationVisible: !this.state.cardInformationVisible
         })
-    }
-
-    // Kiểm tra số bị cô lập và thiếu số 7 và 9
-    isIsolated(num) {
-
-        if (this.state.filterChart[4] == '' && (num == 1 || num == 3 || num == 7 || num == 9)) {
-
-            if (num == 1 && this.state.filterChart[0] != '' && this.state.filterChart[1] == '' && this.state.filterChart[3] == '')
-                this.state.isolatedTitle = BirthChartData['1CL'].title
-            this.state.isolatedDescribe = BirthChartData['1CL'].describe
-
-            if (num == 3 && this.state.filterChart[2] != '' && this.state.filterChart[1] == '' && this.state.filterChart[5] == '')
-                this.state.isolatedTitle = BirthChartData['3CL'].title
-            this.state.isolatedDescribe = BirthChartData['3CL'].describe
-
-            if (num == 7 && this.state.filterChart[6] != '' && this.state.filterChart[3] == '' && this.state.filterChart[7] == '')
-                this.state.isolatedTitle = BirthChartData['7CL'].title
-            this.state.isolatedDescribe = BirthChartData['7CL'].describe
-
-            if (num == 9 && this.state.filterChart[8] != '' && this.state.filterChart[5] == '' && this.state.filterChart[7] == '')
-                this.state.isolatedTitle = BirthChartData['9CL'].title
-            this.state.isolatedDescribe = BirthChartData['9CL'].describe
-        }
-
-        else if (this.state.filterChart[6] == '' && num == 7) {
-            this.state.isolatedTitle = BirthChartData['Not7'].title
-            this.state.isolatedDescribe = BirthChartData['Not7'].describe
-        }
-
-        else if (this.state.filterChart[8] == '' && num == 9) {
-            this.state.isolatedTitle = BirthChartData['Not9'].title
-            this.state.isolatedDescribe = BirthChartData['Not9'].describe
-        }
-        else
-            this.state.isolatedTitle = ''
-        this.state.isolatedDescribe = ''
     }
 
     render() {

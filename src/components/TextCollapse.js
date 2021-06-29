@@ -85,5 +85,6 @@ const styles = StyleSheet.create({
         margin: 6,
         color: COLORS.black,
         textAlign: 'justify',
+        letterSpacing:0.2
     },
 })
