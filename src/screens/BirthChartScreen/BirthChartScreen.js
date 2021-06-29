@@ -8,6 +8,8 @@ import calculator from '../../helper/calculator';
 import ultilities from '../../helper/ultilities';
 import { BirthChartData, DataBirth } from '../../../data/BirthChartData';
 import CheckIsolated from '../../helper/CheckIsolated';
+import { SoulNumberData } from '../../../data/SoulNumberData';
+import { OuterNumerData } from '../../../data/OuterNumberData';
 
 export class BirthChartScreen extends Component {
 
@@ -33,8 +35,11 @@ export class BirthChartScreen extends Component {
 
             //Những số bị cô lập
             isolatedTitle: '',
-            isolatedDescribe: ''
+            isolatedDescribe: '',
 
+            // Type show: only dateBirth or (dateBirth + name) 
+            isOnlyDateBirth: true,
+            typeName: 'Biểu đồ ngày sinh',
         }
     }
 
@@ -68,7 +73,12 @@ export class BirthChartScreen extends Component {
             // Get LifePathNumber 
             var lifePath = calculator.calNumber(birthdate)
             var nameNumber = calculator.nameInfo(ultilities.removeVietNameseTone(username))
-            var chartResult = calculator.filterBirthChart(birthdate, ultilities.removeVietNameseTone(username))
+
+            if (this.state.isOnlyDateBirth == true) {
+                var chartResult = calculator.filterBirthChart(birthdate)
+            } else {
+                var chartResult = calculator.filterFullBirthChart(birthdate, ultilities.removeVietNameseTone(username))
+            }
 
             if (username !== null) {
                 this.setState({
@@ -79,7 +89,8 @@ export class BirthChartScreen extends Component {
                         soul: nameNumber.soul,
                         outer: nameNumber.outer
                     },
-                    filterChart: chartResult
+                    filterChart: chartResult,
+                    typeName: (this.state.isOnlyDateBirth) ? 'Biểu đồ ngày sinh' : 'Biểu đồ tên & ngày sinh',
                 })
             } else {
                 this.setState({
@@ -87,6 +98,7 @@ export class BirthChartScreen extends Component {
                     birthdate: '',
                     name: '',
                     filterChart: '',
+                    typeName: (this.state.isOnlyDateBirth) ? 'Biểu đồ ngày sinh' : 'Biểu đồ tên & ngày sinh',
                 })
             }
         } catch (e) {
@@ -96,11 +108,44 @@ export class BirthChartScreen extends Component {
 
     // Đổ data vào cardInformation
     onNumberPress(numberfilled, numbercard) {
+
+        var numberValidate = ultilities.checkOutOfIndexBirthChartData(numberfilled)
+
+        console.log("NUMBER VALIDATE ", numberValidate)
+
         var isolated = CheckIsolated.isIsolated(this.state.filterChart, numbercard)
 
         this.setState({
-            cardtitle: BirthChartData[numberfilled].title + isolated.isolatedTitle,
-            carddescribe: BirthChartData[numberfilled].describe + '\n\n' + isolated.isolatedDescribe,
+            cardtitle: BirthChartData[numberValidate].title + isolated.isolatedTitle,
+            carddescribe: BirthChartData[numberValidate].describe + '\n\n' + isolated.isolatedDescribe,
+            cardInformationVisible: !this.state.cardInformationVisible
+        })
+    }
+
+    handleChangeToNameType = () => {
+        console.log("Handle Change Name Type")
+
+        this.setState({
+            isOnlyDateBirth: !this.state.isOnlyDateBirth,
+        })
+
+        this.getData()
+    }
+
+    onSoulNumberPress = (value) => {
+        // console.log(SoulNumberData[value])
+
+        this.setState({
+            cardtitle: SoulNumberData[value].title,
+            carddescribe: SoulNumberData[value].describe,
+            cardInformationVisible: !this.state.cardInformationVisible
+        })
+    }
+
+    onOuterNumberPress = (value) => {
+        this.setState({
+            cardtitle: OuterNumerData[value].title,
+            carddescribe: OuterNumerData[value].describe,
             cardInformationVisible: !this.state.cardInformationVisible
         })
     }
@@ -120,7 +165,7 @@ export class BirthChartScreen extends Component {
                     <View style={styles.container}>
                         <View style={{}}>
                             <View style={{ marginTop: 16, height: 32, paddingLeft: 16 }}>
-                                <Text style={{ ...FONTS.light2 }}>Biểu đồ ngày sinh</Text>
+                                <Text style={{ ...FONTS.light2 }}>{this.state.typeName}</Text>
                             </View>
 
                             {/* 3 - 6 - 9 */}
@@ -200,7 +245,8 @@ export class BirthChartScreen extends Component {
                             <View style={{ marginTop: 16, marginBottom: 16, height: 50, alignItems: 'center' }}>
                                 <TouchableOpacity
                                     style={[styles.button, { width: buttonWidth }]}
-                                    onPress={() => { this.props.navigation.push("BirthChartResult") }}
+                                    // onPress={() => { this.props.navigation.push("BirthChartResult") }}
+                                    onPress={this.handleChangeToNameType}
                                 >
                                     <Text style={{ ...FONTS.body3, color: COLORS.white }}> Khám phá </Text>
                                 </TouchableOpacity>
@@ -216,21 +262,21 @@ export class BirthChartScreen extends Component {
                             <View style={{ marginBottom: 16, marginTop: 16, flexDirection: 'row' }}>
                                 <TouchableOpacity
                                     style={{ paddingLeft: 16 }}
-                                    onPress={() => this.onNumberPress("1")}
+                                    onPress={() => this.onOuterNumberPress(this.state.number.outer)}
                                 >
                                     <CardNumber color={COLORS.brownCard} title='Số biểu đạt' number={this.state.number.outer} />
                                 </TouchableOpacity>
 
-                                <TouchableOpacity
+                                <View
                                     style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress("4")}
+                                // onPress={() => this.onNumberPress("4")}
                                 >
                                     <CardNumber color={COLORS.orangeCard} title='Số chủ đạo' number={this.state.number.lifePath} />
-                                </TouchableOpacity>
+                                </View>
 
                                 <TouchableOpacity
                                     style={{ paddingLeft: 8 }}
-                                    onPress={() => this.onNumberPress("7")}
+                                    onPress={() => this.onSoulNumberPress(this.state.number.soul)}
                                 >
                                     <CardNumber color={COLORS.brownCard} title='Số linh hồn' number={this.state.number.soul} />
                                 </TouchableOpacity>
