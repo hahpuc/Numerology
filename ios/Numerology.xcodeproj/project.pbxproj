@@ -8,30 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* NumerologyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NumerologyTests.m */; };
-		0E1FD0A29A684823A52D3536 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93876D7F1D9B444E89057F2A /* RobotoCondensed-Bold.ttf */; };
-		13570AB252684B7F9DCC1C4E /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4746EC9F72A0447283818FC8 /* RobotoCondensed-BoldItalic.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		196A3B0873514B3EA960551B /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B51FA5CE31C4A93BA02207F /* Roboto-LightItalic.ttf */; };
-		25A6B243414F4F639CD7ABE0 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09434750BC69463998694787 /* Roboto-Light.ttf */; };
-		34866766C7DB997D703E886C /* libPods-Numerology-NumerologyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9857BF66F0932FC0E71379 /* libPods-Numerology-NumerologyTests.a */; };
-		37425C0BD82841D38930028E /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B850DEB1226D402A809AF4E3 /* Roboto-BoldItalic.ttf */; };
-		442A87F04BD04903AC390314 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC10A47BF948B9B8E375CB /* RobotoCondensed-LightItalic.ttf */; };
-		465D07586FBF4D7FB899F568 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6A81CD647DB439086E69EA6 /* RobotoCondensed-Italic.ttf */; };
-		466091FDD1224544A0F72C53 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EAC66B699BA42A3AE750D8D /* Roboto-Thin.ttf */; };
-		4768A9A5275441F9B6DA773F /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4476DE092ADA4D7BAAB090E5 /* Roboto-Bold.ttf */; };
-		5B064B726D6245E481DBFB6A /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68F2898C29704D90873B467F /* RobotoCondensed-Light.ttf */; };
-		7992639AD9964348BEDD874D /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 473EBCB14C1243AFB52F093B /* Roboto-Medium.ttf */; };
+		28D776032A8845A588ECE5F9 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B989E8B35B4E6E90E361CB /* Roboto-BoldItalic.ttf */; };
+		2AEA5A820F6C414DB263FD15 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC2F10F9BE94474B9220EFD9 /* Roboto-Regular.ttf */; };
+		3453DA1BCFB04744B17E9DBE /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7644CC75E3C841799A22578B /* Roboto-BlackItalic.ttf */; };
+		41450FAC5122D20A53CE357A /* libPods-Numerology-NumerologyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FDB74BC05E109CB737E2EB2 /* libPods-Numerology-NumerologyTests.a */; };
+		4F19615409554E06B8846D78 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD9251D69C0D4351ADF94A8C /* Roboto-Black.ttf */; };
+		622277AF26FD46EAB983E5D1 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 620EC31A8B804FDAB5F927D2 /* Roboto-Bold.ttf */; };
+		6C6B727D06D646D4AB7B771E /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA5E3D8625046FFA7205F57 /* RobotoCondensed-BoldItalic.ttf */; };
+		7B74A0261E594343A2DA4BAC /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75E816DAFF5A468E9F942274 /* Roboto-Thin.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9DF9FB06F38D4CDD9986D9DC /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A803872DEA346EEA2BA4757 /* Roboto-Italic.ttf */; };
-		AE6F9BE39F34427E8B8B8509 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FAC4B4F03C84B599F9B43F2 /* Roboto-MediumItalic.ttf */; };
-		C170030413854E14997FB7F6 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42E013E1699E437A9B302199 /* RobotoCondensed-Regular.ttf */; };
-		C3A15217974D4F599C77BBF6 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1409E9778E84BB2B03BD6F6 /* Roboto-ThinItalic.ttf */; };
-		C4AC2BB8F8E747859C7C9B14 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1928A3D35C3C4606AB6809EA /* Roboto-BlackItalic.ttf */; };
-		CBEA029A16C6CDE343295B25 /* libPods-Numerology.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F7A6F67D8C2D7A956E2DB8 /* libPods-Numerology.a */; };
-		DEFE0BC14C4B477E9E0A8B30 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C816F6C0E31457CB93C1262 /* Roboto-Regular.ttf */; };
-		FA98925DE4BB4C0D8D2027C0 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33FD5B7F73074031BCA6344C /* Roboto-Black.ttf */; };
+		88324C50429E4084A2DF7448 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 745789CF8DC549C5B11245E8 /* RobotoCondensed-Bold.ttf */; };
+		903A5CEBBD6C4A8C8925CF8E /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E8E8E85CABA44E9BDEA09F7 /* Roboto-LightItalic.ttf */; };
+		AB82076A82DA486A99D8DF41 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F5DCEBA209448818051B39F /* Roboto-Medium.ttf */; };
+		AC59C862D74D4124B53EF1D2 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6596B67AC21D42BD8BFB045B /* RobotoCondensed-Regular.ttf */; };
+		AEB3CA156E804329BE223364 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01034F706F7B48799A946AFB /* Roboto-ThinItalic.ttf */; };
+		B697B8C3F712DC938A5FB2B0 /* libPods-Numerology.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13107405BC5E4250B2511678 /* libPods-Numerology.a */; };
+		B725AB06FBEC46D1B566F384 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 247BF411DD484848AD66F0A3 /* Roboto-Italic.ttf */; };
+		BB169669244248FDBC2E3498 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F5CFCFCD33443CB92DB2A89 /* RobotoCondensed-Light.ttf */; };
+		BE35A834F9404BF7B5AEF784 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6BBCD259BD3429C84DD9AE1 /* Roboto-MediumItalic.ttf */; };
+		C90A940192C44AD6A26CC51C /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B93EB43DD00942EC924A44E2 /* RobotoCondensed-Italic.ttf */; };
+		EA12B77AABE64EA8B581BDF0 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 932018083DF34D809F2D045D /* Roboto-Light.ttf */; };
+		F8124F73BDB84B3D85AA1ED8 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC19C275D84290A747E0E0 /* RobotoCondensed-LightItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,37 +48,37 @@
 		00E356EE1AD99517003FC87E /* NumerologyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumerologyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* NumerologyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumerologyTests.m; sourceTree = "<group>"; };
-		03F7A6F67D8C2D7A956E2DB8 /* libPods-Numerology.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Numerology.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		09434750BC69463998694787 /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
-		1371472DCBA97190A9B36948 /* Pods-Numerology-NumerologyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Numerology-NumerologyTests.debug.xcconfig"; path = "Target Support Files/Pods-Numerology-NumerologyTests/Pods-Numerology-NumerologyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		01034F706F7B48799A946AFB /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ThinItalic.ttf"; path = "../src/assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		13107405BC5E4250B2511678 /* libPods-Numerology.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Numerology.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Numerology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numerology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Numerology/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Numerology/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Numerology/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Numerology/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Numerology/main.m; sourceTree = "<group>"; };
-		1928A3D35C3C4606AB6809EA /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BlackItalic.ttf"; path = "../assets/fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
-		1DED3B1B8803E7F0F16EFDFA /* Pods-Numerology.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Numerology.debug.xcconfig"; path = "Target Support Files/Pods-Numerology/Pods-Numerology.debug.xcconfig"; sourceTree = "<group>"; };
-		2ACC10A47BF948B9B8E375CB /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-LightItalic.ttf"; path = "../assets/fonts/RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
-		33FD5B7F73074031BCA6344C /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../assets/fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
-		3A803872DEA346EEA2BA4757 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Italic.ttf"; path = "../assets/fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
-		3EAC66B699BA42A3AE750D8D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		42E013E1699E437A9B302199 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Regular.ttf"; path = "../assets/fonts/RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
-		4476DE092ADA4D7BAAB090E5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		473EBCB14C1243AFB52F093B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		4746EC9F72A0447283818FC8 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-BoldItalic.ttf"; path = "../assets/fonts/RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
-		4FAC4B4F03C84B599F9B43F2 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-MediumItalic.ttf"; path = "../assets/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
-		68F2898C29704D90873B467F /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Light.ttf"; path = "../assets/fonts/RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		16B515DDE10AD0AA90AD7DAB /* Pods-Numerology-NumerologyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Numerology-NumerologyTests.debug.xcconfig"; path = "Target Support Files/Pods-Numerology-NumerologyTests/Pods-Numerology-NumerologyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1DA5E3D8625046FFA7205F57 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-BoldItalic.ttf"; path = "../src/assets/fonts/RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		247BF411DD484848AD66F0A3 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Italic.ttf"; path = "../src/assets/fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		2DDC19C275D84290A747E0E0 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-LightItalic.ttf"; path = "../src/assets/fonts/RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		4963B03ED7D964DDB32CF88B /* Pods-Numerology.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Numerology.release.xcconfig"; path = "Target Support Files/Pods-Numerology/Pods-Numerology.release.xcconfig"; sourceTree = "<group>"; };
+		5F5CFCFCD33443CB92DB2A89 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Light.ttf"; path = "../src/assets/fonts/RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		61C73FC9C1D5B57313229C30 /* Pods-Numerology-NumerologyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Numerology-NumerologyTests.release.xcconfig"; path = "Target Support Files/Pods-Numerology-NumerologyTests/Pods-Numerology-NumerologyTests.release.xcconfig"; sourceTree = "<group>"; };
+		620EC31A8B804FDAB5F927D2 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		6596B67AC21D42BD8BFB045B /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Regular.ttf"; path = "../src/assets/fonts/RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		745789CF8DC549C5B11245E8 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Bold.ttf"; path = "../src/assets/fonts/RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		75E816DAFF5A468E9F942274 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../src/assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		7644CC75E3C841799A22578B /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BlackItalic.ttf"; path = "../src/assets/fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		7F5DCEBA209448818051B39F /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../src/assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Numerology/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8C816F6C0E31457CB93C1262 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		93876D7F1D9B444E89057F2A /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Bold.ttf"; path = "../assets/fonts/RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
-		9B51FA5CE31C4A93BA02207F /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
-		B850DEB1226D402A809AF4E3 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BoldItalic.ttf"; path = "../assets/fonts/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
-		CE9857BF66F0932FC0E71379 /* libPods-Numerology-NumerologyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Numerology-NumerologyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1409E9778E84BB2B03BD6F6 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ThinItalic.ttf"; path = "../assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
-		D78D7591181185BC0EC71358 /* Pods-Numerology.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Numerology.release.xcconfig"; path = "Target Support Files/Pods-Numerology/Pods-Numerology.release.xcconfig"; sourceTree = "<group>"; };
-		E6A81CD647DB439086E69EA6 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Italic.ttf"; path = "../assets/fonts/RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
-		E99DFBB391800E8F4DE3D7CE /* Pods-Numerology-NumerologyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Numerology-NumerologyTests.release.xcconfig"; path = "Target Support Files/Pods-Numerology-NumerologyTests/Pods-Numerology-NumerologyTests.release.xcconfig"; sourceTree = "<group>"; };
+		8E8E8E85CABA44E9BDEA09F7 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../src/assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		932018083DF34D809F2D045D /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../src/assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
+		96B989E8B35B4E6E90E361CB /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BoldItalic.ttf"; path = "../src/assets/fonts/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		9FDB74BC05E109CB737E2EB2 /* libPods-Numerology-NumerologyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Numerology-NumerologyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A732A5C20C5D03AEB4843FD5 /* Pods-Numerology.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Numerology.debug.xcconfig"; path = "Target Support Files/Pods-Numerology/Pods-Numerology.debug.xcconfig"; sourceTree = "<group>"; };
+		B6BBCD259BD3429C84DD9AE1 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-MediumItalic.ttf"; path = "../src/assets/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		B93EB43DD00942EC924A44E2 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Italic.ttf"; path = "../src/assets/fonts/RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		CC2F10F9BE94474B9220EFD9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		DD9251D69C0D4351ADF94A8C /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../src/assets/fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34866766C7DB997D703E886C /* libPods-Numerology-NumerologyTests.a in Frameworks */,
+				41450FAC5122D20A53CE357A /* libPods-Numerology-NumerologyTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBEA029A16C6CDE343295B25 /* libPods-Numerology.a in Frameworks */,
+				B697B8C3F712DC938A5FB2B0 /* libPods-Numerology.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,48 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				03F7A6F67D8C2D7A956E2DB8 /* libPods-Numerology.a */,
-				CE9857BF66F0932FC0E71379 /* libPods-Numerology-NumerologyTests.a */,
+				13107405BC5E4250B2511678 /* libPods-Numerology.a */,
+				9FDB74BC05E109CB737E2EB2 /* libPods-Numerology-NumerologyTests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3AEC260B8AA348F98344F735 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				33FD5B7F73074031BCA6344C /* Roboto-Black.ttf */,
-				1928A3D35C3C4606AB6809EA /* Roboto-BlackItalic.ttf */,
-				4476DE092ADA4D7BAAB090E5 /* Roboto-Bold.ttf */,
-				B850DEB1226D402A809AF4E3 /* Roboto-BoldItalic.ttf */,
-				3A803872DEA346EEA2BA4757 /* Roboto-Italic.ttf */,
-				09434750BC69463998694787 /* Roboto-Light.ttf */,
-				9B51FA5CE31C4A93BA02207F /* Roboto-LightItalic.ttf */,
-				473EBCB14C1243AFB52F093B /* Roboto-Medium.ttf */,
-				4FAC4B4F03C84B599F9B43F2 /* Roboto-MediumItalic.ttf */,
-				8C816F6C0E31457CB93C1262 /* Roboto-Regular.ttf */,
-				3EAC66B699BA42A3AE750D8D /* Roboto-Thin.ttf */,
-				D1409E9778E84BB2B03BD6F6 /* Roboto-ThinItalic.ttf */,
-				93876D7F1D9B444E89057F2A /* RobotoCondensed-Bold.ttf */,
-				4746EC9F72A0447283818FC8 /* RobotoCondensed-BoldItalic.ttf */,
-				E6A81CD647DB439086E69EA6 /* RobotoCondensed-Italic.ttf */,
-				68F2898C29704D90873B467F /* RobotoCondensed-Light.ttf */,
-				2ACC10A47BF948B9B8E375CB /* RobotoCondensed-LightItalic.ttf */,
-				42E013E1699E437A9B302199 /* RobotoCondensed-Regular.ttf */,
-			);
-			name = Resources;
-			path = "";
-			sourceTree = "<group>";
-		};
-		53140548D5CEFEF6BE745D55 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1DED3B1B8803E7F0F16EFDFA /* Pods-Numerology.debug.xcconfig */,
-				D78D7591181185BC0EC71358 /* Pods-Numerology.release.xcconfig */,
-				1371472DCBA97190A9B36948 /* Pods-Numerology-NumerologyTests.debug.xcconfig */,
-				E99DFBB391800E8F4DE3D7CE /* Pods-Numerology-NumerologyTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -195,8 +157,8 @@
 				00E356EF1AD99517003FC87E /* NumerologyTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				53140548D5CEFEF6BE745D55 /* Pods */,
-				3AEC260B8AA348F98344F735 /* Resources */,
+				C58DA099307FE0935078B314 /* Pods */,
+				FB2FBD93EE3D4599B3E61DDE /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -212,6 +174,42 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C58DA099307FE0935078B314 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A732A5C20C5D03AEB4843FD5 /* Pods-Numerology.debug.xcconfig */,
+				4963B03ED7D964DDB32CF88B /* Pods-Numerology.release.xcconfig */,
+				16B515DDE10AD0AA90AD7DAB /* Pods-Numerology-NumerologyTests.debug.xcconfig */,
+				61C73FC9C1D5B57313229C30 /* Pods-Numerology-NumerologyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB2FBD93EE3D4599B3E61DDE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD9251D69C0D4351ADF94A8C /* Roboto-Black.ttf */,
+				7644CC75E3C841799A22578B /* Roboto-BlackItalic.ttf */,
+				620EC31A8B804FDAB5F927D2 /* Roboto-Bold.ttf */,
+				96B989E8B35B4E6E90E361CB /* Roboto-BoldItalic.ttf */,
+				247BF411DD484848AD66F0A3 /* Roboto-Italic.ttf */,
+				932018083DF34D809F2D045D /* Roboto-Light.ttf */,
+				8E8E8E85CABA44E9BDEA09F7 /* Roboto-LightItalic.ttf */,
+				7F5DCEBA209448818051B39F /* Roboto-Medium.ttf */,
+				B6BBCD259BD3429C84DD9AE1 /* Roboto-MediumItalic.ttf */,
+				CC2F10F9BE94474B9220EFD9 /* Roboto-Regular.ttf */,
+				75E816DAFF5A468E9F942274 /* Roboto-Thin.ttf */,
+				01034F706F7B48799A946AFB /* Roboto-ThinItalic.ttf */,
+				745789CF8DC549C5B11245E8 /* RobotoCondensed-Bold.ttf */,
+				1DA5E3D8625046FFA7205F57 /* RobotoCondensed-BoldItalic.ttf */,
+				B93EB43DD00942EC924A44E2 /* RobotoCondensed-Italic.ttf */,
+				5F5CFCFCD33443CB92DB2A89 /* RobotoCondensed-Light.ttf */,
+				2DDC19C275D84290A747E0E0 /* RobotoCondensed-LightItalic.ttf */,
+				6596B67AC21D42BD8BFB045B /* RobotoCondensed-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,12 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NumerologyTests" */;
 			buildPhases = (
-				65C13BF2C52F101342EB46B4 /* [CP] Check Pods Manifest.lock */,
+				28CD6C773D7DE6A50FC633A7 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				994557233D298048B2983F59 /* [CP] Embed Pods Frameworks */,
-				FFE01A9A6DA00FC498952905 /* [CP] Copy Pods Resources */,
+				E959E5FA57F912D721EBB7B7 /* [CP] Embed Pods Frameworks */,
+				470D5D1756AC23D2596F1EC6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,14 +238,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Numerology" */;
 			buildPhases = (
-				4C4DE644935C1405A3666D74 /* [CP] Check Pods Manifest.lock */,
+				D1E07244DAFDCDEA07A39AB4 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				25EB1F02DA8339CA7E623256 /* [CP] Embed Pods Frameworks */,
-				49F68750C570A544F02DE5F9 /* [CP] Copy Pods Resources */,
+				D2BFFE44945ECD367AD6F1A8 /* [CP] Embed Pods Frameworks */,
+				5C3D5F474A1E533CE3838DE1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,24 +306,24 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				FA98925DE4BB4C0D8D2027C0 /* Roboto-Black.ttf in Resources */,
-				C4AC2BB8F8E747859C7C9B14 /* Roboto-BlackItalic.ttf in Resources */,
-				4768A9A5275441F9B6DA773F /* Roboto-Bold.ttf in Resources */,
-				37425C0BD82841D38930028E /* Roboto-BoldItalic.ttf in Resources */,
-				9DF9FB06F38D4CDD9986D9DC /* Roboto-Italic.ttf in Resources */,
-				25A6B243414F4F639CD7ABE0 /* Roboto-Light.ttf in Resources */,
-				196A3B0873514B3EA960551B /* Roboto-LightItalic.ttf in Resources */,
-				7992639AD9964348BEDD874D /* Roboto-Medium.ttf in Resources */,
-				AE6F9BE39F34427E8B8B8509 /* Roboto-MediumItalic.ttf in Resources */,
-				DEFE0BC14C4B477E9E0A8B30 /* Roboto-Regular.ttf in Resources */,
-				466091FDD1224544A0F72C53 /* Roboto-Thin.ttf in Resources */,
-				C3A15217974D4F599C77BBF6 /* Roboto-ThinItalic.ttf in Resources */,
-				0E1FD0A29A684823A52D3536 /* RobotoCondensed-Bold.ttf in Resources */,
-				13570AB252684B7F9DCC1C4E /* RobotoCondensed-BoldItalic.ttf in Resources */,
-				465D07586FBF4D7FB899F568 /* RobotoCondensed-Italic.ttf in Resources */,
-				5B064B726D6245E481DBFB6A /* RobotoCondensed-Light.ttf in Resources */,
-				442A87F04BD04903AC390314 /* RobotoCondensed-LightItalic.ttf in Resources */,
-				C170030413854E14997FB7F6 /* RobotoCondensed-Regular.ttf in Resources */,
+				4F19615409554E06B8846D78 /* Roboto-Black.ttf in Resources */,
+				3453DA1BCFB04744B17E9DBE /* Roboto-BlackItalic.ttf in Resources */,
+				622277AF26FD46EAB983E5D1 /* Roboto-Bold.ttf in Resources */,
+				28D776032A8845A588ECE5F9 /* Roboto-BoldItalic.ttf in Resources */,
+				B725AB06FBEC46D1B566F384 /* Roboto-Italic.ttf in Resources */,
+				EA12B77AABE64EA8B581BDF0 /* Roboto-Light.ttf in Resources */,
+				903A5CEBBD6C4A8C8925CF8E /* Roboto-LightItalic.ttf in Resources */,
+				AB82076A82DA486A99D8DF41 /* Roboto-Medium.ttf in Resources */,
+				BE35A834F9404BF7B5AEF784 /* Roboto-MediumItalic.ttf in Resources */,
+				2AEA5A820F6C414DB263FD15 /* Roboto-Regular.ttf in Resources */,
+				7B74A0261E594343A2DA4BAC /* Roboto-Thin.ttf in Resources */,
+				AEB3CA156E804329BE223364 /* Roboto-ThinItalic.ttf in Resources */,
+				88324C50429E4084A2DF7448 /* RobotoCondensed-Bold.ttf in Resources */,
+				6C6B727D06D646D4AB7B771E /* RobotoCondensed-BoldItalic.ttf in Resources */,
+				C90A940192C44AD6A26CC51C /* RobotoCondensed-Italic.ttf in Resources */,
+				BB169669244248FDBC2E3498 /* RobotoCondensed-Light.ttf in Resources */,
+				F8124F73BDB84B3D85AA1ED8 /* RobotoCondensed-LightItalic.ttf in Resources */,
+				AC59C862D74D4124B53EF1D2 /* RobotoCondensed-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,63 +344,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		25EB1F02DA8339CA7E623256 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		49F68750C570A544F02DE5F9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4C4DE644935C1405A3666D74 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Numerology-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		65C13BF2C52F101342EB46B4 /* [CP] Check Pods Manifest.lock */ = {
+		28CD6C773D7DE6A50FC633A7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -424,7 +366,80 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		994557233D298048B2983F59 /* [CP] Embed Pods Frameworks */ = {
+		470D5D1756AC23D2596F1EC6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Numerology-NumerologyTests/Pods-Numerology-NumerologyTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Numerology-NumerologyTests/Pods-Numerology-NumerologyTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Numerology-NumerologyTests/Pods-Numerology-NumerologyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C3D5F474A1E533CE3838DE1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1E07244DAFDCDEA07A39AB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Numerology-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2BFFE44945ECD367AD6F1A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Numerology/Pods-Numerology-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E959E5FA57F912D721EBB7B7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -460,23 +475,6 @@
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FFE01A9A6DA00FC498952905 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Numerology-NumerologyTests/Pods-Numerology-NumerologyTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Numerology-NumerologyTests/Pods-Numerology-NumerologyTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Numerology-NumerologyTests/Pods-Numerology-NumerologyTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -510,7 +508,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1371472DCBA97190A9B36948 /* Pods-Numerology-NumerologyTests.debug.xcconfig */;
+			baseConfigurationReference = 16B515DDE10AD0AA90AD7DAB /* Pods-Numerology-NumerologyTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -537,7 +535,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E99DFBB391800E8F4DE3D7CE /* Pods-Numerology-NumerologyTests.release.xcconfig */;
+			baseConfigurationReference = 61C73FC9C1D5B57313229C30 /* Pods-Numerology-NumerologyTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -561,23 +559,25 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DED3B1B8803E7F0F16EFDFA /* Pods-Numerology.debug.xcconfig */;
+			baseConfigurationReference = A732A5C20C5D03AEB4843FD5 /* Pods-Numerology.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3Z3LF2XVPS;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Numerology/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = hahpuc.Numerology;
 				PRODUCT_NAME = Numerology;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -587,22 +587,24 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D78D7591181185BC0EC71358 /* Pods-Numerology.release.xcconfig */;
+			baseConfigurationReference = 4963B03ED7D964DDB32CF88B /* Pods-Numerology.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3Z3LF2XVPS;
 				INFOPLIST_FILE = Numerology/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = hahpuc.Numerology;
 				PRODUCT_NAME = Numerology;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
