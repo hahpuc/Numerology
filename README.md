@@ -1,5 +1,10 @@
 # Numerology
 
+## Preview 
+<div>
+    <img src="prototype/artboard.png" height = 600 width= '100%' />
+</div>
+
 ## Overview 
 Numerology is an ancient study that draws meaning from different numbers, number combinations, letters, and symbols in your life. This art can help us tap into the underlying patterns of the universe and reveal new truths about who we are. This application will help you to figure your life.
 
